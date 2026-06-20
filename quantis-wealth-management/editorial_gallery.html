@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quantis Wealth Management, Meta Ads Launch Pack</title>
+<style>
+  :root {
+    --bg: #fafaf7;
+    --surface: #ffffff;
+    --ink: #14130f;
+    --ink-soft: #5a584f;
+    --ink-faint: #94928a;
+    --line: #e9e6df;
+    --line-soft: #f1efea;
+    --navy: #001a6c;
+    --accent: #e0701c;
+    --accent-deep: #c25e14;
+    --cold: #2e6bf0;
+    --cold-bg: #eaf1ff;
+    --consid: #0d9488;
+    --consid-bg: #e6f5f3;
+    --mid: #7c3aed;
+    --mid-bg: #f1eafe;
+    --bottom: #ea580c;
+    --bottom-bg: #fdece1;
+    --edu: #16a34a;
+    --edu-bg: #e7f6ec;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 56px 32px 96px; }
+  header.masthead { border-bottom: 1px solid var(--line); padding-bottom: 40px; margin-bottom: 64px; }
+  .headline-pill {
+    display: inline-block; background: var(--accent); color: #fff; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase; padding: 9px 18px; border-radius: 999px; margin: 0 0 20px;
+  }
+  h1.title {
+    font-family: 'Playfair Display', Georgia, serif; font-size: clamp(36px, 5vw, 64px); line-height: 1.05;
+    font-weight: 700; margin: 0 0 24px; letter-spacing: -0.02em; color: var(--navy);
+  }
+  h1.title em { font-style: italic; color: var(--accent); font-weight: 500; }
+  .deck { font-size: 18px; color: var(--ink-soft); max-width: 760px; margin: 0; }
+  .meta-row { display: flex; flex-wrap: wrap; gap: 32px; margin-top: 32px; font-size: 13px; color: var(--ink-soft); }
+  .meta-row span strong { color: var(--ink-faint); font-weight: 600; display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+  .section-head { display: flex; align-items: baseline; justify-content: space-between; margin: 0 0 32px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+  .section-head h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 28px; font-weight: 700; margin: 0; letter-spacing: -0.01em; color: var(--navy); }
+  .section-head .count { font-size: 12px; color: var(--ink-faint); letter-spacing: 0.1em; text-transform: uppercase; }
+  .gallery { display: flex; flex-direction: column; gap: 64px; margin-bottom: 96px; }
+  .ad-card { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; display: grid; grid-template-columns: minmax(0, 540px) minmax(0, 1fr); gap: 0; }
+  .ad-visual { padding: 32px; background: var(--line-soft); display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 12px; }
+  .ad-img-frame { width: 100%; aspect-ratio: 1 / 1; background: #ddd; border-radius: 2px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06); }
+  .ad-img-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .save-btn { display: block; width: 100%; padding: 12px 16px; background: var(--navy); color: #fff; text-decoration: none; text-align: center; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; border-radius: 2px; border: 1px solid var(--navy); transition: background 0.15s ease; }
+  .save-btn:hover { background: var(--accent); border-color: var(--accent); }
+  .ad-body { padding: 40px 40px 36px; display: flex; flex-direction: column; gap: 20px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
+  .tag { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; padding: 5px 10px; border-radius: 999px; line-height: 1; }
+  .tag.product { background: var(--line-soft); color: var(--ink); border: 1px solid var(--line); }
+  .tag.stage-cold { background: var(--cold-bg); color: var(--cold); }
+  .tag.stage-consid { background: var(--consid-bg); color: var(--consid); }
+  .tag.stage-mid { background: var(--mid-bg); color: var(--mid); }
+  .tag.stage-bottom { background: var(--bottom-bg); color: var(--bottom); }
+  .tag.stage-edu { background: var(--edu-bg); color: var(--edu); }
+  .concept-name { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 700; line-height: 1.2; margin: 0; letter-spacing: -0.01em; color: var(--navy); }
+  .copy-block { display: flex; flex-direction: column; gap: 14px; }
+  .copy-row { border-top: 1px solid var(--line); padding-top: 14px; }
+  .copy-row:first-child { border-top: none; padding-top: 0; }
+  .copy-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-faint); font-weight: 600; margin: 0 0 6px; }
+  .copy-text { font-size: 14.5px; line-height: 1.55; color: var(--ink); margin: 0; }
+  .copy-text.headline { font-weight: 600; }
+  .cta-pill { display: inline-block; padding: 8px 18px; background: var(--accent); color: #fff; font-size: 13px; font-weight: 700; border-radius: 999px; letter-spacing: 0.04em; margin-top: 2px; }
+  .deep-link { font-size: 12px; color: var(--ink-faint); word-break: break-all; font-family: 'JetBrains Mono', 'Menlo', monospace; }
+  .deep-link a { color: var(--accent); text-decoration: none; }
+  .deep-link a:hover { text-decoration: underline; }
+  .export-section { border-top: 2px solid var(--navy); padding-top: 64px; }
+  .export-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; }
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 32px; }
+  .panel h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-weight: 700; margin: 0 0 16px; letter-spacing: -0.01em; color: var(--navy); }
+  .panel h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); margin: 24px 0 10px; font-weight: 600; }
+  .panel h4:first-of-type { margin-top: 0; }
+  .panel p, .panel li { font-size: 14px; line-height: 1.6; color: var(--ink-soft); }
+  .panel ol, .panel ul { padding-left: 20px; margin: 8px 0; }
+  .panel ol li, .panel ul li { margin-bottom: 6px; }
+  .panel ol li::marker { color: var(--accent); font-weight: 700; }
+  .panel code, .codeblock { font-family: 'JetBrains Mono', 'Menlo', monospace; font-size: 12.5px; background: var(--line-soft); color: var(--ink); padding: 2px 6px; border-radius: 2px; }
+  .codeblock { display: block; padding: 14px 16px; margin: 10px 0; white-space: pre-wrap; word-break: break-all; line-height: 1.6; border: 1px solid var(--line); }
+  table.spec { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
+  table.spec th, table.spec td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.spec th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); background: var(--line-soft); font-weight: 600; }
+  table.spec tr:last-child td { border-bottom: none; }
+  table.spec td:first-child { font-weight: 600; color: var(--ink); width: 36%; }
+  .target-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 8px; }
+  .target-card { border-left: 3px solid var(--line); padding: 4px 0 4px 14px; }
+  .target-card.cold { border-color: var(--cold); }
+  .target-card.consid { border-color: var(--consid); }
+  .target-card.mid { border-color: var(--mid); }
+  .target-card.bottom { border-color: var(--bottom); }
+  .target-card.edu { border-color: var(--edu); }
+  .target-card .t-stage { font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; margin: 0 0 4px; }
+  .target-card.cold .t-stage { color: var(--cold); }
+  .target-card.consid .t-stage { color: var(--consid); }
+  .target-card.mid .t-stage { color: var(--mid); }
+  .target-card.bottom .t-stage { color: var(--bottom); }
+  .target-card.edu .t-stage { color: var(--edu); }
+  .target-card .t-body { font-size: 13.5px; color: var(--ink-soft); margin: 0; line-height: 1.5; }
+  .target-card .t-body strong { color: var(--ink); }
+  .link-table { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 8px; }
+  .link-row { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line-soft); }
+  .link-row:last-child { border-bottom: none; }
+  .link-row .num { width: 24px; height: 24px; background: var(--navy); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; }
+  .link-row .url { font-family: 'JetBrains Mono', 'Menlo', monospace; font-size: 12px; color: var(--ink-soft); word-break: break-all; }
+  .link-row .url strong { color: var(--ink); display: block; font-family: 'Inter', sans-serif; font-size: 13px; margin-bottom: 2px; }
+  .link-row .url a { color: var(--accent); text-decoration: none; }
+  footer.bottom { margin-top: 96px; padding-top: 32px; border-top: 1px solid var(--line); text-align: center; font-size: 12px; color: var(--ink-faint); }
+  @media (max-width: 860px) {
+    .wrap { padding: 32px 20px 64px; }
+    .ad-card { grid-template-columns: 1fr; }
+    .ad-visual { padding: 20px; }
+    .ad-body { padding: 28px 24px; }
+    .export-grid { grid-template-columns: 1fr; gap: 24px; }
+    .panel { padding: 24px; }
+    h1.title { font-size: 36px; }
+    table.spec th, table.spec td { padding: 10px 10px; font-size: 13px; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="headline-pill">Five static ads custom designed for Quantis Wealth Management</div>
+    <h1 class="title">Five static creatives,<br><em>one audience, five pains.</em></h1>
+    <p class="deck">A hand-built ad set for the affluent Northern Virginia retiree, each creative anchored to one of the five worries that actually keep this audience up at night: the chaos of uncoordinated advisors, the quiet tax leak, the fear of retiring too soon, the fear of outliving the money, and the legacy that may not hold together. All assets are 1080×1080, Meta-compliant, and ready to upload.</p>
+    <div class="meta-row">
+      <span><strong>Prepared for</strong>Quantis Wealth Management</span>
+      <span><strong>Audience</strong>Affluent DMV Pre-Retirees (55-70, $2M+)</span>
+      <span><strong>Channel</strong>Facebook + Instagram Feed</span>
+      <span><strong>Format</strong>1080×1080 Square Static</span>
+      <span><strong>Objective</strong>Lead Gen, Webinar Registrations</span>
+    </div>
+  </header>
+
+  <section>
+    <div class="section-head"><h2>The Creatives</h2><span class="count">01 → 05</span></div>
+    <div class="gallery">
+
+      <article class="ad-card">
+        <div class="ad-visual">
+          <div class="ad-img-frame"><img src="images/01-coordination-messenger.png" alt="Affluent man overwhelmed coordinating his own advisors at night"></div>
+          <a class="save-btn" href="images/01-coordination-messenger.png" download="quantis-ad-01-coordination-messenger.png">↓ Save Image</a>
+        </div>
+        <div class="ad-body">
+          <div class="tags"><span class="tag stage-cold">● Cold · Brand Intro</span><span class="tag product">Pain: Uncoordinated Advisors</span></div>
+          <h3 class="concept-name">"The Lonely Quarterback"</h3>
+          <div class="copy-block">
+            <div class="copy-row"><p class="copy-label">Primary Text</p><p class="copy-text">Your advisor, your CPA, and your estate attorney have never spoken, and you are the one forwarding emails between them. At Quantis, tax and wealth planning live under one roof in Northern Virginia, so nothing falls through the cracks. Focus on enjoying your wealth, not managing its complexity.</p></div>
+            <div class="copy-row"><p class="copy-label">Headline</p><p class="copy-text headline">Stop Being Your Own Financial Quarterback</p></div>
+            <div class="copy-row"><p class="copy-label">Link Description</p><p class="copy-text">Fee-only fiduciary. Tysons &amp; McLean, VA.</p></div>
+            <div class="copy-row"><p class="copy-label">CTA Button</p><span class="cta-pill">Learn More</span></div>
+            <div class="copy-row"><p class="copy-label">Deep Link</p><p class="deep-link"><a href="https://quantiswm.com/training?utm_source=facebook&utm_medium=paid_social&utm_campaign=launch001_cold_coordination&utm_content=ad01_quarterback_brandintro" target="_blank">quantiswm.com/training</a></p></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ad-card">
+        <div class="ad-visual">
+          <div class="ad-img-frame"><img src="images/02-tax-drag.png" alt="Tax documents, Social Security statement and calculator on a desk"></div>
+          <a class="save-btn" href="images/02-tax-drag.png" download="quantis-ad-02-tax-drag.png">↓ Save Image</a>
+        </div>
+        <div class="ad-body">
+          <div class="tags"><span class="tag stage-consid">● Consideration · Problem Aware</span><span class="tag product">Pain: Tax Drag</span></div>
+          <h3 class="concept-name">"The Silent Leak"</h3>
+          <div class="copy-block">
+            <div class="copy-row"><p class="copy-label">Primary Text</p><p class="copy-text">Poorly coordinated withdrawals, missed Roth windows, and surprise Medicare premiums quietly cost retirees more tax than they ever need to pay. Quantis coordinates your withdrawals, RMDs, and Social Security timing as one plan, so you keep more of what you spent a lifetime building.</p></div>
+            <div class="copy-row"><p class="copy-label">Headline</p><p class="copy-text headline">The Biggest Leak In Your Retirement</p></div>
+            <div class="copy-row"><p class="copy-label">Link Description</p><p class="copy-text">Integrated tax + wealth planning, Northern VA.</p></div>
+            <div class="copy-row"><p class="copy-label">CTA Button</p><span class="cta-pill">Learn More</span></div>
+            <div class="copy-row"><p class="copy-label">Deep Link</p><p class="deep-link"><a href="https://quantiswm.com/training?utm_source=facebook&utm_medium=paid_social&utm_campaign=launch001_consid_taxdrag&utm_content=ad02_silentleak_problemaware" target="_blank">quantiswm.com/training</a></p></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ad-card">
+        <div class="ad-visual">
+          <div class="ad-img-frame"><img src="images/03-afford-retire.png" alt="Couple gazing out a window, uncertain about retirement"></div>
+          <a class="save-btn" href="images/03-afford-retire.png" download="quantis-ad-03-afford-retire.png">↓ Save Image</a>
+        </div>
+        <div class="ad-body">
+          <div class="tags"><span class="tag stage-mid">● Mid-Funnel · Core Desire</span><span class="tag product">Pain: Can I Afford To Retire</span></div>
+          <h3 class="concept-name">"Permission To Retire"</h3>
+          <div class="copy-block">
+            <div class="copy-row"><p class="copy-label">Primary Text</p><p class="copy-text">You have done well, yet you still cannot answer the only question that matters: can we retire now, travel, and never run out? Quantis replaces guesswork with a real retirement model. One couple we planned for were able to retire two years ahead of schedule.</p></div>
+            <div class="copy-row"><p class="copy-label">Headline</p><p class="copy-text headline">Can You Actually Afford To Retire?</p></div>
+            <div class="copy-row"><p class="copy-label">Link Description</p><p class="copy-text">Book a planning session. McLean, VA.</p></div>
+            <div class="copy-row"><p class="copy-label">CTA Button</p><span class="cta-pill">Book Now</span></div>
+            <div class="copy-row"><p class="copy-label">Deep Link</p><p class="deep-link"><a href="https://quantiswm.com/training?utm_source=facebook&utm_medium=paid_social&utm_campaign=launch001_mid_affordretire&utm_content=ad03_permission_coredesire" target="_blank">quantiswm.com/training</a></p></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ad-card">
+        <div class="ad-visual">
+          <div class="ad-img-frame"><img src="images/04-outliving-fear.png" alt="Man awake at night worried about the market and outliving his money"></div>
+          <a class="save-btn" href="images/04-outliving-fear.png" download="quantis-ad-04-outliving-fear.png">↓ Save Image</a>
+        </div>
+        <div class="ad-body">
+          <div class="tags"><span class="tag stage-bottom">● Bottom-Funnel · Urgency</span><span class="tag product">Pain: Outliving The Money</span></div>
+          <h3 class="concept-name">"The 4am Question"</h3>
+          <div class="copy-block">
+            <div class="copy-row"><p class="copy-label">Primary Text</p><p class="copy-text">If a bad market early in retirement keeps you up at 4am, you do not have an income plan, you have a hope. Quantis builds a withdrawal strategy that flexes with the market, so a down year becomes a managed event instead of a threat to the next thirty.</p></div>
+            <div class="copy-row"><p class="copy-label">Headline</p><p class="copy-text headline">Will Your Money Outlast You?</p></div>
+            <div class="copy-row"><p class="copy-label">Link Description</p><p class="copy-text">Fiduciary retirement income planning, Northern VA.</p></div>
+            <div class="copy-row"><p class="copy-label">CTA Button</p><span class="cta-pill">Book Now</span></div>
+            <div class="copy-row"><p class="copy-label">Deep Link</p><p class="deep-link"><a href="https://quantiswm.com/training?utm_source=facebook&utm_medium=paid_social&utm_campaign=launch001_bottom_outliving&utm_content=ad04_4amquestion_urgency" target="_blank">quantiswm.com/training</a></p></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ad-card">
+        <div class="ad-visual">
+          <div class="ad-img-frame"><img src="images/05-legacy.png" alt="Warm multigenerational family on a porch at golden hour"></div>
+          <a class="save-btn" href="images/05-legacy.png" download="quantis-ad-05-legacy.png">↓ Save Image</a>
+        </div>
+        <div class="ad-body">
+          <div class="tags"><span class="tag stage-edu">● Education · Trust Builder</span><span class="tag product">Pain: Legacy That Holds Together</span></div>
+          <h3 class="concept-name">"Leave A Legacy, Not A Mess"</h3>
+          <div class="copy-block">
+            <div class="copy-row"><p class="copy-label">Primary Text</p><p class="copy-text">Does your trust actually agree with how your portfolio is invested, or will your children inherit a tax bill and a tangle? Quantis aligns your estate plan, your investments, and your taxes so what you leave behind reaches the people and the causes you choose.</p></div>
+            <div class="copy-row"><p class="copy-label">Headline</p><p class="copy-text headline">Leave A Legacy, Not A Mess</p></div>
+            <div class="copy-row"><p class="copy-label">Link Description</p><p class="copy-text">Estate + wealth coordination. Tysons, VA.</p></div>
+            <div class="copy-row"><p class="copy-label">CTA Button</p><span class="cta-pill">Learn More</span></div>
+            <div class="copy-row"><p class="copy-label">Deep Link</p><p class="deep-link"><a href="https://quantiswm.com/training?utm_source=facebook&utm_medium=paid_social&utm_campaign=launch001_edu_legacy&utm_content=ad05_legacy_trustbuilder" target="_blank">quantiswm.com/training</a></p></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="export-section">
+    <div class="section-head"><h2>Exporting to Meta Ads Manager</h2><span class="count">Setup Guide</span></div>
+
+    <div class="panel" style="margin-bottom: 32px;">
+      <h3>Image Specifications</h3>
+      <p style="margin-top:0;">Every creative is delivered to Meta's recommended square-feed specs. Drop directly into Ads Manager without resizing.</p>
+      <table class="spec">
+        <thead><tr><th>Specification</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Dimensions</td><td>1080 × 1080 px (1:1 aspect ratio)</td></tr>
+          <tr><td>File Format</td><td><code>.png</code> (use <code>.jpg</code> if over 8MB for faster delivery)</td></tr>
+          <tr><td>File Size Limit</td><td>Hard cap 30MB · Recommended &lt; 8MB</td></tr>
+          <tr><td>Color Mode</td><td>sRGB</td></tr>
+          <tr><td>Placements</td><td>Facebook Feed · Instagram Feed · Instagram Explore · Marketplace</td></tr>
+          <tr><td>Reels / Stories</td><td>Auto-cropped to 9:16. Generate dedicated 1080×1920 versions for best result.</td></tr>
+          <tr><td>Text-on-image Rule</td><td>No longer a hard cap, but keep headlines concise; Meta down-ranks very text-heavy creatives.</td></tr>
+          <tr><td>Financial Compliance</td><td>No guaranteed-return language · Advisory disclosures on the destination page · State fee-only / fiduciary status honestly.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="export-grid">
+      <div class="panel">
+        <h3>Campaign Setup, Step by Step</h3>
+        <ol>
+          <li><strong>Open Ads Manager</strong> → <em>Create</em> → <em>Manual</em> setup.</li>
+          <li><strong>Select objective</strong> by funnel stage (below). One campaign per stage so budgets stay isolated.</li>
+          <li><strong>Name the campaign</strong>: <code>Quantis_Launch001_{Stage}_{Pain}</code> (e.g. <code>Quantis_Launch001_Cold_Coordination</code>).</li>
+          <li><strong>Advantage+ campaign budget</strong>, starting $40–$80/day per stage. Raise 20% every 3 days once cost-per-lead stabilizes.</li>
+          <li><strong>Ad set</strong>: conversion location <em>Website</em> (or <em>Instant Form</em> for lead-gen), attribution <em>7-day click + 1-day view</em>.</li>
+          <li><strong>Audience</strong>: apply the stage profile from the next panel.</li>
+          <li><strong>Placements</strong>: Advantage+ Placements, exclude Audience Network on cold campaigns.</li>
+          <li><strong>Creative</strong>: upload the PNG, paste Primary Text, Headline, Link Description, set CTA, paste the deep link with UTMs.</li>
+          <li><strong>Pixel</strong>: verify <em>Lead</em> and <em>CompleteRegistration</em> fire on the registration thank-you page.</li>
+          <li><strong>Publish</strong> → run each ad set 7+ days or to 50 leads before judging.</li>
+        </ol>
+        <h4>Objective by Funnel Stage</h4>
+        <ul>
+          <li><strong style="color:var(--cold);">Cold (Ad 01):</strong> <em>Awareness → Reach</em>, or <em>Leads → Landing Page Views</em>.</li>
+          <li><strong style="color:var(--consid);">Consideration (Ad 02):</strong> <em>Traffic → Landing Page Views</em>.</li>
+          <li><strong style="color:var(--mid);">Mid (Ad 03):</strong> <em>Leads → CompleteRegistration</em> (webinar sign-up).</li>
+          <li><strong style="color:var(--bottom);">Bottom (Ad 04):</strong> <em>Leads → Schedule</em> (book a call). 14-day learning window.</li>
+          <li><strong style="color:var(--edu);">Education (Ad 05):</strong> <em>Traffic → Landing Page Views</em>, then retarget engagers.</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h3>Audience Targeting by Funnel Stage</h3>
+        <div class="target-grid">
+          <div class="target-card cold"><p class="t-stage">Cold · Ad 01, Uncoordinated Advisors</p><p class="t-body"><strong>Broad geo + life-stage.</strong> Northern Virginia + DC metro (McLean, Tysons, Vienna, Great Falls, Arlington), ages 55–70. Interests: retirement planning, estate planning, wealth management, financial planning. Layer income / likely-investor behaviors. Estimated size: 150K–350K.</p></div>
+          <div class="target-card consid"><p class="t-stage">Consideration · Ad 02, Tax Drag</p><p class="t-body"><strong>Tax-aware affluent.</strong> Same DMV geo, 55–70. Interests: tax planning, Roth IRA, RMDs, Social Security, Fidelity, Charles Schwab, Vanguard. Layer business-owner / executive titles. Estimated size: 80K–180K.</p></div>
+          <div class="target-card mid"><p class="t-stage">Mid-Funnel · Ad 03, Afford To Retire</p><p class="t-body"><strong>Pre-retiree intenders.</strong> DMV geo, 58–68. Interests: early retirement, retirement income, Fisher Investments, Edelman Financial Engines. Lookalike 1–2% of past consultation bookers / email list. Estimated size: 60K–120K.</p></div>
+          <div class="target-card bottom"><p class="t-stage">Bottom-Funnel · Ad 04, Outliving The Money</p><p class="t-body"><strong>Warm retargeting.</strong> Past-30-day site and registration-page visitors who did not sign up, 25%+ video viewers of Ads 01–03, recent FB/IG engagers, uploaded prospect email list. Estimated size: 10K–60K.</p></div>
+          <div class="target-card edu"><p class="t-stage">Education · Ad 05, Legacy</p><p class="t-body"><strong>Legacy-minded.</strong> DMV geo, 58–72. Interests: estate planning, trusts, charitable giving, wealth transfer, AARP. Lookalike 1% of newsletter subscribers. Retarget registration-page viewers who did not convert. Estimated size: 50K–110K.</p></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Destination URLs by Creative</h3>
+        <p style="margin-top:0;">Point each ad at the webinar registration page with the full UTM string in the Website URL field. (Registration and thank-you pages are produced in the next phase of this build.)</p>
+        <div class="link-table">
+          <div class="link-row"><div class="num">1</div><div class="url"><strong>Ad 01, The Lonely Quarterback</strong><a href="https://quantiswm.com/training" target="_blank">quantiswm.com/training</a></div></div>
+          <div class="link-row"><div class="num">2</div><div class="url"><strong>Ad 02, The Silent Leak</strong><a href="https://quantiswm.com/training" target="_blank">quantiswm.com/training</a></div></div>
+          <div class="link-row"><div class="num">3</div><div class="url"><strong>Ad 03, Permission To Retire</strong><a href="https://quantiswm.com/training" target="_blank">quantiswm.com/training</a></div></div>
+          <div class="link-row"><div class="num">4</div><div class="url"><strong>Ad 04, The 4am Question</strong><a href="https://quantiswm.com/training" target="_blank">quantiswm.com/training</a></div></div>
+          <div class="link-row"><div class="num">5</div><div class="url"><strong>Ad 05, Leave A Legacy</strong><a href="https://quantiswm.com/training" target="_blank">quantiswm.com/training</a></div></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>UTM Parameter Templates</h3>
+        <p style="margin-top:0;">Paste into the <em>URL Parameters</em> field in Ads Manager. Meta auto-populates the dynamic tokens per impression.</p>
+        <h4>Universal Meta tracking string (recommended)</h4>
+        <code class="codeblock">utm_source=facebook&utm_medium=paid_social&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&utm_id={{campaign.id}}</code>
+        <h4>Pre-built per-creative URLs (copy-paste ready)</h4>
+        <code class="codeblock">Ad 01 → quantiswm.com/training?utm_source=facebook&utm_medium=paid_social&utm_campaign=launch001_cold_coordination&utm_content=ad01_quarterback_brandintro
+
+Ad 02 → quantiswm.com/training?utm_source=facebook&utm_medium=paid_social&utm_campaign=launch001_consid_taxdrag&utm_content=ad02_silentleak_problemaware
+
+Ad 03 → quantiswm.com/training?utm_source=facebook&utm_medium=paid_social&utm_campaign=launch001_mid_affordretire&utm_content=ad03_permission_coredesire
+
+Ad 04 → quantiswm.com/training?utm_source=facebook&utm_medium=paid_social&utm_campaign=launch001_bottom_outliving&utm_content=ad04_4amquestion_urgency
+
+Ad 05 → quantiswm.com/training?utm_source=facebook&utm_medium=paid_social&utm_campaign=launch001_edu_legacy&utm_content=ad05_legacy_trustbuilder</code>
+        <h4>Naming convention reference</h4>
+        <ul>
+          <li><code>utm_campaign</code>: <code>launch{number}_{stage}_{pain}</code></li>
+          <li><code>utm_content</code>: <code>ad{number}_{concept}_{angle}</code></li>
+          <li><code>utm_medium</code>: always <code>paid_social</code></li>
+          <li><code>utm_source</code>: <code>facebook</code> (used for IG placements too)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bottom">
+    Quantis Wealth Management · Static Ad Pack · Prepared 2026-06-19 · Open <code>images/</code> for raw PNG files at 1080×1080.
+  </footer>
+
+</div>
+</body>
+</html>
