@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're Registered · Allied Wealth</title>
+<meta name="description" content="Your seat for the private ExxonMobil retirement training is confirmed. Here's exactly what to expect and how to get the most out of it.">
+<style>
+  :root{
+    --navy:#1f1b14; --navy-deep:#0d0b07; --navy-soft:#322c22;
+    --orange:#a8814a; --orange-soft:#d4b483; --orange-deep:#876534;
+    --bg:#fdf5e4; --surface:#fffdf8; --ink:#090806; --ink-soft:#5b5446;
+    --ink-faint:#9a917f; --line:#e6dcc8; --line-soft:#f0e9da; --green:#4a7c59;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;letter-spacing:-0.015em;line-height:1.15;margin:0;}
+  .ph{color:var(--orange-deep);background:rgba(168,129,74,0.10);border-bottom:1px dashed var(--orange);padding:0 3px;border-radius:2px;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+
+  /* topbar */
+  .topbar{background:var(--navy-deep);color:#fff;}
+  .topbar .in{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+  .brand{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:0.16em;font-size:17px;text-transform:uppercase;}
+  .brand small{display:block;font-family:'Inter',sans-serif;font-weight:400;letter-spacing:0.24em;font-size:9px;color:var(--orange-soft);margin-top:2px;}
+  .topbar .pill{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange-soft);border:1px solid var(--navy-soft);padding:6px 12px;border-radius:999px;}
+
+  /* confirmation hero */
+  .hero{background:linear-gradient(180deg,var(--navy),var(--navy-deep));color:#fff;padding:48px 0 44px;}
+  .hero .check{width:60px;height:60px;border-radius:50%;background:rgba(74,124,89,0.22);border:1.5px solid rgba(74,124,89,0.6);
+    color:#9fd9af;display:flex;align-items:center;justify-content:center;font-size:30px;margin-bottom:20px;}
+  .hero .kick{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--orange-soft);margin-bottom:14px;}
+  .hero h1{font-size:clamp(32px,4.6vw,46px);font-weight:800;max-width:760px;}
+  .hero h1 em{font-style:italic;color:var(--orange-soft);font-weight:500;}
+  .hero .when{margin:22px 0 0;display:flex;flex-wrap:wrap;gap:10px;}
+  .hero .when span{background:rgba(255,255,255,0.07);border:1px solid var(--navy-soft);border-radius:8px;padding:9px 15px;font-size:14px;letter-spacing:0.02em;}
+  .hero .when b{color:#fff;font-weight:700;}
+  .hero .mailnote{margin:20px 0 0;font-size:14.5px;color:#d8cdb4;max-width:620px;}
+
+  /* layout */
+  .grid{display:grid;grid-template-columns:1fr 360px;gap:40px;align-items:start;padding:56px 0 70px;}
+
+  /* main column blocks */
+  .block{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:34px 36px;margin-bottom:24px;box-shadow:0 2px 5px rgba(31,27,20,0.04);}
+  .block:last-child{margin-bottom:0;}
+  .eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange-deep);background:rgba(168,129,74,0.12);padding:6px 13px;border-radius:999px;margin-bottom:16px;}
+  .block h2{font-size:clamp(24px,3vw,31px);font-weight:700;color:var(--navy);}
+  .block > p{font-size:16.5px;color:var(--ink-soft);margin:14px 0 0;}
+
+  /* big promise list */
+  .promise{display:flex;flex-direction:column;gap:16px;margin-top:26px;}
+  .promise .item{display:flex;gap:16px;align-items:flex-start;}
+  .promise .no{flex:none;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Playfair Display',serif;font-weight:700;
+    display:flex;align-items:center;justify-content:center;font-size:16px;margin-top:2px;}
+  .promise h3{font-size:18.5px;color:var(--navy);margin-bottom:3px;}
+  .promise p{font-size:15.5px;color:var(--ink-soft);margin:0;}
+
+  /* early callout */
+  .early{border-left:4px solid var(--orange);background:#fbf5ea;}
+  .early .clock{font-size:26px;margin-bottom:6px;}
+
+  /* show up ready contrast */
+  .contrast{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;}
+  .contrast .col{border:1px solid var(--line);border-radius:12px;padding:20px 20px;}
+  .contrast .col.not{background:#f9f0ec;border-color:#ecd9cf;}
+  .contrast .col.is{background:#f0f5ef;border-color:#d6e6d6;}
+  .contrast .lab{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;}
+  .contrast .not .lab{color:#a85a3f;}
+  .contrast .is .lab{color:var(--green);}
+  .contrast p{font-size:15px;color:var(--ink-soft);margin:0;}
+
+  .sig{margin-top:26px;padding-top:20px;border-top:1px solid var(--line);font-size:15.5px;color:var(--ink-soft);}
+  .sig b{color:var(--navy);font-family:'Playfair Display',serif;}
+
+  /* sticky proof sidebar */
+  aside{position:sticky;top:24px;}
+  .proof-rail{background:linear-gradient(180deg,var(--navy),var(--navy-deep));border-radius:16px;padding:26px 24px;color:#fff;box-shadow:0 24px 60px rgba(31,27,20,0.18);}
+  .proof-rail .rkick{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange-soft);margin-bottom:18px;}
+  .stat{border-bottom:1px solid var(--navy-soft);padding-bottom:18px;margin-bottom:18px;}
+  .stat .big{font-family:'Playfair Display',serif;font-size:40px;font-weight:800;color:#fff;line-height:1;}
+  .stat p{font-size:13.5px;color:#d8cdb4;margin:9px 0 0;}
+  .tcard{background:rgba(255,255,255,0.06);border:1px solid var(--navy-soft);border-radius:11px;padding:15px 16px;margin-bottom:13px;}
+  .tcard:last-of-type{margin-bottom:0;}
+  .tcard .stars{color:var(--orange-soft);font-size:13px;letter-spacing:2px;margin-bottom:7px;}
+  .tcard .q{font-size:14px;color:#f3ece0;margin:0 0 8px;line-height:1.5;}
+  .tcard .who{font-size:11.5px;letter-spacing:0.03em;text-transform:uppercase;color:#b3a890;}
+  .rail-trust{margin-top:16px;font-size:12px;color:#b3a890;text-align:center;letter-spacing:0.02em;}
+
+  footer{background:var(--navy-deep);color:#9a917f;font-size:12px;text-align:center;padding:26px 0;margin-top:10px;}
+  footer .disclaimer{max-width:820px;margin:10px auto 0;line-height:1.5;}
+
+  @media(max-width:880px){
+    .grid{grid-template-columns:1fr;gap:28px;}
+    aside{position:static;order:-1;}
+    .contrast{grid-template-columns:1fr;}
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,800;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="in">
+      <div class="brand">Allied Wealth<small>Retirement Planning</small></div>
+      <span class="pill">Your Seat Is Confirmed</span>
+    </div>
+  </div>
+
+  <!-- CONFIRMATION HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="check">✓</div>
+      <span class="kick">You're registered</span>
+      <h1 id="headline">You're in<span id="firstname"></span> — your seat is saved.</h1>
+      <div class="when">
+        <span>📅 <b>Sunday, June 28</b></span>
+        <span>🕐 <b>1:00 PM CT</b></span>
+        <span>💻 <b>Live online</b></span>
+      </div>
+      <p class="mailnote">Check your inbox now — your private access link and a calendar invite are on the way. Add the calendar invite so the day doesn't slip past. Below is exactly what to expect, and how to get the most out of it.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="grid">
+
+      <!-- MAIN COLUMN -->
+      <main>
+
+        <!-- 1. THE BIG PROMISE -->
+        <section class="block">
+          <span class="eyebrow">My Big Promise To You</span>
+          <h2>Here's what you'll walk away with.</h2>
+          <p>You signed up for a reason. So this is worth blocking the time for, here's exactly what you'll have by the end of the 45 minutes, no homework and no jargon:</p>
+          <div class="promise">
+            <div class="item"><div class="no">1</div><div><h3>Make the big decisions once, correctly</h3><p>Walk in knowing how to time your Benefit Commencement Date and elect your pension, so the one choice you can never take back is the right one.</p></div></div>
+            <div class="item"><div class="no">2</div><div><h3>Sleep through the oil-price swings</h3><p>See how to unwind concentrated ExxonMobil stock and build income that holds up in a down market, so a bad year stops being a 4am fear.</p></div></div>
+            <div class="item"><div class="no">3</div><div><h3>Stop handing the IRS more than you owe</h3><p>Understand the NUA, Roth, and payout-timing moves built for your benefits, so taxes stop quietly draining the retirement you earned.</p></div></div>
+          </div>
+        </section>
+
+        <!-- 2. SHOW UP EARLY (positive micro-commitment, no scarcity) -->
+        <section class="block early">
+          <div class="clock">🕐</div>
+          <span class="eyebrow">One Small Favor</span>
+          <h2>Hop on about 10 minutes early.</h2>
+          <p>The people who get the most out of this session are the ones already settled in when we begin. Use those ten minutes to sort out your audio, pour a coffee, and have a notepad ready. We start right on time and open with one of the most valuable parts, so you'll want to be in your seat, not still hunting for the link.</p>
+        </section>
+
+        <!-- 3. SHOW UP READY (what this is NOT) -->
+        <section class="block">
+          <span class="eyebrow">So Show Up Ready</span>
+          <h2>This is not your typical webinar.</h2>
+          <p>You know how most of these go, so let's set expectations honestly:</p>
+          <div class="contrast">
+            <div class="col not">
+              <div class="lab">✕ What this isn't</div>
+              <p>Generic slides, a slow build, and a pitch you can smell from the first minute, the kind where you're hunting for the exit inside ten.</p>
+            </div>
+            <div class="col is">
+              <div class="lab">✓ What this is</div>
+              <p>45 focused minutes of the actual framework for ExxonMobil benefits, in plain English, plus live Q&amp;A on your own situation.</p>
+            </div>
+          </div>
+          <div class="sig">Bring your real questions, your spouse if these are joint decisions, and an open notepad. See you Sunday.<br><br>— <b>Arthur Sung</b>, Education Team · Allied Wealth</div>
+        </section>
+
+      </main>
+
+      <!-- STICKY PROOF SIDEBAR (always in view) -->
+      <aside>
+        <div class="proof-rail">
+          <div class="rkick">Why ExxonMobil families trust Allied</div>
+          <div class="stat">
+            <div class="big">Hundreds</div>
+            <p>of ExxonMobil professionals have retired with clarity alongside Allied Wealth, their pension, stock, and Savings Plan coordinated into one plan, exactly where this training is designed to take you.</p>
+          </div>
+          <div class="tcard">
+            <div class="stars">★★★★★</div>
+            <p class="q">"They genuinely looked out for my best interest, even ahead of the interest of the firm."</p>
+            <div class="who">Larry · Allied Wealth client</div>
+          </div>
+          <div class="tcard">
+            <div class="stars">★★★★★</div>
+            <p class="q">"Every time we call, we get a real person on the line, and they respond in less than 24 hours."</p>
+            <div class="who">Maria · Allied Wealth client</div>
+          </div>
+        </div>
+        <p class="rail-trust">Deep ExxonMobil benefits expertise · Houston, TX · Featured in Forbes, Fortune &amp; Money</p>
+      </aside>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <div class="brand" style="color:#fff;">Allied Wealth<small>Retirement Planning</small></div>
+      <p class="disclaimer">This training is for educational purposes only and does not constitute investment, tax, or legal advice. Allied Wealth is not affiliated with, endorsed by, or sponsored by Exxon Mobil Corporation; ExxonMobil and related plan names are referenced only to describe the employee benefits discussed. Advisory services are offered through <span class="ph">[Registered Investment Adviser entity]</span>. Any client comments referenced are individual experiences and are not a guarantee of future results. © 2026 Allied Wealth. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Personalize the headline if a first name was carried through the funnel (?name=).
+    (function(){
+      try{
+        var name = new URLSearchParams(window.location.search).get('name');
+        if(name){
+          var first = name.trim().split(/\s+/)[0];
+          if(first){ document.getElementById('firstname').textContent = ', ' + first.charAt(0).toUpperCase() + first.slice(1); }
+        }
+      }catch(e){}
+    })();
+  </script>
+
+</body>
+</html>

@@ -122,14 +122,6 @@
         <p class="seat-note">Prefer to wait? <button class="skip" id="skipFit" style="display:inline;width:auto;margin:0;">I'll just see you at the training →</button></p>
       </div>
 
-      <!-- result: all set -> (thank-you) -->
-      <div class="result set" id="resSet">
-        <div class="crest">✓</div>
-        <h2>You're all set.</h2>
-        <p>Your seat is confirmed. We've sent the access link and a calendar invite to your email, see you on <strong>Sunday, June 28</strong>.</p>
-        <p class="seat-note">Tip: add it to your calendar now so the day does not slip past.</p>
-      </div>
-
     </div>
   </div>
 
@@ -187,19 +179,28 @@
     }
     elBack.onclick=function(){ if(idx>0){ idx--; render(); } };
 
+    // Step 3: carry the lead's first-party data forward to the thank-you page.
+    function goThankYou(){
+      var name = '';
+      try{ name = new URLSearchParams(window.location.search).get('name') || ''; }catch(e){}
+      window.location.href = 'webinar-thank-you.html' + (name ? '?name=' + encodeURIComponent(name) : '');
+    }
     function finish(){
-      elFill.style.width="100%";
       let score=0; answers.forEach(function(a,i){ if(a!==null) score+=QUESTIONS[i].opts[a][1]; });
-      elQuiz.style.display="none";
-      document.querySelector('.lead').style.display="none";
-      document.getElementById(score>=QUALIFY ? 'resFit' : 'resSet').classList.add('show');
+      if(score >= QUALIFY){
+        // strong fit -> offer the call first
+        elFill.style.width="100%";
+        elQuiz.style.display="none";
+        document.querySelector('.lead').style.display="none";
+        document.getElementById('resFit').classList.add('show');
+      } else {
+        goThankYou(); // everyone else -> straight to the thank-you page
+      }
     }
     // booking link is a placeholder until the real scheduler URL is set
     document.getElementById('bookBtn').addEventListener('click',function(e){ /* set href to the team's Calendly */ });
-    document.getElementById('skipFit').addEventListener('click',function(){
-      document.getElementById('resFit').classList.remove('show');
-      document.getElementById('resSet').classList.add('show');
-    });
+    // qualified lead chose to wait -> thank-you page
+    document.getElementById('skipFit').addEventListener('click',function(e){ e.preventDefault(); goThankYou(); });
     render();
   </script>
 
