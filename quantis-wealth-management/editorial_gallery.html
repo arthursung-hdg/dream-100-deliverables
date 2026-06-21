@@ -240,71 +240,22 @@
   </section>
 
   <section class="export-section">
-    <div class="section-head"><h2>Exporting to Meta Ads Manager</h2><span class="count">Setup Guide</span></div>
-
-    <div class="panel" style="margin-bottom: 32px;">
-      <h3>Image Specifications</h3>
-      <p style="margin-top:0;">Every creative is delivered to Meta's recommended square-feed specs. Drop directly into Ads Manager without resizing.</p>
-      <table class="spec">
-        <thead><tr><th>Specification</th><th>Value</th></tr></thead>
-        <tbody>
-          <tr><td>Dimensions</td><td>1080 × 1080 px (1:1 aspect ratio)</td></tr>
-          <tr><td>File Format</td><td><code>.png</code> (use <code>.jpg</code> if over 8MB for faster delivery)</td></tr>
-          <tr><td>File Size Limit</td><td>Hard cap 30MB · Recommended &lt; 8MB</td></tr>
-          <tr><td>Color Mode</td><td>sRGB</td></tr>
-          <tr><td>Placements</td><td>Facebook Feed · Instagram Feed · Instagram Explore · Marketplace</td></tr>
-          <tr><td>Reels / Stories</td><td>Auto-cropped to 9:16. Generate dedicated 1080×1920 versions for best result.</td></tr>
-          <tr><td>Text-on-image Rule</td><td>No longer a hard cap, but keep headlines concise; Meta down-ranks very text-heavy creatives.</td></tr>
-          <tr><td>Financial Compliance</td><td>No guaranteed-return language · Advisory disclosures on the destination page · State fee-only / fiduciary status honestly.</td></tr>
-        </tbody>
-      </table>
-    </div>
-
+    <div class="section-head"><h2>The Thinking Behind These Creatives</h2><span class="count">Our Approach</span></div>
+    <p class="deck" style="margin-bottom:36px;">We don't point one ad at everyone and hope. Each creative is built for a different slice of your market, sorted by how aware that person already is of the problem, so the message meets them exactly where they are. Here is how the five fit together.</p>
     <div class="export-grid">
       <div class="panel">
-        <h3>Campaign Setup, Step by Step</h3>
-        <ol>
-          <li><strong>Open Ads Manager</strong> → <em>Create</em> → choose the <em>Leads</em> objective.</li>
-          <li><strong>Conversion location</strong>: Website. Conversion event <em>CompleteRegistration</em>, firing on the registration thank-you page.</li>
-          <li><strong>Name the campaign</strong>: <code>Quantis_Training_{Month}</code>.</li>
-          <li><strong>Budget</strong>: start one ad set at $40 to $80/day. Let Meta optimize across all five creatives before splitting tests.</li>
-          <li><strong>Audience</strong>: apply the profile from the next panel. One broad ad set holding all five pain creatives usually beats five narrow ad sets early on.</li>
-          <li><strong>Placements</strong>: Advantage+ Placements, exclude Audience Network early to protect lead quality.</li>
-          <li><strong>Creative</strong>: upload each PNG, paste Ad Copy, Headline, and Link Description, set a soft CTA button (Learn More / Sign Up), and set the website URL to the registration page with the UTM string below.</li>
-          <li><strong>Pixel</strong>: verify <em>CompleteRegistration</em> fires on the thank-you page before publishing.</li>
-          <li><strong>Publish</strong> → run 7+ days or to ~50 registrations before judging which pains pull hardest.</li>
-        </ol>
-      </div>
-
-      <div class="panel">
-        <h3>Audience Targeting</h3>
+        <h3>Reaching Your Whole Market</h3>
         <div class="target-grid">
-          <div class="target-card cold"><p class="t-stage">Core Audience, all five creatives</p><p class="t-body"><strong>Geo + life-stage.</strong> Northern Virginia + DC metro (McLean, Tysons, Vienna, Great Falls, Arlington), ages 55 to 70. Interests: retirement planning, estate planning, wealth management, financial planning. Layer income / likely-investor behaviors. Estimated size: 150K to 350K.</p></div>
-          <div class="target-card consid"><p class="t-stage">Layer, tax-aware affluent</p><p class="t-body"><strong>Add for Ad 02.</strong> Interests: tax planning, Roth IRA, RMDs, Social Security, Fidelity, Charles Schwab, Vanguard. Layer business-owner / executive titles.</p></div>
-          <div class="target-card mid"><p class="t-stage">Layer, pre-retiree intenders</p><p class="t-body"><strong>Add for Ad 03.</strong> Interests: early retirement, retirement income, Fisher Investments, Edelman Financial Engines. Lookalike 1 to 2% of past registrants / email list.</p></div>
-          <div class="target-card bottom"><p class="t-stage">Retargeting</p><p class="t-body"><strong>Warm pool.</strong> Past-30-day site and registration-page visitors who did not sign up, 25%+ video viewers, recent FB/IG engagers, uploaded prospect email list.</p></div>
-          <div class="target-card edu"><p class="t-stage">Layer, legacy-minded</p><p class="t-body"><strong>Add for Ad 05.</strong> Interests: estate planning, trusts, charitable giving, wealth transfer, AARP. Lookalike 1% of newsletter subscribers.</p></div>
+          <div class="target-card cold"><p class="t-stage">Problem Unaware</p><p class="t-body">Affluent retirees who feel scattered and worn down by their own finances but have never named the cause. <strong>Ad 01, The Lonely Quarterback</strong> shows them the problem: they have quietly become the middleman between advisors who never talk.</p></div>
+          <div class="target-card consid"><p class="t-stage">Problem Aware</p><p class="t-body">Retirees already worried about a specific threat to their plan. <strong>Ad 02, The Silent Leak</strong> names the tax drain; <strong>Ad 03, Permission To Retire</strong> names the "can we actually retire" fear; <strong>Ad 04, The 4am Question</strong> names the fear of outliving the money.</p></div>
+          <div class="target-card mid"><p class="t-stage">Solution Aware</p><p class="t-body">Retirees who know they need a real plan and are thinking about how to lock it in. <strong>Ad 05, Leave A Legacy</strong> reaches those focused on what they pass on, and on getting the estate, taxes, and investments to finally agree.</p></div>
         </div>
       </div>
-
       <div class="panel">
-        <h3>Destination &amp; Tracking</h3>
-        <p style="margin-top:0;">All five ads point to the one webinar registration page. Use a single destination with a per-ad <code>utm_content</code> set to the pain, so you can see which pain drives the most registrations.</p>
-        <code class="codeblock">quantiswm.com/training?utm_source=facebook&utm_medium=paid_social&utm_campaign=quantis_training&utm_content={pain_slug}</code>
-        <p style="margin-top:10px;">Example <code>utm_content</code> values: <code>uncoordinated_advisors</code>, <code>tax_drag</code>, <code>afford_retire</code>, <code>outliving_money</code>, <code>legacy</code>.</p>
-        <h4>Universal Meta tracking string (alternative)</h4>
-        <code class="codeblock">utm_source=facebook&utm_medium=paid_social&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}</code>
-      </div>
-
-      <div class="panel">
-        <h3>Naming Convention</h3>
-        <ul>
-          <li><code>utm_campaign</code>: <code>{client}_training</code></li>
-          <li><code>utm_content</code>: the pain slug for each ad (above)</li>
-          <li><code>utm_medium</code>: always <code>paid_social</code></li>
-          <li><code>utm_source</code>: <code>facebook</code> (used for IG placements too)</li>
-        </ul>
-        <p>Keeping the campaign flat (one campaign, one ad set, five pain creatives) lets Meta find the people most likely to register and shows you the winning pain fastest.</p>
+        <h3>Why One Pain Per Ad</h3>
+        <p>Most agencies run a single, generic ad and hope it lands. We build one creative per pain for two reasons. First, a sharp, specific worry stops the right person mid-scroll in a way that "we do retirement planning" never will. Second, running all five together tells us which pain actually pulls registrations, so we put the budget behind the winner instead of guessing.</p>
+        <h4>Who each ad is built for</h4>
+        <p>The audience stays constant across the set (affluent Northern Virginia pre-retirees and retirees, roughly ages 55 to 70 with $2M or more). What changes is the pain, and therefore which person in that audience each ad pulls forward. That is what a coordinated funnel looks like before a single dollar goes to ad management.</p>
       </div>
     </div>
   </section>
