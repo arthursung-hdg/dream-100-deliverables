@@ -56,7 +56,7 @@
 
   /* embed frames */
   .embed-wrap{padding:0 0 30px;}
-  .embed-shell{max-width:1180px;margin:24px auto 0;padding:0 16px;}
+  .embed-shell{max-width:1180px;margin:24px auto 0;padding:0 24px;}
   .embed-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 30px 70px rgba(20,12,0,0.16);}
   .embed-bar{display:flex;align-items:center;justify-content:space-between;padding:11px 18px;background:#f4ecdb;border-bottom:1px solid var(--line);font-size:12px;letter-spacing:0.04em;color:var(--ink-soft);}
   .embed-bar .dots{display:flex;gap:6px;}
@@ -80,7 +80,13 @@
   .close a:hover{background:var(--gold-deep);}
   footer{background:#080705;color:#8c8369;font-size:12px;text-align:center;padding:26px 0;}
 
-  @media(max-width:780px){.pains{grid-template-columns:1fr 1fr;}}
+  @media(max-width:780px){
+    .pains{grid-template-columns:1fr 1fr;}
+    .wrap{padding:0 18px;}
+    .embed-shell{padding:0 18px;}
+    .placeholder{margin-left:18px;margin-right:18px;padding:54px 22px;}
+    .band{padding-top:48px;}
+  }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -205,14 +211,17 @@
       document.querySelectorAll('iframe.page').forEach(function(f){
         try{
           var doc = f.contentDocument || f.contentWindow.document;
-          if(doc && doc.body){
-            f.style.height = doc.documentElement.scrollHeight + 'px';
-          }
+          if(!doc || !doc.documentElement) return;
+          // Collapse first: documentElement.scrollHeight is clamped to at least the
+          // iframe's own height, so a tall (mobile) frame never shrinks when widened
+          // to desktop. Zeroing the height lets it remeasure the real content height.
+          f.style.height = '0px';
+          f.style.height = doc.documentElement.scrollHeight + 'px';
         }catch(e){}
       });
     }
     window.addEventListener('load', function(){ resizeFrames(); setTimeout(resizeFrames, 600); setTimeout(resizeFrames, 1500); });
-    window.addEventListener('resize', resizeFrames);
+    window.addEventListener('resize', function(){ requestAnimationFrame(resizeFrames); });
   </script>
 
 </body>
