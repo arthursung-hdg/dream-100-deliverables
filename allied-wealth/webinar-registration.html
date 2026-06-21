@@ -460,18 +460,19 @@
     }
     tick(); setInterval(tick, 1000);
 
-    // Demo only: no data is sent or stored. Shows a confirmation state on submit.
-    function wireForm(form, confirm){
+    // Demo: no backend yet. On submit, carry the lead's first-party data forward to
+    // the survey (Step 2 of the 3-step funnel: register -> survey -> thank-you).
+    function wireForm(form){
       if(!form) return;
       form.addEventListener('submit', function(e){
         e.preventDefault();
-        form.style.display='none';
-        confirm.style.display='block';
-        confirm.scrollIntoView({behavior:'smooth', block:'center'});
+        var data = new FormData(form);
+        var qs = new URLSearchParams({ name: data.get('name') || '', email: data.get('email') || '' }).toString();
+        window.location.href = 'webinar-survey.html?' + qs;
       });
     }
-    wireForm(document.getElementById('signupForm'), document.getElementById('confirmMsg'));
-    wireForm(document.querySelector('.signupForm2'), document.querySelector('.confirm2'));
+    wireForm(document.getElementById('signupForm'));
+    wireForm(document.querySelector('.signupForm2'));
   </script>
 
 </body>
