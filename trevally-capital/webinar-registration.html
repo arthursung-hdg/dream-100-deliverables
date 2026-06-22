@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>An Invitation · Private Credit Training · Trevally Capital</title>
+<meta name="description" content="A private, invitation-only live training for RIAs and family-office allocators: where the real mispricing in credit has moved, and how to diversify a private-credit sleeve beyond the crowded direct-lending trade. Seats are limited. Reserve yours.">
+<style>
+  :root{
+    --navy:#183c60; --navy-deep:#0c2438; --navy-soft:#2a4d78;
+    --orange:#2f80bf; --orange-soft:#8fbbe2; --orange-deep:#1f5e94;
+    --bg:#f6f8fc; --surface:#ffffff; --ink:#0e131c; --ink-soft:#4d5563;
+    --ink-faint:#8a93a3; --line:#e2e7ef; --line-soft:#eef2f7; --green:#1f9d52;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;letter-spacing:-0.015em;line-height:1.12;margin:0;}
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  .ph{color:var(--orange-deep);background:rgba(47,128,191,0.08);border-bottom:1px dashed var(--orange);padding:0 3px;border-radius:2px;font-style:normal;}
+
+  /* top bar */
+  .topbar{background:var(--navy-deep);color:#fff;}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+  .brand{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:0.12em;font-size:17px;text-transform:uppercase;}
+  .brand small{display:block;font-family:'Inter',sans-serif;font-weight:400;letter-spacing:0.24em;font-size:9px;color:var(--orange-soft);margin-top:2px;}
+  .topbar .pill{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange-soft);border:1px solid var(--navy-soft);padding:6px 12px;border-radius:999px;}
+
+  /* hero */
+  .hero{background:
+      radial-gradient(120% 120% at 82% 0%, rgba(47,128,191,0.22), transparent 55%),
+      linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);
+    color:#fff;padding:56px 0 76px;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:52px;align-items:start;}
+  .eyebrow{display:inline-block;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange-soft);font-weight:600;margin-bottom:18px;border-left:2px solid var(--orange);padding-left:12px;}
+  .hero h1{font-size:clamp(40px,5.6vw,62px);font-weight:800;color:#fff;}
+  .hero h1 em{font-style:italic;color:var(--orange-soft);font-weight:500;}
+  .hero p.lede{font-size:18px;color:#cdd9e8;margin:20px 0 26px;max-width:520px;}
+  .when{font-size:14px;color:#eef0f4;font-weight:600;margin-bottom:14px;}
+  .when .ph{font-weight:600;}
+
+  /* countdown */
+  .cd-label{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange-soft);margin:0 0 10px;}
+  .countdown{display:flex;gap:10px;margin:0 0 18px;}
+  .cd-box{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.16);border-radius:10px;padding:10px 0;text-align:center;min-width:66px;}
+  .cd-box b{display:block;font-family:'Playfair Display',serif;font-size:30px;color:#fff;line-height:1;}
+  .cd-box span{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange-soft);}
+
+  /* scarcity */
+  .scarcity{max-width:430px;}
+  .scarcity .line{display:flex;justify-content:space-between;font-size:12.5px;letter-spacing:0.04em;text-transform:uppercase;color:#cdd9e8;margin-bottom:7px;}
+  .scarcity .line b{color:var(--orange-soft);}
+  .bar{height:8px;background:rgba(255,255,255,0.12);border-radius:999px;overflow:hidden;}
+  .bar i{display:block;height:100%;width:84%;background:linear-gradient(90deg,var(--orange),var(--orange-soft));border-radius:999px;}
+
+  /* form card */
+  .signup{background:var(--surface);color:var(--ink);border-radius:14px;box-shadow:0 24px 60px rgba(8,20,44,0.42);padding:30px 28px;border-top:5px solid var(--orange);}
+  .signup h3{font-size:22px;margin-bottom:6px;}
+  .signup .sub{font-size:14px;color:var(--ink-soft);margin:0 0 18px;}
+  .field{margin-bottom:13px;}
+  .field label{display:block;font-size:12px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:6px;}
+  .field input{width:100%;padding:13px 14px;font-size:16px;border:1px solid var(--line);border-radius:8px;background:#fcfdfe;font-family:inherit;color:var(--ink);}
+  .field input:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(47,128,191,0.18);}
+  .btn{display:block;width:100%;border:none;cursor:pointer;font-family:inherit;background:var(--orange);color:#fff;font-size:17px;font-weight:700;letter-spacing:0.02em;padding:15px 18px;border-radius:8px;transition:background .15s ease,transform .05s ease;}
+  .btn:hover{background:var(--orange-deep);}
+  .btn:active{transform:translateY(1px);}
+  .signup .fineprint{font-size:12px;color:var(--ink-faint);text-align:center;margin:12px 0 0;}
+  .confirm{display:none;text-align:center;padding:18px 4px;}
+  .confirm .check{width:56px;height:56px;border-radius:50%;background:#eaf7ee;color:var(--green);display:flex;align-items:center;justify-content:center;font-size:30px;margin:0 auto 14px;}
+  .confirm h3{font-size:22px;margin-bottom:8px;}
+  .confirm p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+
+  /* SOCIAL PROOF BAR (immediately after hero) */
+  .proofbar{background:var(--surface);border-bottom:1px solid var(--line);padding:50px 0;}
+  .proof-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:24px;align-items:stretch;}
+  .proof-hero{background:linear-gradient(135deg,var(--navy),var(--navy-deep));color:#fff;border-radius:14px;padding:30px 30px;display:flex;flex-direction:column;justify-content:center;}
+  .proof-hero .big{font-family:'Playfair Display',serif;font-size:46px;font-weight:800;color:var(--orange-soft);line-height:1;margin-bottom:8px;}
+  .proof-hero p{font-size:15px;color:#dfe5ef;margin:0;}
+  .proof-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;}
+  .proof-card .stars{color:var(--orange);font-size:15px;letter-spacing:2px;margin-bottom:10px;}
+  .proof-card .q{font-family:'Playfair Display',serif;font-style:italic;font-size:18px;line-height:1.4;color:var(--navy);margin:0 0 12px;}
+  .proof-card .who{font-size:12.5px;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink-faint);margin-top:auto;}
+  .trust-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;margin-top:30px;font-size:13px;color:var(--ink-soft);}
+  .trust-strip span{display:flex;align-items:center;gap:7px;}
+  .trust-strip b{color:var(--navy);}
+
+  /* generic section */
+  section.block{padding:78px 0;}
+  .section-eyebrow{display:block;width:fit-content;margin:0 auto 18px;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange-deep);font-weight:700;background:rgba(47,128,191,0.10);padding:7px 16px;border-radius:999px;}
+  .section-title{font-size:clamp(28px,4vw,40px);font-weight:700;text-align:center;max-width:820px;margin:0 auto;color:var(--navy);}
+  .section-intro{font-size:18px;color:var(--ink-soft);text-align:center;max-width:680px;margin:18px auto 0;}
+
+  /* fears grid */
+  .fears{background:var(--bg);}
+  .fear-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px;}
+  .fear{border:1px solid var(--line);border-radius:12px;background:#fff;padding:28px 26px;box-shadow:0 2px 4px rgba(0,0,0,0.03);transition:transform .15s ease,box-shadow .15s ease;}
+  .fear:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(8,20,44,0.10);}
+  .fear .ic{width:46px;height:46px;border-radius:11px;background:rgba(24,60,96,0.07);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;}
+  .fear h3{font-size:19px;margin-bottom:8px;color:var(--navy);}
+  .fear p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+  .fear.cta{background:var(--navy);color:#fff;display:flex;flex-direction:column;justify-content:center;text-align:center;}
+  .fear.cta h3{color:#fff;font-size:22px;}
+  .fear.cta p{color:#cdd9e8;margin-bottom:16px;}
+  .fear.cta a{display:inline-block;background:var(--orange);color:#fff;font-weight:700;font-size:14px;padding:11px 22px;border-radius:8px;text-decoration:none;align-self:center;}
+  .fear.cta a:hover{background:var(--orange-deep);}
+
+  /* solution / benefits */
+  .learn{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:980px;margin:50px auto 0;}
+  .benefit{background:#fff;border:1px solid var(--line);border-radius:14px;padding:32px 28px;display:flex;flex-direction:column;box-shadow:0 2px 4px rgba(0,0,0,0.03);}
+  .benefit .no{width:44px;height:44px;border-radius:12px;background:var(--navy);color:var(--orange-soft);font-family:'Playfair Display',serif;font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+  .benefit h3{font-size:21px;color:var(--navy);margin-bottom:10px;line-height:1.15;}
+  .benefit p{font-size:15px;color:var(--ink-soft);margin:0;}
+  .benefit .payoff{margin-top:auto;padding-top:16px;font-size:12.5px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--orange-deep);}
+
+  /* credibility */
+  .cred{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;}
+  .cred .section-title{color:#fff;}
+  .cred .section-eyebrow{color:var(--orange-soft);background:rgba(47,128,191,0.18);}
+  .cred .section-intro{color:#cdd9e8;}
+  .badges{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px auto 0;max-width:940px;}
+  .badge{border:1px solid rgba(255,255,255,0.16);background:rgba(255,255,255,0.05);border-radius:10px;padding:18px 14px;text-align:center;}
+  .badge b{display:block;font-family:'Playfair Display',serif;font-size:22px;color:var(--orange-soft);}
+  .badge span{font-size:11.5px;letter-spacing:0.05em;text-transform:uppercase;color:#c7d0e0;}
+  .hosts{display:flex;flex-direction:column;gap:20px;max-width:680px;margin:24px auto 0;}
+  .host{display:grid;grid-template-columns:104px 1fr;gap:28px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px 30px;text-align:left;}
+  .host-photo{width:104px;height:104px;border-radius:50%;flex:none;background:var(--line-soft);display:flex;align-items:center;justify-content:center;color:var(--ink-faint);font-size:11px;text-align:center;padding:6px;}
+  .host .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);background:rgba(24,60,96,0.08);padding:5px 11px;border-radius:999px;margin-bottom:10px;}
+  .host h3{font-size:20px;margin:0 0 2px;color:var(--navy);}
+  .host .role{color:var(--orange-deep);font-weight:600;font-size:13.5px;margin:0;}
+  .host p.bio{font-size:14.5px;color:var(--ink-soft);margin:10px 0 0;}
+
+  /* who this is for */
+  .whofor{background:var(--bg);}
+  .who-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:920px;margin:48px auto 0;}
+  .who-col{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px;}
+  .who-col.yes{border-top:4px solid var(--green);}
+  .who-col.no{border:1px solid #f4cfcb;border-top:4px solid #d92d20;background:#fff7f6;}
+  .who-col h3{font-size:20px;color:var(--navy);margin-bottom:20px;}
+  .who-col.no h3{color:#c0211a;}
+  .who-col ul{list-style:none;margin:0;padding:0;}
+  .who-col li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:var(--ink-soft);margin-bottom:14px;line-height:1.5;}
+  .who-col li:last-child{margin-bottom:0;}
+  .who-col li .t{flex:1;}
+  .who-col.no li{color:#8a3b35;}
+  .who-col li .mk{flex:none;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:1px;}
+  .who-col.yes .mk{background:#eaf7ee;color:var(--green);}
+  .who-col.no .mk{background:#d92d20;color:#fff;}
+
+  /* faq */
+  .faqsec{background:#eaf0f8;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .faq{max-width:760px;margin:44px auto 0;}
+  details{border-bottom:1px solid var(--line);padding:18px 4px;}
+  details summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+  details summary::-webkit-details-marker{display:none;}
+  details summary::after{content:"+";color:var(--orange-deep);font-size:24px;font-weight:400;line-height:1;}
+  details[open] summary::after{content:"\2013";}
+  details p{margin:14px 0 2px;color:var(--ink-soft);font-size:15.5px;}
+
+  /* final cta */
+  .final{background:var(--surface);border-top:1px solid var(--line);text-align:center;}
+  .final .signup{max-width:480px;margin:44px auto 0;text-align:left;}
+  .final .cd-label{color:var(--orange-deep);text-align:center;margin:28px 0 0;}
+  .final .countdown{justify-content:center;margin:10px auto 0;max-width:330px;}
+  .final .cd-box{background:rgba(24,60,96,0.05);border-color:var(--line);}
+  .final .cd-box b{color:var(--navy);}
+  .final .cd-box span{color:var(--orange-deep);}
+
+  /* footer */
+  footer.site{background:var(--navy-deep);color:#aeb8c8;font-size:13px;padding:48px 0 56px;}
+  footer.site .wrap{display:flex;flex-direction:column;gap:18px;}
+  footer.site .brand{color:#fff;}
+  .disclaimer{font-size:11.5px;line-height:1.6;color:#7e88a0;border-top:1px solid var(--navy-soft);padding-top:18px;}
+
+  @media(max-width:880px){
+    .hero-grid{grid-template-columns:1fr;gap:34px;}
+    .proof-grid{grid-template-columns:1fr;}
+    .fear-grid{grid-template-columns:1fr;}
+    .benefit-grid{grid-template-columns:1fr;}
+    .who-grid{grid-template-columns:1fr;}
+    .badges{grid-template-columns:repeat(2,1fr);}
+    .host{grid-template-columns:1fr;text-align:center;}
+    .host-photo{margin:0 auto;}
+    section.block{padding:58px 0;}
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,800;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="wrap">
+      <div class="brand">Trevally<small>Capital</small></div>
+      <span class="pill">By Invitation Only</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">An Exclusive Live Training · By Invitation</span>
+        <h1>Find the Credit Yield <em>Everyone Else Bid Away</em></h1>
+        <p class="lede">You've been invited to a private live training for a select group of RIAs and family-office allocators who are done overpaying for the same crowded direct-lending fund, and want to see where the real mispricing in credit has moved.</p>
+        <p class="when">📅 Tuesday, June 30, 2026 &nbsp;·&nbsp; 🕐 1:00 PM ET &nbsp;·&nbsp; 💻 Live Online</p>
+
+        <p class="cd-label">We're going live in</p>
+        <div class="countdown" id="countdown" aria-label="Time until the training begins">
+          <div class="cd-box"><b id="cd-d">00</b><span>Days</span></div>
+          <div class="cd-box"><b id="cd-h">00</b><span>Hours</span></div>
+          <div class="cd-box"><b id="cd-m">00</b><span>Mins</span></div>
+          <div class="cd-box"><b id="cd-s">00</b><span>Secs</span></div>
+        </div>
+
+        <div class="scarcity">
+          <div class="line"><span>Seats are limited</span><span><b id="seatsLeft" class="ph">[164]</b> of <span class="ph">[200]</span> left</span></div>
+          <div class="bar"><i></i></div>
+        </div>
+      </div>
+
+      <!-- SIGN-UP CARD -->
+      <div class="signup" id="register">
+        <form id="signupForm">
+          <h3>Claim Your Invitation</h3>
+          <p class="sub">Seats for this session are limited and by invitation. Reserve yours and we'll send the private access link.</p>
+          <div class="field"><label for="name">Full Name</label><input id="name" name="name" type="text" placeholder="Jane Smith" required></div>
+          <div class="field"><label for="email">Email Address</label><input id="email" name="email" type="email" placeholder="jane@firm.com" required></div>
+          <button class="btn" type="submit">Reserve My Seat →</button>
+          <p class="fineprint">By invitation · Limited seating · Your details stay private.</p>
+        </form>
+        <div class="confirm" id="confirmMsg">
+          <div class="check">✓</div>
+          <h3>You're registered!</h3>
+          <p>Check your email for the training link and calendar invite. See you there.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SOCIAL PROOF BAR (the dream outcome, up front) -->
+  <section class="proofbar">
+    <div class="wrap">
+      <div class="proof-grid">
+        <div class="proof-hero">
+          <div class="big">$30B+</div>
+          <p>In mortgage securities issued across roughly 80 transactions by the team now running this strategy, through every credit cycle since the early '90s. That is the depth this training draws from.</p>
+        </div>
+        <div class="proof-card">
+          <div class="stars">★★★★★</div>
+          <p class="q ph">"[An allocator's words on what the training or the team's read on mortgage credit was worth to them.]"</p>
+          <div class="who ph">[First name, RIA or family-office allocator]</div>
+        </div>
+        <div class="proof-card">
+          <div class="stars">★★★★★</div>
+          <p class="q">"A minority-led firm that raised $100M with another $150M committed, backed by The Raptor Group and Seaport Global Securities."</p>
+          <div class="who">As reported by Hedgeweek, 2024</div>
+        </div>
+      </div>
+      <div class="trust-strip">
+        <span>✓ <b>Backed by The Raptor Group &amp; Seaport Global</b></span>
+        <span>✓ <b>Led by the ex-Head of Mortgage Research at J.P. Morgan</b></span>
+        <span>✓ <b>30+ years across every credit cycle</b></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEARS -->
+  <section class="block fears">
+    <div class="wrap">
+      <p class="section-eyebrow">Sound Familiar?</p>
+      <h2 class="section-title">The five worries keeping private-credit allocators up at night</h2>
+      <p class="section-intro">If any of these hit home, this training was built for you. We tackle all five, in plain terms, with no fund pitch and no jargon.</p>
+      <div class="fear-grid">
+        <article class="fear"><div class="ic">🔁</div><h3>One trade, five times</h3><p>You spread private credit across managers, then read the holdings: every fund owns the same corporate direct loans. The diversification is an illusion, and it all reprices on one afternoon.</p></article>
+        <article class="fear"><div class="ic">📉</div><h3>The vanishing premium</h3><p>The double-digit yields that justified locking client capital away for years keep grinding lower, while you still carry the illiquidity and the default risk.</p></article>
+        <article class="fear"><div class="ic">🔦</div><h3>Flying blind on managers</h3><p>New funds keep landing on your desk, and you're underwriting first-time managers with a spreadsheet and a gut read. One blow-up costs you the client's trust.</p></article>
+        <article class="fear"><div class="ic">⬛</div><h3>Priced by the seller</h3><p>Your largest alt position is marked quarterly, by the manager, on loans that never trade. You can't stress-test a black box priced by the people who sold it.</p></article>
+        <article class="fear"><div class="ic">🔒</div><h3>The seven-year bet</h3><p>A closed-end fund locks capital into one vintage for years. Mistime the entry and you're trapped, watching the next vintage capture the better spreads.</p></article>
+        <article class="fear cta"><h3>All five, addressed in 45 minutes.</h3><p>Claim your invitation.</p><a href="#register">Reserve My Seat →</a></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU'LL LEARN -->
+  <section class="block learn">
+    <div class="wrap">
+      <p class="section-eyebrow">What You'll Walk Away With</p>
+      <h2 class="section-title">Three shifts, not a reading list</h2>
+      <p class="section-intro">You will not leave with homework. You will leave with three clear changes in how you think about the credit sleeve you already run.</p>
+      <div class="benefit-grid">
+        <div class="benefit">
+          <div class="no">1</div>
+          <h3>Diversification that actually diversifies</h3>
+          <p>See how to hold credit that does not all reprice on the same afternoon, because it isn't five wrappers around the same corporate loans.</p>
+          <div class="payoff">Real, uncorrelated diversification</div>
+        </div>
+        <div class="benefit">
+          <div class="no">2</div>
+          <h3>Marks you can actually defend</h3>
+          <p>Understand what it means to hold credit in a liquid, modelable market, with risk you can stress-test, not a quarterly number set by the people who sold it to you.</p>
+          <div class="payoff">See the risk you actually hold</div>
+        </div>
+        <div class="benefit">
+          <div class="no">3</div>
+          <h3>A manager you can stand behind</h3>
+          <p>Learn how to underwrite the team running your capital, so you stop choosing between picked-over megafunds and unknowable first-timers.</p>
+          <div class="payoff">Allocate with conviction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDIBILITY -->
+  <section class="block cred">
+    <div class="wrap">
+      <p class="section-eyebrow">Why Listen to Us?</p>
+      <h2 class="section-title">A team that has navigated this market at the highest level</h2>
+      <p class="section-intro">Trevally Capital is led by people who spent three decades at the top of the mortgage securities market, at J.P. Morgan, Goldman Sachs, and Redwood Trust, through every credit cycle since the early '90s.</p>
+      <div class="badges">
+        <div class="badge"><b>30+ yrs</b><span>Across every credit<br>cycle since the '90s</span></div>
+        <div class="badge"><b>$30B+</b><span>Mortgage securities<br>issued by the team</span></div>
+        <div class="badge"><b>J.P. Morgan</b><span>Ex-Head of Mortgage<br>Research leads research</span></div>
+        <div class="badge"><b>Raptor + Seaport</b><span>Institutional partners<br>backing the firm</span></div>
+      </div>
+      <p class="section-eyebrow" style="margin-top:60px;">Meet Your Hosts</p>
+      <div class="hosts">
+        <div class="host">
+          <div class="host-photo">[ photo ]</div>
+          <div class="host-info">
+            <span class="tag">Your Host</span>
+            <h3>Arthur Sung</h3>
+            <p class="role">Education Team · Trevally Capital</p>
+            <p class="bio">Part of the Trevally education team, here to walk you through everything in plain terms, no jargon.</p>
+          </div>
+        </div>
+        <div class="host">
+          <div class="host-photo">[ photo ]</div>
+          <div class="host-info">
+            <span class="tag">Specialist · Live Q&amp;A</span>
+            <h3>Matt Jozoff</h3>
+            <p class="role">Co-CEO &amp; Portfolio Manager · Trevally Capital</p>
+            <p class="bio">Former Head of Mortgage and Securitized Products Research at J.P. Morgan and Head of Mortgage Strategy at Goldman Sachs. Joins live to answer your most specific, in-depth questions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section class="block whofor">
+    <div class="wrap">
+      <p class="section-eyebrow">Is This For You?</p>
+      <h2 class="section-title">Who this training is for (and who it isn't)</h2>
+      <p class="section-intro">We kept this session focused, so it lands hardest for the right people. See where you fit before you reserve a seat.</p>
+      <div class="who-grid">
+        <div class="who-col yes">
+          <h3>This is for you if…</h3>
+          <ul>
+            <li><span class="mk">✓</span><span class="t">You are an RIA, family office, or wealth manager allocating client capital to private markets.</span></li>
+            <li><span class="mk">✓</span><span class="t">You already hold private credit and want real diversification beyond corporate direct lending.</span></li>
+            <li><span class="mk">✓</span><span class="t">You allocate on behalf of accredited investors or qualified purchasers.</span></li>
+            <li><span class="mk">✓</span><span class="t">You want an asset class you can actually model and exit, not a quarterly mark you can't verify.</span></li>
+            <li><span class="mk">✓</span><span class="t">You would rather underwrite a team's real track record than gamble on an unknown first-time manager.</span></li>
+          </ul>
+        </div>
+        <div class="who-col no">
+          <h3>This is NOT for you if…</h3>
+          <ul>
+            <li><span class="mk">✕</span><span class="t">You are an individual retail investor looking for a stock tip or a quick trade.</span></li>
+            <li><span class="mk">✕</span><span class="t">You do not allocate to alternatives and have no plans to.</span></li>
+            <li><span class="mk">✕</span><span class="t">You want a guaranteed return or a no-risk product (this is educational, and markets carry risk).</span></li>
+            <li><span class="mk">✕</span><span class="t">You are unwilling to look past the brand-name megafunds everyone already owns.</span></li>
+            <li><span class="mk">✕</span><span class="t">You just want to be sold a single product today rather than learn a framework.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block faqsec">
+    <div class="wrap">
+      <p class="section-eyebrow">Questions</p>
+      <h2 class="section-title">Before you register</h2>
+      <div class="faq">
+        <details open><summary>Why did I receive this invitation?</summary><p>This session was built for a specific group: RIAs and family-office allocators with a real private-markets program who are rethinking how they hold credit. If you are here, you fit that profile. Seats are kept limited so the room stays small enough for live Q&amp;A.</p></details>
+        <details><summary>Who is this for?</summary><p>RIA founders and CIOs, family-office investment leads, and wealth managers allocating accredited or qualified-purchaser capital into private markets, who want a sharper read on where credit is mispriced.</p></details>
+        <details><summary>I already allocate to private credit. Is this still worth my time?</summary><p>Especially then. Most allocators have spread "private credit" across several funds that quietly all hold the same corporate direct loans. This session shows you what genuine diversification in credit looks like, so you can judge for yourself whether your sleeve is as spread out as you think.</p></details>
+        <details><summary>Is this a pitch for a fund?</summary><p>No. It is a training on how to think about mispricing, liquidity, and manager diligence in credit. The framework is yours to use however you like. If you want to look at how it applies to your own book, you can request a working call with the team. Either way, you walk away with the framework.</p></details>
+        <details><summary>What happens if I keep allocating the way I do?</summary><p>Probably nothing dramatic this quarter. But a crowded trade, compressing spreads, and marks you can't verify compound quietly. The point of this session is to show you those exposures while there is still time to reposition.</p></details>
+        <details><summary>Can I bring a colleague or my investment committee?</summary><p>Please do. The allocators who get the most out of it attend with the people they make these decisions with, so everyone leaves on the same page.</p></details>
+        <details><summary>What if I can't attend live?</summary><p>Register anyway. We will send a recording to everyone who signs up. The live Q&amp;A, though, only happens once.</p></details>
+        <details><summary>How long is it?</summary><p>About 45 minutes of training, plus live Q&amp;A at the end.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="block final">
+    <div class="wrap">
+      <p class="section-eyebrow">Save Your Seat</p>
+      <h2 class="section-title">See where the real mispricing has moved</h2>
+      <p class="section-intro">This private session is limited and by invitation. Reserve your seat before the countdown ends.</p>
+      <p class="cd-label">We're going live in</p>
+      <div class="countdown">
+        <div class="cd-box"><b id="cd2-d">00</b><span>Days</span></div>
+        <div class="cd-box"><b id="cd2-h">00</b><span>Hours</span></div>
+        <div class="cd-box"><b id="cd2-m">00</b><span>Mins</span></div>
+        <div class="cd-box"><b id="cd2-s">00</b><span>Secs</span></div>
+      </div>
+      <div class="signup">
+        <form class="signupForm2">
+          <div class="field"><label for="name2">Full Name</label><input id="name2" name="name" type="text" placeholder="Jane Smith" required></div>
+          <div class="field"><label for="email2">Email Address</label><input id="email2" name="email" type="email" placeholder="jane@firm.com" required></div>
+          <button class="btn" type="submit">Reserve My Seat →</button>
+          <p class="fineprint">By invitation · Limited seating · Your details stay private.</p>
+        </form>
+        <div class="confirm confirm2">
+          <div class="check">✓</div>
+          <h3>You're registered!</h3>
+          <p>Check your email for the training link and calendar invite. See you there.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site">
+    <div class="wrap">
+      <div class="brand">Trevally<small>Capital</small></div>
+      <div>Investor relations: ir@trevallycapital.com · <span class="ph">[phone number]</span> · <span class="ph">[address]</span></div>
+      <p class="disclaimer">This training is for educational purposes only and does not constitute investment, tax, or legal advice, nor an offer to sell or a solicitation to buy any security. Alternative investments involve significant risks, including illiquidity and the potential loss of principal, and are available only to accredited investors and qualified purchasers. Any figures referenced reflect past activity of the team or third-party reporting and are not a guarantee of future results. Consult a qualified professional before making investment decisions. © 2026 Trevally Capital LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ===== EDIT THE LIVE DATE/TIME HERE (ISO 8601 with timezone offset) =====
+    const WEBINAR_DATE = new Date("2026-06-30T13:00:00-04:00");
+
+    function pad(n){ return String(n).padStart(2,'0'); }
+    function setText(id,v){ var el=document.getElementById(id); if(el) el.textContent=v; }
+    function tick(){
+      var diff = WEBINAR_DATE.getTime() - Date.now();
+      if (diff < 0) diff = 0;
+      var d = Math.floor(diff/86400000); diff -= d*86400000;
+      var h = Math.floor(diff/3600000); diff -= h*3600000;
+      var m = Math.floor(diff/60000);   diff -= m*60000;
+      var s = Math.floor(diff/1000);
+      setText('cd-d',pad(d)); setText('cd-h',pad(h)); setText('cd-m',pad(m)); setText('cd-s',pad(s));
+      setText('cd2-d',pad(d)); setText('cd2-h',pad(h)); setText('cd2-m',pad(m)); setText('cd2-s',pad(s));
+    }
+    tick(); setInterval(tick, 1000);
+
+    // Step 1 -> Step 2: carry name + email forward to the qualifying survey.
+    // Front-end demo only: no data is stored. Swap for a real POST when infra exists.
+    function wireForm(form){
+      if(!form) return;
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var name = (form.querySelector('input[name="name"]') || {}).value || '';
+        var email = (form.querySelector('input[name="email"]') || {}).value || '';
+        var qs = 'name=' + encodeURIComponent(name.trim()) + '&email=' + encodeURIComponent(email.trim());
+        window.location.href = 'webinar-survey.html?' + qs;
+      });
+    }
+    wireForm(document.getElementById('signupForm'));
+    wireForm(document.querySelector('.signupForm2'));
+  </script>
+
+</body>
+</html>

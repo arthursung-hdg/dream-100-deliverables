@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trevally Capital, Private Training Ad Pack</title>
+<style>
+  :root {
+    --bg: #f6f8fc;
+    --surface: #ffffff;
+    --ink: #0e131c;
+    --ink-soft: #4d5563;
+    --ink-faint: #8a93a3;
+    --line: #e2e7ef;
+    --line-soft: #eef2f7;
+    --accent: #246084;
+    --accent-deep: #183c60;
+    /* Awareness-stage colors */
+    --cold: #2e6bf0;
+    --cold-bg: #eaf1ff;
+    --consid: #0d9488;
+    --consid-bg: #e6f5f3;
+    --mid: #7c3aed;
+    --mid-bg: #f1eafe;
+    --bottom: #ea580c;
+    --bottom-bg: #fdece1;
+    --edu: #16a34a;
+    --edu-bg: #e7f6ec;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 56px 32px 96px; }
+
+  /* ─── HEADER ─── */
+  header.masthead {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 40px;
+    margin-bottom: 64px;
+  }
+  .headline-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 9px 18px;
+    border-radius: 999px;
+    margin: 0 0 20px;
+  }
+  h1.title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    font-weight: 700;
+    margin: 0 0 24px;
+    letter-spacing: -0.02em;
+  }
+  h1.title em { font-style: italic; color: var(--accent); font-weight: 500; }
+  .deck {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 720px;
+    margin: 0;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 32px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .meta-row span strong {
+    color: var(--ink);
+    font-weight: 600;
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+    color: var(--ink-faint);
+  }
+
+  /* ─── SECTION ─── */
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 0 0 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-head h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .section-head .count {
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ─── AD CARD ─── */
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    margin-bottom: 96px;
+  }
+  .ad-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: minmax(0, 540px) minmax(0, 1fr);
+    gap: 0;
+  }
+  .ad-visual {
+    padding: 32px;
+    background: var(--line-soft);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  .ad-img-frame {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #ddd;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
+  }
+  .ad-img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .save-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--ink);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    border-radius: 2px;
+    border: 1px solid var(--ink);
+    transition: background 0.15s ease;
+  }
+  .save-btn:hover { background: var(--accent); border-color: var(--accent); }
+
+  .ad-body { padding: 40px 40px 36px; display: flex; flex-direction: column; gap: 20px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
+  .tag {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 5px 10px;
+    border-radius: 999px;
+    line-height: 1;
+  }
+  .tag.pain {
+    background: var(--line-soft);
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+  .tag.stage-cold { background: var(--cold-bg); color: var(--cold); }
+  .tag.stage-consid { background: var(--consid-bg); color: var(--consid); }
+  .tag.stage-mid { background: var(--mid-bg); color: var(--mid); }
+  .tag.stage-bottom { background: var(--bottom-bg); color: var(--bottom); }
+  .tag.stage-edu { background: var(--edu-bg); color: var(--edu); }
+
+  .concept-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .copy-block { display: flex; flex-direction: column; gap: 14px; }
+  .copy-row {
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+  }
+  .copy-row:first-child { border-top: none; padding-top: 0; }
+  .copy-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-faint);
+    font-weight: 600;
+    margin: 0 0 6px;
+  }
+  .copy-text {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+  }
+  .copy-text.headline { font-weight: 600; }
+  .copy-row.pain-row { border-top: 1px solid var(--line); }
+  .copy-row.pain-row .copy-label { color: var(--accent-deep); }
+  .copy-text.pain { color: var(--ink-soft); font-style: italic; }
+
+  /* ─── EXPORT SECTION ─── */
+  .export-section {
+    border-top: 2px solid var(--ink);
+    padding-top: 64px;
+  }
+  .export-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 32px;
+  }
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 32px;
+  }
+  .panel h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+  }
+  .panel h4 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin: 24px 0 10px;
+    font-weight: 600;
+  }
+  .panel h4:first-of-type { margin-top: 0; }
+  .panel p, .panel li { font-size: 14px; line-height: 1.6; color: var(--ink-soft); }
+  .panel ol, .panel ul { padding-left: 20px; margin: 8px 0; }
+  .panel ol li, .panel ul li { margin-bottom: 6px; }
+  .panel ol li::marker { color: var(--accent); font-weight: 700; }
+  /* targeting cards */
+  .target-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .target-card {
+    border-left: 3px solid var(--line);
+    padding: 4px 0 4px 14px;
+  }
+  .target-card.cold { border-color: var(--cold); }
+  .target-card.consid { border-color: var(--consid); }
+  .target-card.mid { border-color: var(--mid); }
+  .target-card.bottom { border-color: var(--bottom); }
+  .target-card.edu { border-color: var(--edu); }
+  .target-card .t-stage {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    margin: 0 0 4px;
+  }
+  .target-card.cold .t-stage { color: var(--cold); }
+  .target-card.consid .t-stage { color: var(--consid); }
+  .target-card.mid .t-stage { color: var(--mid); }
+  .target-card.bottom .t-stage { color: var(--bottom); }
+  .target-card.edu .t-stage { color: var(--edu); }
+  .target-card .t-body { font-size: 13.5px; color: var(--ink-soft); margin: 0; line-height: 1.5; }
+  .target-card .t-body strong { color: var(--ink); }
+
+  footer.bottom {
+    margin-top: 96px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 860px) {
+    .wrap { padding: 32px 20px 64px; }
+    .ad-card { grid-template-columns: 1fr; }
+    .ad-visual { padding: 20px; }
+    .ad-body { padding: 28px 24px; }
+    .export-grid { grid-template-columns: 1fr; gap: 24px; }
+    .panel { padding: 24px; }
+    h1.title { font-size: 36px; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ─────────── HEADER ─────────── -->
+  <header class="masthead">
+    <div class="headline-pill">Five pain-driven ads custom designed for Trevally Capital</div>
+    <h1 class="title">Five static creatives,<br><em>one private training.</em></h1>
+    <p class="deck">A hand-built ad set where each creative dramatizes one specific worry your ideal allocator carries, then invites them to a private live training. No fund pitch, no hard sell, just the right pain in front of the right advisor, every ad driving to one registration page. All assets are 1080×1080, Meta-compliant, and ready to upload.</p>
+    <div class="meta-row">
+      <span><strong>Prepared for</strong>Trevally Capital</span>
+      <span><strong>Audience</strong>RIAs &amp; Family-Office Allocators</span>
+      <span><strong>Channel</strong>Facebook + Instagram Feed</span>
+      <span><strong>Format</strong>1080×1080 Square Static</span>
+      <span><strong>Objective</strong>Private Training Registrations</span>
+    </div>
+  </header>
+
+  <!-- ─────────── GALLERY ─────────── -->
+  <section>
+    <div class="section-head">
+      <h2>The Creatives</h2>
+      <span class="count">01 → 05</span>
+    </div>
+
+    <div class="gallery">
+
+      <!-- ── AD 01 ── -->
+      <article class="ad-card">
+        <div class="ad-visual">
+          <div class="ad-img-frame">
+            <img src="images/01-same-trade.png" alt="Advisor facing five identical fund folders lined up on a boardroom table">
+          </div>
+          <a class="save-btn" href="images/01-same-trade.png" download="trevally-capital-ad-01-same-trade.png">↓ Save Image</a>
+        </div>
+        <div class="ad-body">
+          <div class="tags">
+            <span class="tag stage-cold">● Cold · Problem Unaware</span>
+            <span class="tag pain">Pain: False Diversification</span>
+          </div>
+          <h3 class="concept-name">"One Trade, Five Times"</h3>
+          <div class="copy-block">
+            <div class="copy-row">
+              <p class="copy-label">Ad Copy</p>
+              <p class="copy-text">You added private credit, spread it across managers, and checked the box for your clients. Then you read the holdings: every fund owns the same floating-rate, middle-market corporate loans. You don't hold five managers, you hold one trade five times, and it all reprices on the same afternoon. We're hosting a private training for advisors who want a credit sleeve that is actually diversified.</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Headline</p>
+              <p class="copy-text headline">Is Your Private Credit Actually Diversified?</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Link Description</p>
+              <p class="copy-text">You're invited to a private live training. Save your seat.</p>
+            </div>
+            <div class="copy-row pain-row">
+              <p class="copy-label">Pain</p>
+              <p class="copy-text pain">The advisor believes their private-credit sleeve is diversified, but every fund holds the same corporate direct loans, so the whole sleeve moves as one block when the cycle turns.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── AD 02 ── -->
+      <article class="ad-card">
+        <div class="ad-visual">
+          <div class="ad-img-frame">
+            <img src="images/02-premium-gone.png" alt="Advisor watching a declining yield chart on a dark monitor">
+          </div>
+          <a class="save-btn" href="images/02-premium-gone.png" download="trevally-capital-ad-02-premium-gone.png">↓ Save Image</a>
+        </div>
+        <div class="ad-body">
+          <div class="tags">
+            <span class="tag stage-consid">● Cold · Problem Aware</span>
+            <span class="tag pain">Pain: Yield Compression</span>
+          </div>
+          <h3 class="concept-name">"The Vanishing Premium"</h3>
+          <div class="copy-block">
+            <div class="copy-row">
+              <p class="copy-label">Ad Copy</p>
+              <p class="copy-text">The double-digit yields that justified locking client capital away for years were a 2022 story. Money flooded in, spreads tightened, covenants loosened, and the premium keeps grinding lower, while you still carry the illiquidity and the default risk. Join a private training on where the real mispricing in credit has quietly moved.</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Headline</p>
+              <p class="copy-text headline">The Yield No Longer Pays For The Lockup</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Link Description</p>
+              <p class="copy-text">A private live training for allocators. Reserve a seat.</p>
+            </div>
+            <div class="copy-row pain-row">
+              <p class="copy-label">Pain</p>
+              <p class="copy-text pain">Direct-lending returns have compressed toward public-bond levels, yet the advisor is still accepting years of illiquidity and default risk for a shrinking premium.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── AD 03 ── -->
+      <article class="ad-card">
+        <div class="ad-visual">
+          <div class="ad-img-frame">
+            <img src="images/03-blind-managers.png" alt="Advisor at night examining a nearly blank track record under a single lamp">
+          </div>
+          <a class="save-btn" href="images/03-blind-managers.png" download="trevally-capital-ad-03-blind-managers.png">↓ Save Image</a>
+        </div>
+        <div class="ad-body">
+          <div class="tags">
+            <span class="tag stage-mid">● Warm · Solution Aware</span>
+            <span class="tag pain">Pain: Emerging-Manager Risk</span>
+          </div>
+          <h3 class="concept-name">"Diligence In The Dark"</h3>
+          <div class="copy-block">
+            <div class="copy-row">
+              <p class="copy-label">Ad Copy</p>
+              <p class="copy-text">New funds keep landing on your desk, and you're underwriting first-time managers with a spreadsheet and a gut read. One blow-up doesn't just cost return, it costs the client's trust and your fiduciary cover, so you retreat to the picked-over megafunds and miss the real alpha. This private training shows how to underwrite a credit manager you can actually stand behind.</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Headline</p>
+              <p class="copy-text headline">How Do You Vet A Manager You Can't See?</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Link Description</p>
+              <p class="copy-text">You're invited to a private live training. Save your seat.</p>
+            </div>
+            <div class="copy-row pain-row">
+              <p class="copy-label">Pain</p>
+              <p class="copy-text pain">Emerging-manager deal flow is exploding, but with short track records and manual diligence, the advisor either freezes or overpays for brand-name beta.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── AD 04 ── -->
+      <article class="ad-card">
+        <div class="ad-visual">
+          <div class="ad-img-frame">
+            <img src="images/04-black-box.png" alt="A sealed opaque black cube beside transparent glass cubes on a boardroom table">
+          </div>
+          <a class="save-btn" href="images/04-black-box.png" download="trevally-capital-ad-04-black-box.png">↓ Save Image</a>
+        </div>
+        <div class="ad-body">
+          <div class="tags">
+            <span class="tag stage-edu">● Warm · Solution Aware</span>
+            <span class="tag pain">Pain: Black-Box Valuation</span>
+          </div>
+          <h3 class="concept-name">"Priced By The Seller"</h3>
+          <div class="copy-block">
+            <div class="copy-row">
+              <p class="copy-label">Ad Copy</p>
+              <p class="copy-text">Your largest alternative position is marked quarterly, by the manager, on loans that never trade. When a client wants out, the mark and the exit price turn out to be two different numbers. You can't stress-test a black box priced by the people who sold it to you. Join a private training on holding credit you can actually mark, model, and exit.</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Headline</p>
+              <p class="copy-text headline">Who Really Sets The Price On Your Marks?</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Link Description</p>
+              <p class="copy-text">A private live training for allocators. Save a seat.</p>
+            </div>
+            <div class="copy-row pain-row">
+              <p class="copy-label">Pain</p>
+              <p class="copy-text pain">The advisor's biggest alt position is valued by the manager on untraded assets, leaving them unable to independently model, hedge, or trust the mark.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── AD 05 ── -->
+      <article class="ad-card">
+        <div class="ad-visual">
+          <div class="ad-img-frame">
+            <img src="images/05-locked-vintage.png" alt="A chained and padlocked briefcase beside an hourglass in a dark corridor">
+          </div>
+          <a class="save-btn" href="images/05-locked-vintage.png" download="trevally-capital-ad-05-locked-vintage.png">↓ Save Image</a>
+        </div>
+        <div class="ad-body">
+          <div class="tags">
+            <span class="tag stage-consid">● Cold · Problem Aware</span>
+            <span class="tag pain">Pain: Vintage Lock-Up</span>
+          </div>
+          <h3 class="concept-name">"The Seven-Year Bet"</h3>
+          <div class="copy-block">
+            <div class="copy-row">
+              <p class="copy-label">Ad Copy</p>
+              <p class="copy-text">A closed-end credit fund locks your client's capital into one vintage for five to seven years. Mistime the entry and you're trapped in loans underwritten at the top, watching the next vintage capture the better spreads, with no way to redeploy. This private training covers credit strategies that don't force a multi-year, one-way bet on a single moment.</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Headline</p>
+              <p class="copy-text headline">One Vintage. Seven Years. No Exit.</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Link Description</p>
+              <p class="copy-text">You're invited to a private live training. Save your seat.</p>
+            </div>
+            <div class="copy-row pain-row">
+              <p class="copy-label">Pain</p>
+              <p class="copy-text pain">Closed-end fund lockups force the advisor to commit client capital to a single vintage for years, with no flexibility if the entry point proves wrong.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ─────────── STRATEGY / EXPERTISE (not a setup guide) ─────────── -->
+  <section class="export-section">
+    <div class="section-head">
+      <h2>The Thinking Behind These Creatives</h2>
+      <span class="count">Our Approach</span>
+    </div>
+    <p class="deck" style="margin-bottom:36px;">We don't point one ad at every allocator and hope. Each creative is built for a different slice of your market, sorted by how aware that advisor already is of the problem, so the message meets them exactly where they are. Here is how the five fit together.</p>
+    <div class="export-grid">
+      <div class="panel">
+        <h3>Reaching Your Whole Market</h3>
+        <div class="target-grid">
+          <div class="target-card cold">
+            <p class="t-stage">Problem Unaware</p>
+            <p class="t-body">Allocators who already own private credit and assume the box is checked. <strong>Ad 01, One Trade Five Times</strong> shows them the diversification they bought is an illusion, and gets them to look under the hood.</p>
+          </div>
+          <div class="target-card consid">
+            <p class="t-stage">Problem Aware</p>
+            <p class="t-body">Allocators feeling a specific strain. <strong>Ad 02, The Vanishing Premium</strong> names the yield compression eating their returns; <strong>Ad 05, The Seven-Year Bet</strong> names the lock-up that traps client capital in one vintage.</p>
+          </div>
+          <div class="target-card mid">
+            <p class="t-stage">Solution Aware</p>
+            <p class="t-body">Allocators actively hunting a better way in. <strong>Ad 03, Diligence In The Dark</strong> reaches those struggling to underwrite emerging managers; <strong>Ad 04, Priced By The Seller</strong> reaches those uneasy about black-box marks they can't verify.</p>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Why One Pain Per Ad</h3>
+        <p>Most firms run a single, generic ad and hope it lands. We build one creative per pain for two reasons. First, a sharp, specific worry stops the right allocator mid-scroll in a way that "we manage mortgage credit" never will. Second, running all five together tells us which pain actually pulls registrations, so we put the budget behind the winner instead of guessing.</p>
+        <h4>Who each ad is built for</h4>
+        <p>The audience stays constant across the set: RIA founders and CIOs and family-office investment leads, managing roughly $100M to $2B, allocating accredited and qualified-purchaser capital into private markets. What changes is the pain, and therefore which advisor in that audience each ad pulls forward. That is what a coordinated funnel looks like before a single dollar goes to ad management.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bottom">
+    Trevally Capital · Private Training Ad Pack · Open <code>images/</code> for raw PNG files at 1080×1080.
+  </footer>
+
+</div>
+</body>
+</html>
