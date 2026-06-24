@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LG Commercial Displays × HDG — Go-to-Market Partnership Proposal</title>
+<title>LG Commercial Displays × HDG · Go-to-Market Partnership Proposal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
@@ -75,7 +75,7 @@
   .callout p{color:var(--body);font-size:13px}
 
   /* four-block grid (exec) */
-  .blocks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
+  .blocks{display:grid;grid-template-columns:1fr;gap:13px;margin-top:6px}
   .block{border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:var(--panel)}
   .block .eyebrow{margin-bottom:8px}
   .block p{font-size:12.5px;color:var(--body)}
@@ -83,13 +83,13 @@
   /* options comparison */
   .opt{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:4px}
   .opt-row{display:grid;grid-template-columns:1.15fr 1.55fr 1.55fr}
-  .opt-row>div{padding:13px 16px;border-bottom:1px solid var(--line)}
+  .opt-row>div{padding:7px 16px;border-bottom:1px solid var(--line)}
   .opt-row:last-child>div{border-bottom:0}
-  .opt-row .rl{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);align-self:center}
+  .opt-row .rl{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);display:flex;align-items:center}
   .opt-row .adv{border-left:1px solid var(--line)}
   .opt-row .hand{border-left:1px solid var(--line);background:rgba(31,79,217,.045)}
   .opt-row p{font-size:12px;color:var(--body)}
-  .opt-head>div{padding:12px 16px;background:var(--panel)}
+  .opt-head>div{padding:7px 16px;background:var(--panel)}
   .opt-head .colh{font-family:var(--serif);font-size:18px;color:var(--ink)}
   .opt-head .hand{background:var(--tint)}
   .opt-head .hand .colh{color:var(--navy)}
@@ -98,6 +98,31 @@
   .opt-row.fee .price{font-family:var(--serif);font-size:22px;color:var(--ink)}
   .opt-row.fee .hand .price{color:var(--navy)}
   .bonus{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--blue);padding:3px 7px;border-radius:5px;margin-right:6px}
+
+  /* foundation vertical table (exec) */
+  .vtable{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:2px}
+  .vrow{display:grid;grid-template-columns:1fr 1.45fr;border-bottom:1px solid var(--line)}
+  .vrow:last-child{border-bottom:0}
+  .vrow>div{padding:7px 16px;align-self:center}
+  .vrow>div:nth-child(2){border-left:1px solid var(--line)}
+  .vrow.vhead>div{background:var(--panel);font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:7px 16px}
+  .vc1{font-family:var(--serif);font-size:13.5px;color:var(--ink)}
+  .vc2{font-size:11.5px;color:var(--muted)}
+  .found-fee{display:flex;justify-content:space-between;align-items:center;background:var(--tint);border-left:4px solid var(--blue);border-radius:0 10px 10px 0;padding:9px 18px;margin-top:9px}
+  .found-fee .ff-label{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+  .found-fee .ff-amt{font-family:var(--serif);font-size:26px;color:var(--navy);line-height:1}
+  /* page-3 pilot calc strip */
+  .pilotcalc{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .pcrow{display:grid;grid-template-columns:1fr 3fr;border-bottom:1px solid var(--line)}
+  .pcrow:last-child{border-bottom:0}
+  .pcrow>div{padding:6px 16px}
+  .pcrow .pcopt{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--panel);display:flex;align-items:center}
+  .pcrow.h .pcopt{background:var(--tint);color:var(--navy)}
+  .pceq{font-size:13px;color:var(--body);border-left:1px solid var(--line)}
+  .pceq .op{color:var(--blue);font-weight:700;font-family:var(--serif);font-size:15px;margin:0 7px}
+  .pceq .mult{color:var(--muted)}
+  .pceq .tot{font-family:var(--serif);font-size:19px;color:var(--ink);margin-left:6px}
+  .pcrow.h .pceq .tot{color:var(--navy)}
 
   /* retail universe */
   .universe{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:4px}
@@ -124,7 +149,7 @@
   .pcall.concern .eyebrow{color:var(--muted)}
   .pcall p{font-size:12.5px}
   .split{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-  .scard{border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .scard{border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-family:var(--sans)}
   .scard.own{background:var(--paper)}
   .scard .tg{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
   .scard.own .tg{color:var(--blue)}
@@ -143,7 +168,18 @@
   .badge.choice{background:var(--tint);color:var(--blue);border:1px solid var(--blue)}
 
   /* sub-section label */
-  .subsec{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin:18px 0 8px}
+  .subsec{font-family:var(--serif);font-size:16px;letter-spacing:0;text-transform:none;color:var(--blue);margin:20px 0 9px;line-height:1.25}
+  .universe.seg4{grid-template-columns:repeat(4,1fr);gap:10px}
+  .seg4 .cluster{padding:13px 14px}
+  .seg4 .cluster h3{font-size:13.5px;margin:3px 0 8px}
+  .seg4 .cluster li{font-size:11px;padding:2px 0 2px 12px}
+  .signals{margin-top:14px;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:15px 18px}
+  .signals .sh{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+  .signals .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px 20px}
+  .signals .si{padding-left:12px;position:relative}
+  .signals .si::before{content:"";position:absolute;left:0;top:5px;width:5px;height:5px;border-radius:50%;background:var(--blue)}
+  .signals .si .n{font-size:12px;color:var(--ink);font-weight:600}
+  .signals .si .d{font-size:11px;color:var(--muted);margin-top:2px;line-height:1.3}
   .two-points{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:12px}
   .tp{background:var(--panel);border-radius:11px;padding:14px 16px}
   .tp .h{font-family:var(--serif);font-size:14px;color:var(--ink);margin-bottom:5px}
@@ -203,14 +239,16 @@
   .pilot>div{padding:11px 16px;border-bottom:1px solid var(--line)}
   .pilot .ph{background:var(--panel);font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
   .pilot .ph.hand{background:var(--tint);color:var(--navy)}
-  .pilot .rl{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);align-self:center}
-  .pilot .c{border-left:1px solid var(--line);font-size:13px}
+  .pilot .rl{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center}
+  .pilot .c{border-left:1px solid var(--line);font-size:13px;display:flex;align-items:center}
   .pilot .c.hand{background:rgba(31,79,217,.045)}
   .pilot .total{font-weight:600}
   .pilot .total .rl,.pilot .total{border-top:1px solid var(--line)}
   .pilot .total .big{font-family:var(--serif);font-size:20px;color:var(--ink)}
   .pilot .total .c.hand .big{color:var(--navy)}
   .pilot>div:nth-last-child(-n+3){border-bottom:0}
+  .pilot .op{display:inline-block;width:13px;color:var(--blue);font-weight:700;font-family:var(--serif);font-size:15px}
+  .pilot .c .mult{color:var(--muted);font-size:11px}
 
   /* numbered next steps */
   .nsteps{counter-reset:ns;margin-top:6px}
@@ -224,7 +262,7 @@
 
   /* agenda list */
   .agenda{list-style:none;margin-top:6px}
-  .agenda li{padding:11px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:12px}
+  .agenda li{padding:11px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:1.7in 1fr;gap:12px}
   .agenda li .k{font-family:var(--serif);font-style:italic;color:var(--blue);font-size:14px;white-space:nowrap}
   .agenda li p{font-size:12.5px;color:var(--muted)}
   .expand{display:flex;flex-direction:column;gap:9px;margin-top:4px}
@@ -247,7 +285,7 @@
   <div class="page-body cover-flex">
     <div class="cov-head">
       <span class="mono-meta" style="color:var(--ink);letter-spacing:.2em">HANA DIGITAL GROUP</span>
-      <span class="ital">Done-for-you go-to-market workflows</span>
+      <span class="ital">Done For You Go To Market Strategy</span>
     </div>
 
     <div class="cover-center">
@@ -256,17 +294,21 @@
         <span class="pill filled">Private · For LG Commercial Displays</span>
       </div>
 
-      <h1>A go-to-market partnership,<br><span class="accent">built for LG Commercial Displays.</span></h1>
+      <h1>A Go-To-Market partnership,<br><span class="accent">built for LG Commercial Displays.</span></h1>
 
       <p class="lead muted" style="max-width:6.4in;margin-top:22px">
         A Clay-powered, metric-led outbound motion that puts your commercial-display teams in front of
-        the right retail operators across LATAM, the Middle East &amp; Africa, and Asia —
+        the right retail operators across LATAM, MEA, and Asia:
         <span class="accent">in the markets, channels, and language they actually respond to.</span>
       </p>
     </div>
   </div>
 
-  <div class="readnote" style="margin:0 0 14px;padding:0;border:0">READ AT TWO DEPTHS &nbsp;·&nbsp; PART 1 — a one-minute executive summary for leadership &nbsp;·&nbsp; PART 2 — the full working proposal for the team who runs it</div>
+  <div class="readnote" style="margin:0 0 16px;padding:0;border:0;letter-spacing:0">
+    <div style="font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--blue);margin-bottom:8px">Read at Two Depths</div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.75"><strong style="color:var(--ink);font-weight:600">Part 1:</strong> A 1-minute Executive Summary for Leadership</div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.75"><strong style="color:var(--ink);font-weight:600">Part 2:</strong> The Full Working Proposal for the Operating Team</div>
+  </div>
   <div class="cover-meta">
     <div><div class="label">Engagement</div><div class="val">GTM Partnership</div></div>
     <div><div class="label">Timeline</div><div class="val">3-Month Pilot</div></div>
@@ -276,56 +318,82 @@
 
 <!-- ===================== 2 · EXEC SUMMARY I ===================== -->
 <section class="page">
-  <div class="rhead"><span class="mono-meta">Prepared by HDG</span><span class="mono-meta">Private · For LG Commercial Displays</span></div>
+  <div class="rhead" style="border-bottom:0;padding-bottom:0;margin-bottom:20px"><span class="layer-tag" style="font-size:11px;margin-bottom:0">Executive summary · the one-minute read</span></div>
   <div class="page-body">
-    <span class="layer-tag">Executive summary · the one-minute read</span>
-
     <div class="sec-eyebrow"><span class="left"><span class="dash"></span><span class="eyebrow">Part 1 · for leadership</span></span></div>
-    <h2 class="sec-title">The outcome we're <span class="accent">selling you.</span></h2>
+    <h2 class="sec-title">How do we define the <span class="accent">success</span> in this partnership?</h2>
     <div class="sec-rule"></div>
 
-    <p class="lead mb18">One thing: <span class="accent">qualified sales conversations and booked meetings</span>
+    <p class="lead" style="margin-bottom:30px">One metric: <span class="accent">qualified sales conversations and sales meetings</span>
       for your commercial-display teams across LATAM, MEA, and Asia. Not tools, not lists, not technology
-      for its own sake — pipeline your sellers can close. Every dollar in this proposal aims at that single number.</p>
+      for its own sake: pipeline your sellers can close. Every dollar in this proposal aims at that single number.</p>
 
     <div class="blocks">
       <div class="block">
-        <div class="eyebrow">The approach, in a line</div>
-        <p>We identify the right retail operators, build the system that reaches them, and engineer the message
-          that makes them want to talk — then hand your in-market teams a steady flow of warm leads to close.</p>
-      </div>
-      <div class="block">
-        <div class="eyebrow">Why us, honestly</div>
-        <p>We've built these modern outbound motions mainly for North American markets. We won't pretend a message
-          that converts in Chicago converts untouched in São Paulo, Dubai, or Jakarta. We own the parts that travel
-          across any market; we partner with your local teams where their market knowledge has to lead.</p>
+        <div class="eyebrow">The approach, in a sentence</div>
+        <p>We identify the right retail operators, engineer the message that makes them want to talk, and work
+          with the LG team to build the system that reaches them.</p>
       </div>
       <div class="block">
         <div class="eyebrow">What you get</div>
-        <p>A permanent, enriched database of your entire addressable retail market across these regions — yours to
-          keep — plus a live outbound engine, and your choice of how hands-on we are in running it.</p>
+        <p>A permanent, enriched database of your entire addressable retail market across these regions, yours to
+          keep, plus a live outbound engine, and your choice of how hands-on we are in running it.</p>
       </div>
       <div class="block">
-        <div class="eyebrow">What we promise</div>
-        <p>Never a guaranteed winning message in unfamiliar markets — instead a disciplined, fast experimentation
-          system that finds what works, and the operating partnership to run it reliably.</p>
+        <div class="eyebrow">Our promise</div>
+        <p>We've built these modern outbound motions mainly for North American markets.</p>
+        <p style="margin-top:9px">We won't pretend a message that converts in Chicago converts untouched in São Paulo,
+          Dubai, or Jakarta. What we're promising is a disciplined, fast experimentation system that can travel across
+          any market.</p>
+        <p style="margin-top:9px">Our goal is sales empowerment: partnering with your local internal sales-rep teams,
+          where their market knowledge, combined with our operating system, can open new doors for LG Commercial Displays.</p>
       </div>
     </div>
 
-    <div class="next-marker">Your two options, the pricing, and what we need to begin →&nbsp; next page</div>
   </div>
   <div class="rfoot"><span class="mono-meta">Hana Digital Group</span><span class="ital">2 of 15</span></div>
 </section>
 
 <!-- ===================== 3 · EXEC SUMMARY II ===================== -->
 <section class="page">
-  <div class="rhead"><span class="mono-meta">Prepared by HDG</span><span class="mono-meta">Private · For LG Commercial Displays</span></div>
+  <div class="rhead" style="border-bottom:0;padding-bottom:0;margin-bottom:20px"><span class="layer-tag" style="font-size:11px;margin-bottom:0">Executive summary · the foundation &amp; your options</span></div>
   <div class="page-body">
-    <span class="layer-tag">Executive summary · your two options</span>
-
-    <div class="sec-eyebrow"><span class="left"><span class="dash"></span><span class="eyebrow">Part 1 · for leadership</span></span></div>
-    <h2 class="sec-title">Choose how <span class="accent">hands-on we are.</span></h2>
+    <h2 class="sec-title">What you're <span class="accent">investing in.</span></h2>
     <div class="sec-rule"></div>
+
+    <h3 style="margin-top:0;margin-bottom:8px">Data enrichment, <span class="accent">account/contact.</span></h3>
+    <p class="muted" style="margin-bottom:7px">Every decision below rests on what we build first: a permanent data map of your total
+      addressable retail market, structured by vertical and owned by LG forever, identical in both options.</p>
+
+    <div class="vtable">
+      <div class="vrow vhead">
+        <div>The verticals we map</div>
+        <div>Representative segments</div>
+      </div>
+      <div class="vrow">
+        <div class="vc1">Food, beverage &amp; convenience</div>
+        <div class="vc2">QSR &amp; F&amp;B franchises · convenience · grocery</div>
+      </div>
+      <div class="vrow">
+        <div class="vc1">Big-ticket retail</div>
+        <div class="vc2">Dealership groups · retail banking · telecom</div>
+      </div>
+      <div class="vrow">
+        <div class="vc1">Style, beauty &amp; specialty</div>
+        <div class="vc2">Apparel · beauty · luxury · department</div>
+      </div>
+      <div class="vrow">
+        <div class="vc1">Experience &amp; leisure</div>
+        <div class="vc2">Cinema &amp; entertainment · experiential retail</div>
+      </div>
+    </div>
+
+    <div class="found-fee">
+      <div class="ff-label">Flat, one-time build to map the market · owned by LG forever</div>
+      <div class="ff-amt">$6,000</div>
+    </div>
+
+    <h3 style="margin-top:10px;margin-bottom:6px">Message-Market-Fit Engineering + <span class="accent">Outreach.</span></h3>
 
     <div class="opt">
       <div class="opt-row opt-head">
@@ -334,107 +402,100 @@
         <div class="hand"><div class="colh">Hands-on</div><div class="sub">We roll up our sleeves across the motion</div></div>
       </div>
       <div class="opt-row">
-        <div class="rl">Message-market fit</div>
+        <div class="rl">Message-Market Fit Engineering</div>
         <div class="adv"><p>We advise the pains and offers that should land per segment</p></div>
         <div class="hand"><p>A full operating playbook of pain + offer combos your reps can pitch</p></div>
       </div>
       <div class="opt-row">
-        <div class="rl">LinkedIn outreach</div>
+        <div class="rl">LinkedIn Outreach</div>
         <div class="adv"><p>We audit your strategy and coach your team</p></div>
         <div class="hand"><p>We run the outreach campaigns in lower-legal-risk markets</p></div>
       </div>
       <div class="opt-row">
-        <div class="rl">Opt-in lead funnel</div>
-        <div class="adv"><p>We design it and show you how to run it</p></div>
-        <div class="hand"><p><span class="bonus">Bonus</span>We build it for you — turning cold outreach into warm inbound</p></div>
+        <div class="rl">Inbound-Led Outbound Funnel Design</div>
+        <div class="adv"><p>We design the customer journey from a structural perspective.</p></div>
+        <div class="hand"><p><span class="bonus">Bonus</span>We build the customer journey for you, adding an inbound layer over cold outreach.</p></div>
       </div>
       <div class="opt-row fee">
         <div class="rl">Monthly</div>
         <div class="adv"><span class="price">$4,000</span> <span class="muted">/ mo</span></div>
-        <div class="hand"><span class="price">$9,000</span> <span class="muted">/ mo</span></div>
+        <div class="hand"><span class="price">$7,000</span> <span class="muted">/ mo</span></div>
       </div>
     </div>
 
-    <div class="callout">
-      <div class="eyebrow">The foundation · identical in both</div>
-      <p><strong>Plus a one-time $6,000</strong> to build your enrichment database and targeting workflow — owned by
-        you forever, the same in either option. The third-party data itself is sourced at cost and paid by LG directly
-        (see Investment).</p>
-    </div>
-
-    <h3 class="mb6">Run it as a <span class="accent">3-month pilot.</span></h3>
-    <p class="muted mb14">$18,000 total on Advisory, $33,000 on Hands-on — a full proof window for the entire motion.
-      And if you decide not to continue, you still walk away owning the market database you paid for.
-      The risk of trying is low by design.</p>
-
-    <div class="callout" style="background:var(--panel);border-left-color:var(--muted)">
-      <div class="eyebrow" style="color:var(--muted)">What we need to begin</div>
-      <p>A short alignment conversation — your in-market sales coverage by region, your appetite for LinkedIn ad spend,
-        and confirmation of a few starting choices. We'd rather build momentum than wait for a perfect brief.</p>
+    <div class="mono-meta" style="margin:9px 0 5px;color:var(--blue)">The 3-month pilot, end to end</div>
+    <div class="pilotcalc">
+      <div class="pcrow">
+        <div class="pcopt">Advisory</div>
+        <div class="pceq">$6,000 <span class="op">+</span> <span class="mult">$4,000/mo × 3</span> <span class="op">=</span> <span class="tot">$18,000</span></div>
+      </div>
+      <div class="pcrow h">
+        <div class="pcopt">Hands-on</div>
+        <div class="pceq">$6,000 <span class="op">+</span> <span class="mult">$7,000/mo × 3</span> <span class="op">=</span> <span class="tot">$27,000</span></div>
+      </div>
     </div>
   </div>
   <div class="rfoot"><span class="mono-meta">Hana Digital Group</span><span class="ital">3 of 15</span></div>
 </section>
 
+<!-- ===================== 4 · PART 2 DIVIDER ===================== -->
+<section class="page">
+  <div class="page-body" style="display:flex;flex-direction:column;justify-content:center">
+    <h1 style="font-size:66px;line-height:1.05">Full Detailed <span class="accent">Proposal.</span></h1>
+  </div>
+  <div class="rfoot"><span class="mono-meta">Hana Digital Group</span><span class="ital">4 of 15</span></div>
+</section>
+
 <!-- ===================== 4 · 01 WHAT WINNING LOOKS LIKE ===================== -->
 <section class="page">
-  <div class="rhead"><span class="mono-meta">Prepared by HDG</span><span class="mono-meta">Private · For LG Commercial Displays</span></div>
+  <div class="rhead" style="border-bottom:0;padding-bottom:0;margin-bottom:20px"><span class="layer-tag" style="font-size:11px;margin-bottom:0">01 · The Winning GTM Philosophy</span></div>
   <div class="page-body">
-    <span class="layer-tag ghost">Part 2 · the full proposal</span>
-
-    <div class="sec-eyebrow">
-      <span class="left"><span class="dash"></span><span class="eyebrow">01 · What winning looks like</span></span>
-      <span class="ital">The Metric We're Accountable To</span>
-    </div>
     <h2 class="sec-title">Sell the number, <span class="accent">not the panel.</span></h2>
     <div class="sec-rule"></div>
 
-    <p class="lead mb14">Most display conversations start with the screen — its size, its resolution, its specs.
+    <p class="lead" style="margin-bottom:24px">Most display conversations start with the screen: its size, its resolution, its specs.
       But the operators you want to win don't buy panels; they buy outcomes. The single biggest lever in this entire
       program is that shift: <span class="accent">from selling the panel to selling the number the buyer already owns.</span></p>
 
-    <div class="split" style="margin:18px 0">
+    <div class="split" style="margin:30px 0">
       <div class="scard lead" style="background:var(--panel)">
-        <div class="tg" style="color:var(--muted)">The instinct — where most of the market operates</div>
+        <div class="tg" style="color:var(--muted)">The instinct: where most of the market operates</div>
         <h3 style="color:var(--muted)">The panel.</h3>
         <p>Screen size · resolution · brightness · the spec sheet. A conversation about the product.</p>
       </div>
       <div class="scard own">
-        <div class="tg">The lever — what the buyer actually owns</div>
+        <div class="tg">The lever: what the buyer actually owns</div>
         <h3>The number.</h3>
         <p>Foot traffic · basket size · SKU velocity · finance attach. A conversation about their results.</p>
       </div>
     </div>
 
-    <div class="callout">
+    <div class="callout" style="margin:30px 0">
       <div class="eyebrow">The single metric this program is accountable to</div>
       <p style="font-size:15px;font-family:var(--serif);line-height:1.5">Qualified sales conversations engaged, and
         meetings booked, for your commercial-display teams across <span class="accent">LATAM, MEA, and Asia.</span></p>
     </div>
 
     <p class="muted">When we report to you each week, this is what we report against. And one honest distinction, up front:
-      we commit to the <strong>process</strong> that produces meetings — a disciplined loop of testing and learning —
-      not to a guaranteed conversion rate in markets where success depends on local nuance. The next section explains
-      why that distinction is a strength, not a hedge.</p>
+      we commit to the <strong>process</strong> that produces meetings, a disciplined loop of testing and learning,
+      not to a guaranteed conversion rate in markets where success depends on local nuance.</p>
+    <p class="muted" style="margin-top:16px">The next section explains why that distinction is a strength, not a hedge.</p>
   </div>
-  <div class="rfoot"><span class="mono-meta">Hana Digital Group</span><span class="ital">4 of 15</span></div>
+  <div class="rfoot"><span class="mono-meta">Hana Digital Group</span><span class="ital">5 of 15</span></div>
 </section>
 
 <!-- ===================== 5 · 02 RETAIL UNIVERSE (VISUAL 1) ===================== -->
 <section class="page">
-  <div class="rhead"><span class="mono-meta">Prepared by HDG</span><span class="mono-meta">Private · For LG Commercial Displays</span></div>
+  <div class="rhead" style="border-bottom:0;padding-bottom:0;margin-bottom:20px"><span class="layer-tag" style="font-size:11px;margin-bottom:0">02 · The opportunity</span></div>
   <div class="page-body">
-    <div class="sec-eyebrow">
-      <span class="left"><span class="dash"></span><span class="eyebrow">02 · The opportunity</span></span>
-      <span class="ital">Your Entire Retail Universe</span>
-    </div>
     <h2 class="sec-title">Every screen that <span class="accent">moves a number.</span></h2>
     <div class="sec-rule"></div>
 
     <p class="muted mb14">Your displays don't belong only in restaurants and grocery stores. They belong in
-      <strong>any multi-location, customer-facing environment where a screen can change how a shopper behaves —
-      and move a store-performance number.</strong> See retail that way and your addressable market expands
-      dramatically, and so does the pipeline available to your sellers.</p>
+      <strong>any multi-location, customer-facing environment where a screen can change how a shopper behaves,
+      and move a store-performance number.</strong></p>
+    <p class="muted mb14">See retail that way and your addressable market expands dramatically, and so does the
+      pipeline available to your sellers.</p>
 
     <div class="universe">
       <div class="cluster">
@@ -460,260 +521,158 @@
     </div>
 
     <div class="metricstrip">
-      <div class="sh">Every segment owns a number — and we build targeting and messaging around it</div>
+      <div class="sh">Every segment cares about a different metric, and our targeting and messaging should be built around it</div>
       <div class="mgrid">
-        <div class="mi"><div class="seg">Grocery</div><span class="arrow">▼</span><div class="met">foot traffic &amp; basket size</div></div>
-        <div class="mi"><div class="seg">Dealership group</div><span class="arrow">▼</span><div class="met">showroom dwell &amp; finance attach</div></div>
-        <div class="mi"><div class="seg">Bank branch</div><span class="arrow">▼</span><div class="met">cross-sell &amp; queue experience</div></div>
-        <div class="mi"><div class="seg">Cinema</div><span class="arrow">▼</span><div class="met">per-visit concession spend</div></div>
+        <div class="mi" style="text-align:center"><div class="seg">Grocery</div><span class="arrow">▼</span><div class="met">Foot Traffic Volume &amp; Basket Size</div></div>
+        <div class="mi" style="text-align:center"><div class="seg">Dealership Group</div><span class="arrow">▼</span><div class="met">Showroom Dwell Time &amp; Finance Attach</div></div>
+        <div class="mi" style="text-align:center"><div class="seg">Bank Branch</div><span class="arrow">▼</span><div class="met">Cross-Sell Opportunities &amp; Queue Experience</div></div>
+        <div class="mi" style="text-align:center"><div class="seg">Cinema</div><span class="arrow">▼</span><div class="met">Per-Visit Concession Spend</div></div>
       </div>
-      <div class="why">The display is always the <em>how.</em> The metric is always the <em>why</em> — and the value here
-        isn't the size of a list, it's the segmentation.</div>
-    </div>
-  </div>
-  <div class="rfoot"><span class="mono-meta">Hana Digital Group</span><span class="ital">5 of 15</span></div>
-</section>
-
-<!-- ===================== 6 · 03 HONEST FOUNDATION ===================== -->
-<section class="page">
-  <div class="rhead"><span class="mono-meta">Prepared by HDG</span><span class="mono-meta">Private · For LG Commercial Displays</span></div>
-  <div class="page-body">
-    <div class="sec-eyebrow">
-      <span class="left"><span class="dash"></span><span class="eyebrow">03 · An honest foundation</span></span>
-      <span class="ital">Candor, Up Front</span>
-    </div>
-    <h2 class="sec-title">What we'll own, <span class="accent">and won't promise.</span></h2>
-    <div class="sec-rule"></div>
-
-    <p class="muted mb14">We've built these technology-driven outbound motions primarily in North America and Canada.
-      The plays we run are well-established there. They are <em>not</em> widely run in the markets you're asking us to
-      win — LATAM, the Middle East, and Asia. That cuts two ways, and we want both on the table.</p>
-
-    <div class="pair">
-      <div class="pcall concern">
-        <div class="eyebrow">The honest concern</div>
-        <p>We can't promise a message or offer performs in these markets the way it would where we operate intimately.
-          Cultural receptiveness, channel behavior, and buying rhythms differ — sometimes sharply. Anyone who guarantees
-          breakout results in unfamiliar territory is selling certainty they don't have.</p>
-      </div>
-      <div class="pcall adv">
-        <div class="eyebrow">The honest advantage</div>
-        <p>That same scarcity is <em>why</em> this capability is valuable. Very few partners are building sophisticated
-          Clay-powered GTM motions aimed specifically at these regions. You are early to something most of your
-          competitors aren't doing at all.</p>
-      </div>
-    </div>
-
-    <p class="muted mb14">This admission shapes the entire engagement rather than weakening it — because we designed
-      the delivery model around exactly this reality:</p>
-
-    <div class="split">
-      <div class="scard own">
-        <div class="tg">We own — what travels across any market</div>
-        <h3>The machine.</h3>
-        <p>Finding the right accounts, enriching them, building the targeting engine. Done-for-you, identical
-          everywhere, because none of it depends on local nuance.</p>
-      </div>
-      <div class="scard lead">
-        <div class="tg">You lead — where local nuance decides</div>
-        <h3>The market truth.</h3>
-        <p>The message, the offer, the live conversation. Your in-market teams have the fluency we don't — and they
-          work the warm leads the machine produces.</p>
-      </div>
-    </div>
-
-    <div class="callout" style="margin-bottom:0">
-      <div class="eyebrow">One motion, owned together</div>
-      <p>No context-switching between vendors, no one to blame across a handoff. What we guarantee is the engine and
-        the discipline: a fast, structured experimentation loop that finds what resonates, market by market.</p>
+      <div class="why"><p style="margin:0">The display is always the <em>how.</em> The metric is always the <em>why.</em></p>
+        <p style="margin:8px 0 0">And the value here isn't the size of a list, it's the segmentation.</p></div>
     </div>
   </div>
   <div class="rfoot"><span class="mono-meta">Hana Digital Group</span><span class="ital">6 of 15</span></div>
 </section>
 
-<!-- ===================== 7 · 04 THE MOTION + WS1 ===================== -->
+<!-- ===================== 6 · 03 HONEST FOUNDATION ===================== -->
 <section class="page">
-  <div class="rhead"><span class="mono-meta">Prepared by HDG</span><span class="mono-meta">Private · For LG Commercial Displays</span></div>
+  <div class="rhead" style="border-bottom:0;padding-bottom:0;margin-bottom:20px"><span class="layer-tag" style="font-size:11px;margin-bottom:0">03 · The foundation for our partnership</span></div>
   <div class="page-body">
-    <div class="sec-eyebrow">
-      <span class="left"><span class="dash"></span><span class="eyebrow">04 · The motion</span></span>
-      <span class="ital">How The Program Works</span>
-    </div>
-    <h2 class="sec-title">Find them, <span class="accent">earn the reply,</span> reach them.</h2>
+    <h2 class="sec-title">A Candid Analysis of Challenges and <span class="accent">Opportunities.</span></h2>
     <div class="sec-rule"></div>
 
-    <p class="muted mb14">The program follows the path a real prospect travels, organized to mirror the three
-      workstreams in your RFP.</p>
+    <p class="muted mb14">We've built these technology-driven outbound motions primarily in North America and Canada.
+      The plays we run are well established there in the overall business environment. LATAM, EMEA, and APAC,
+      respectively, have different business environments and cultural reciprocity to sales. This presents us with both
+      potential bottlenecks as well as opportunities.</p>
 
-    <div class="engine">
-      <div class="wstream">
-        <div class="wn">Workstream 01</div>
-        <h3>Data enrichment</h3>
-        <p>Find and qualify the right accounts and people, layered with buying signals and scored for intent.</p>
-        <span class="badge both">Foundation · both options</span>
+    <div class="pair">
+      <div class="pcall concern">
+        <div class="eyebrow">Potential bottleneck</div>
+        <p>We can't promise a message or offer performs in these markets the way that it would where we operate
+          intimately. Cultural receptiveness, channel behavior, and buying rhythms differ, sometimes sharply.</p>
       </div>
-      <div class="wstream">
-        <div class="wn">Workstream 02</div>
-        <h3>Message-market fit</h3>
-        <p>Engineer the pain + offer that earns a reply, tuned per sub-niche and tested in-market.</p>
-        <span class="badge choice">Your choice</span>
-      </div>
-      <div class="wstream">
-        <div class="wn">Workstream 03</div>
-        <h3>Outreach</h3>
-        <p>A precision targeting engine, plus LinkedIn outreach and an opt-in funnel that turns cold into warm.</p>
-        <span class="badge both">Targeting: both</span> &nbsp;<span class="badge choice">Rest: your choice</span>
+      <div class="pcall adv">
+        <div class="eyebrow">Potential opportunity</div>
+        <p>That same scarcity is <em>why</em> this capability can become extremely valuable. Very few businesses are
+          building sophisticated Clay-powered GTM motions aimed specifically at these regions. We are early to something
+          that most of our competitors aren't doing at all.</p>
       </div>
     </div>
 
-    <div class="subsec">4.1 · Data enrichment — the foundation (included in both options)</div>
-    <p class="muted mb10">This is the bedrock, and it's entirely on us — done for you, no variation between options, and
-      the part that travels across every market unchanged. We build a structured, enriched database of your addressable
-      retail market across the regions in scope: target accounts qualified and layered with the signals that indicate
-      real buying readiness — new-store rollouts, renovation cycles, energy-cost-reduction mandates — then scored so
-      your effort concentrates where intent is strongest, with the right contacts enriched inside each account.</p>
+    <p class="muted mb14">This reality dictates the nature of our partnership, because it truly becomes a partnered effort.</p>
 
-    <div class="two-points">
-      <div class="tp">
-        <div class="h">Sub-niche segmentation</div>
-        <p>We don't treat "retail" as one audience. Each segment — grocery, dealership groups, banking, cinema,
-          luxury — carries the metric and messaging logic that fits it.</p>
+    <div class="split">
+      <div class="scard own">
+        <div class="tg">We own: what travels across any market</div>
+        <h3>The machine.</h3>
+        <p>Finding the right accounts, enriching them, building the targeting engine. Done-for-you, identical
+          everywhere, because none of it depends on local nuance.</p>
       </div>
-      <div class="tp">
-        <div class="h">A permanent asset</div>
-        <p>A one-time build, owned by LG forever — company infrastructure, not a rented list. Whatever you decide
-          about the rest of the engagement, this stays yours.</p>
+      <div class="scard lead">
+        <div class="tg">We experiment where local nuance decides</div>
+        <h3>The market truth.</h3>
+        <p>The message, the offer, the live conversation. LG's internal sales representatives, who are boots on the
+          ground, have the fluency we don't. We must work together to find the alpha in this approach.</p>
       </div>
+    </div>
+
+    <div class="callout" style="margin:34px 0 0">
+      <div class="eyebrow">One motion, owned together</div>
+      <p style="font-size:15px;font-family:var(--serif);line-height:1.5">What we guarantee is the engine and
+        the discipline: a fast, structured experimentation loop that finds what resonates, market by market.</p>
     </div>
   </div>
   <div class="rfoot"><span class="mono-meta">Hana Digital Group</span><span class="ital">7 of 15</span></div>
 </section>
 
-<!-- ===================== 8 · 04 WS2 + WS3 ===================== -->
+<!-- ===================== 7 · 04 THE MOTION + WS1 ===================== -->
 <section class="page">
-  <div class="rhead"><span class="mono-meta">Prepared by HDG</span><span class="mono-meta">Private · For LG Commercial Displays</span></div>
+  <div class="rhead" style="border-bottom:0;padding-bottom:0;margin-bottom:20px"><span class="layer-tag" style="font-size:11px;margin-bottom:0">04 · The GTM Motion Structure (Data Enrichment)</span></div>
   <div class="page-body">
-    <div class="sec-eyebrow">
-      <span class="left"><span class="dash"></span><span class="eyebrow">04 · The motion (continued)</span></span>
-      <span class="ital">The Message, And The Reach</span>
-    </div>
-    <h2 class="sec-title">Earning the reply, <span class="accent">then reaching them.</span></h2>
+    <h2 class="sec-title">Start with the <span class="accent">market analysis.</span></h2>
     <div class="sec-rule"></div>
 
-    <div class="subsec" style="margin-top:0">4.2 · Message-market-fit engineering — your choice</div>
-    <p class="muted mb10">A message that lands isn't a clever line. It's the right <strong>pain</strong> spoken to the
-      right operator, paired with an <strong>offer</strong> that's easy to say yes to — and together those two
-      <em>are</em> the message. We engineer them as one unit, tuned per sub-niche. Your product range becomes
-      ammunition: storefront displays as a foot-traffic lever, aisle signage to move slow SKUs, checkout screens as
-      average-transaction lift, transparent OLED to spotlight premium items, centralized control as promo
-      speed-to-market, and the retail-media layer as a <em>revenue stream, not a cost.</em> Because we can't guarantee
-      which message wins in each market, we don't sell one — we build an <strong>experimentation system</strong> so the
-      data tells us what resonates.</p>
+    <p class="muted mb14">The GTM Motion can be designed to mirror the three subcategories in the RFP.</p>
 
-    <div class="ahmini">
-      <div class="ah"><div class="lab">Advisory</div><p>We advise the likely pains and the lead-magnet offers most likely to land per segment, and hand your team the thinking to run with.</p></div>
-      <div class="ah h"><div class="lab">Hands-on</div><p>A full operating playbook of pain + offer combinations your in-market reps can start pitching immediately — built to deploy and test across markets.</p></div>
-    </div>
-
-    <div class="subsec">4.3 · Outreach — reaching them and turning attention into meetings</div>
-    <div class="two-points" style="margin-top:0;margin-bottom:12px">
-      <div class="tp">
-        <div class="h">The targeting engine <span style="font-size:9px;color:var(--blue);font-family:var(--mono)">· BOTH</span></div>
-        <p>Built on Clay, a workflow that touches <em>only</em> your identified target contacts through LinkedIn Ads —
-          no spray-and-pray, no wasted spend on the wrong audience.</p>
+    <div class="engine" style="margin:4px 0 18px">
+      <div class="wstream">
+        <div class="wn">Workstream 01</div>
+        <h3>Data enrichment</h3>
+        <p>Find and qualify the right accounts and people, layered with buying signals and scored for intent.</p>
       </div>
-      <div class="tp">
-        <div class="h">LinkedIn outreach <span style="font-size:9px;color:var(--blue);font-family:var(--mono)">· YOUR CHOICE</span></div>
-        <p>Advisory: we audit profiles and coach disciplined, non-spammy outreach. Hands-on: we run campaigns directly
-          in markets with lower legal and platform risk.</p>
+      <div class="wstream">
+        <div class="wn">Workstream 02</div>
+        <h3>Message-market fit engineering</h3>
+        <p>Engineer the pain + offer combo that earns a reply, tuned per each sub-niche and tested in-market.</p>
+      </div>
+      <div class="wstream">
+        <div class="wn">Workstream 03</div>
+        <h3>Outreach system</h3>
+        <p>A precision ad targeting engine with Clay audiences, LinkedIn outreach, and a potential opt-in funnel that turns cold into warm.</p>
       </div>
     </div>
 
-    <div class="callout" style="margin:0 0 14px">
-      <div class="eyebrow">The opt-in lead funnel — warm beats cold</div>
-      <p>Rather than have reps cold-message strangers, we drive the targeted audience to a simple opt-in where genuinely
-        interested operators raise their hand. Cold outbound becomes warm inbound. <strong>Advisory:</strong> we design
-        the funnel and show you how to run it. <strong>Hands-on:</strong> as a built-in bonus, we build it for you —
-        the engine that makes any future LinkedIn ad spend worthwhile.</p>
+    <div class="subsec" style="margin-top:30px">4.1 · Data enrichment: the foundation (included in both options)</div>
+    <p class="muted mb10">This is our GTM foundation, and entirely done for you. No variation between the advisory or
+      hands-on option.</p>
+    <p class="muted mb10">We build a structured, enriched database of your addressable retail market across the regions
+      in scope: target accounts qualified and layered with the signals that indicate real buying readiness (new-store
+      rollouts, renovation cycles, energy-cost-reduction mandates).</p>
+
+    <div class="subsec" style="margin-top:26px">Our plan to segment the market</div>
+    <div class="universe seg4">
+      <div class="cluster">
+        <div class="cnum">01</div>
+        <h3>Food, beverage &amp; convenience</h3>
+        <ul><li>QSR &amp; F&amp;B franchises</li><li>Convenience stores</li><li>Grocery &amp; supermarket</li></ul>
+      </div>
+      <div class="cluster">
+        <div class="cnum">02</div>
+        <h3>Considered &amp; big-ticket</h3>
+        <ul><li>Car dealership groups</li><li>Retail banking branches</li><li>Telecom retail stores</li></ul>
+      </div>
+      <div class="cluster">
+        <div class="cnum">03</div>
+        <h3>Style, beauty &amp; specialty</h3>
+        <ul><li>Apparel &amp; fashion chains</li><li>Cosmetics &amp; beauty retail</li><li>Luxury &amp; department</li></ul>
+      </div>
+      <div class="cluster">
+        <div class="cnum">04</div>
+        <h3>Experience &amp; leisure</h3>
+        <ul><li>Cinema &amp; entertainment</li><li>Experiential retail</li></ul>
+      </div>
     </div>
 
-    <div class="callout" style="margin:0;background:var(--panel);border-left-color:var(--navy)">
-      <div class="eyebrow" style="color:var(--navy)">What your team always owns, in both options</div>
-      <p>Running ad spend in-region, the live sales conversation once a lead replies, and final sign-off on what's
-        culturally right for each market. We build and feed the engine; your sellers close.</p>
+    <div class="signals">
+      <div class="sh">Buying-readiness signals we layer onto every account</div>
+      <div class="sgrid">
+        <div class="si"><div class="n">New-store rollouts</div><div class="d">Multi-location expansion and store-opening plans</div></div>
+        <div class="si"><div class="n">Renovation announcements</div><div class="d">Remodel, refresh, and store-redesign programs</div></div>
+        <div class="si"><div class="n">Energy-cost mandates</div><div class="d">Efficiency and operating-cost-reduction initiatives</div></div>
+        <div class="si"><div class="n">Leadership moves</div><div class="d">New retail, marketing, or store-operations hires</div></div>
+        <div class="si"><div class="n">In-store tech upgrades</div><div class="d">POS, signage, and systems modernization</div></div>
+        <div class="si"><div class="n">Funding &amp; market entry</div><div class="d">Capital raises, M&amp;A, and new-region expansion</div></div>
+      </div>
     </div>
   </div>
   <div class="rfoot"><span class="mono-meta">Hana Digital Group</span><span class="ital">8 of 15</span></div>
 </section>
 
-<!-- ===================== 9 · 05 MESSAGE CARDS ===================== -->
-<section class="page">
-  <div class="rhead"><span class="mono-meta">Prepared by HDG</span><span class="mono-meta">Private · For LG Commercial Displays</span></div>
-  <div class="page-body">
-    <div class="sec-eyebrow">
-      <span class="left"><span class="dash"></span><span class="eyebrow">05 · What you'll receive</span></span>
-      <span class="ital">Message-Market-Fit, Made Visual</span>
-    </div>
-    <h2 class="sec-title">One card <span class="accent">per segment.</span></h2>
-    <div class="sec-rule"></div>
-
-    <p class="muted mb14">Rather than describe what good messaging looks like, we show it. For each retail segment you
-      receive a clean, intuitive breakdown — the operator, the pain they own, the metric it maps to, the LG capability
-      that addresses it, and the lead-magnet offer that earns the reply. So your sales teams see at a glance why each
-      operator should care.</p>
-
-    <div class="msgcards">
-      <div class="msgcard">
-        <div class="mhead"><h3>Grocery &amp; supermarket</h3><span class="seg">Food, beverage &amp; convenience</span></div>
-        <div class="mbody">
-          <div class="mc"><div class="l">The pain</div><div class="v">Flat weekday foot traffic</div></div>
-          <div class="mc"><div class="l">The metric</div><div class="v">Store entries &amp; basket size</div></div>
-          <div class="mc"><div class="l">LG lever</div><div class="v">Window-facing &amp; in-store signage</div></div>
-          <div class="mc offer"><div class="l">The offer</div><div class="v"><span class="placeholder">[ lead-magnet ]</span></div></div>
-        </div>
-      </div>
-      <div class="msgcard">
-        <div class="mhead"><h3>Car dealership group</h3><span class="seg">Considered &amp; big-ticket</span></div>
-        <div class="mbody">
-          <div class="mc"><div class="l">The pain</div><div class="v">Low finance-product attach</div></div>
-          <div class="mc"><div class="l">The metric</div><div class="v">F&amp;I attach rate</div></div>
-          <div class="mc"><div class="l">LG lever</div><div class="v">Showroom &amp; finance-desk displays</div></div>
-          <div class="mc offer"><div class="l">The offer</div><div class="v"><span class="placeholder">[ lead-magnet ]</span></div></div>
-        </div>
-      </div>
-      <div class="msgcard">
-        <div class="mhead"><h3>Cinema &amp; entertainment</h3><span class="seg">Experience &amp; leisure</span></div>
-        <div class="mbody">
-          <div class="mc"><div class="l">The pain</div><div class="v">Weak concession spend</div></div>
-          <div class="mc"><div class="l">The metric</div><div class="v">Per-visit concession revenue</div></div>
-          <div class="mc"><div class="l">LG lever</div><div class="v">Lobby &amp; concession-line screens</div></div>
-          <div class="mc offer"><div class="l">The offer</div><div class="v"><span class="placeholder">[ lead-magnet ]</span></div></div>
-        </div>
-      </div>
-    </div>
-
-    <p class="muted" style="margin-top:14px;font-size:12px">Illustrative shapes — the actual cards are designed one per
-      segment as clean visuals, and the lead-magnet offers are set with your team during message-market-fit engineering.</p>
-  </div>
-  <div class="rfoot"><span class="mono-meta">Hana Digital Group</span><span class="ital">9 of 15</span></div>
-</section>
-
 <!-- ===================== 10 · 05 MARKET MAP / REGIONS ===================== -->
 <section class="page">
-  <div class="rhead"><span class="mono-meta">Prepared by HDG</span><span class="mono-meta">Private · For LG Commercial Displays</span></div>
+  <div class="rhead" style="border-bottom:0;padding-bottom:0;margin-bottom:20px"><span class="layer-tag" style="font-size:11px;margin-bottom:0">04 · The GTM Motion Structure (Data Enrichment)</span></div>
   <div class="page-body">
-    <div class="sec-eyebrow">
-      <span class="left"><span class="dash"></span><span class="eyebrow">05 · What you'll receive</span></span>
-      <span class="ital">The Enriched Market Map</span>
-    </div>
-    <h2 class="sec-title">Sourced <span class="accent">region by region.</span></h2>
+    <h2 class="sec-title">TAM Data, Sourced <span class="accent">Region by Region.</span></h2>
     <div class="sec-rule"></div>
 
-    <p class="muted mb14">Your market database won't come from a single source — and that's the most important decision
-      we make on your behalf. Nearly every off-the-shelf database is built on US and Western European data, and coverage
-      thins out sharply in exactly the markets you care about. So we treat each region as needing its own best-in-class
-      source, blended and cross-verified through Clay — which is built to draw from many providers in sequence, filling
-      the gaps any single one leaves.</p>
+    <p class="muted mb10">Based on our research, your market database won't come from a single source, and that's the most
+      important decision we make on your behalf.</p>
+    <p class="muted mb10">Nearly every off-the-shelf database is built on US and Western European data, and coverage
+      thins out sharply in exactly the LATAM, MEA, and APAC markets we care about.</p>
+    <p class="muted mb14">So we treat each region as needing its own best-in-class source, blended and cross-verified
+      through Clay, which is built to draw from many providers in sequence, filling the gaps any single one leaves.</p>
 
     <div class="regions">
       <div class="region">
@@ -731,51 +690,130 @@
       <div class="region">
         <div class="rn">Asia</div>
         <h3>Local, by sub-market</h3>
-        <p>The most fragmented region — local specialists by sub-market, with particular care for Japan and Korea, where
+        <p>The most fragmented region: local specialists by sub-market, with particular care for Japan and Korea, where
           low LinkedIn penetration and local-language records defeat most Western databases entirely.</p>
       </div>
     </div>
 
     <div class="callout">
-      <div class="eyebrow">Sourced &amp; negotiated on your behalf — at cost</div>
-      <p>The data itself is an asset <em>you</em> purchase and own; we don't mark it up or bake it into our fee. Part of
+      <div class="eyebrow">Sourced &amp; negotiated on your behalf, at cost</div>
+      <p style="font-size:15px;font-family:var(--serif);line-height:1.5">The data itself is an asset <em>you</em> purchase and own; we don't mark it up or bake it into our fee. Part of
         the foundation fee buys our going to the right vendors per region, sample-testing them for accuracy before
-        committing, and negotiating the most cost-effective stack for your targets. Our only incentive is the best
-        coverage per dollar — <strong>because we profit from our work, not from your data.</strong></p>
+        committing, and negotiating the most cost-effective stack for your targets.</p>
     </div>
 
     <p class="muted" style="margin:0;font-size:12.5px"><strong>What you receive:</strong> a structured, segmented,
-      deduplicated market map — accounts organized by sub-niche, scored for buying signals, enriched contacts — sourced
+      deduplicated market map: accounts organized by sub-niche, scored for buying signals, enriched contacts, sourced
       from the best-fit providers for each region, and owned by you.</p>
+  </div>
+  <div class="rfoot"><span class="mono-meta">Hana Digital Group</span><span class="ital">9 of 15</span></div>
+</section>
+
+<!-- ===================== 8 · 04 WS2 + WS3 ===================== -->
+<section class="page">
+  <div class="rhead" style="border-bottom:0;padding-bottom:0;margin-bottom:20px"><span class="layer-tag" style="font-size:11px;margin-bottom:0">04 · The GTM Motion Structure (Message Engineering)</span></div>
+  <div class="page-body">
+    <h2 class="sec-title">Testing Messages that Earn <span class="accent">the reply.</span></h2>
+    <div class="sec-rule"></div>
+
+    <div class="subsec" style="margin-top:0">4.2 · Message-market-fit engineering</div>
+
+    <p style="font-family:var(--serif);font-size:23px;line-height:1.3;color:var(--ink);margin:8px 0 14px">Message <span class="accent" style="font-style:normal">=</span> Pain <span class="accent" style="font-style:normal">+</span> Offer.</p>
+
+    <p class="muted mb10">In the noise-filled outbound market of 2026, clever tactics and gimmicky personalization is
+      rapidly losing power. It's a full-circle moment, where success yet again relies on the fundamentals.</p>
+    <p class="muted mb10">It's the right <strong>pain</strong> spoken to the right operator, paired with an
+      <strong>offer</strong> that's easy to say yes to, and together those two <em>are</em> the message. We engineer
+      them as one unit, tuned per sub-niche.</p>
+    <p class="muted mb14">Your product range becomes ammunition: storefront displays as a foot-traffic lever, aisle
+      signage to move slow SKUs, checkout screens as average-transaction lift, transparent OLED to spotlight premium
+      items, centralized control as promo speed-to-market, and the retail-media layer as a
+      <em>revenue stream, not a cost.</em></p>
+
+    <p class="muted mb10">Below is how we develop hypotheses around the message-market-fit experimentation.</p>
+
+    <div class="msgcards">
+      <div class="msgcard">
+        <div class="mhead"><h3>Grocery &amp; supermarket</h3><span class="seg">Food, beverage &amp; convenience</span></div>
+        <div class="mbody">
+          <div class="mc"><div class="l">The pain</div><div class="v">Low foot traffic volume / small basket size</div></div>
+          <div class="mc"><div class="l">The metric</div><div class="v">Store entries &amp; basket size</div></div>
+          <div class="mc"><div class="l">LG value proposition</div><div class="v">Window-facing &amp; in-store signage</div></div>
+          <div class="mc offer"><div class="l">The offer</div><div class="v">X% increased basket size</div></div>
+        </div>
+      </div>
+      <div class="msgcard">
+        <div class="mhead"><h3>Car dealership group</h3><span class="seg">Considered &amp; big-ticket</span></div>
+        <div class="mbody">
+          <div class="mc"><div class="l">The pain</div><div class="v">Short customer dwell time in the showroom</div></div>
+          <div class="mc"><div class="l">The metric</div><div class="v">Average customer dwell time</div></div>
+          <div class="mc"><div class="l">LG value proposition</div><div class="v">Showroom &amp; financing option displays</div></div>
+          <div class="mc offer"><div class="l">The offer</div><div class="v">X% more purchases per showroom visit</div></div>
+        </div>
+      </div>
+      <div class="msgcard">
+        <div class="mhead"><h3>Cinema &amp; entertainment</h3><span class="seg">Experience &amp; leisure</span></div>
+        <div class="mbody">
+          <div class="mc"><div class="l">The pain</div><div class="v">Weak food &amp; beverage concession spend</div></div>
+          <div class="mc"><div class="l">The metric</div><div class="v">Per-visit concession revenue</div></div>
+          <div class="mc"><div class="l">LG value proposition</div><div class="v">Lobby &amp; concession-line screens</div></div>
+          <div class="mc offer"><div class="l">The offer</div><div class="v">X% increase in revenue per visitor</div></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="muted" style="margin-top:14px;font-size:12px">These cards represent one possible message hypothesis we
+      would develop for each market segment.</p>
+    <p class="muted" style="margin-top:8px;font-size:12px">The specific lead-magnet offers are set with your team during
+      the message-market-fit engineering.</p>
+
   </div>
   <div class="rfoot"><span class="mono-meta">Hana Digital Group</span><span class="ital">10 of 15</span></div>
 </section>
 
-<!-- ===================== 11 · 05 FUNNEL JOURNEY (VISUAL 2) ===================== -->
+<!-- ===================== 04 · OUTREACH (DETAILS + FUNNEL) ===================== -->
 <section class="page">
-  <div class="rhead"><span class="mono-meta">Prepared by HDG</span><span class="mono-meta">Private · For LG Commercial Displays</span></div>
+  <div class="rhead" style="border-bottom:0;padding-bottom:0;margin-bottom:20px"><span class="layer-tag" style="font-size:11px;margin-bottom:0">04 · The GTM Motion Structure (Outreach)</span></div>
   <div class="page-body">
-    <div class="sec-eyebrow">
-      <span class="left"><span class="dash"></span><span class="eyebrow">05 · What you'll receive</span></span>
-      <span class="ital">The Opt-In Funnel · Customer Journey</span>
-    </div>
-    <h2 class="sec-title">From cold impression <span class="accent">to warm conversation.</span></h2>
+    <h2 class="sec-title">Then, <span class="accent">reaching them.</span></h2>
     <div class="sec-rule"></div>
 
-    <p class="muted mb14">This is the piece that elevates the entire motion. Instead of reps cold-DMing strangers, the
-      targeted audience is driven to a simple opt-in — so your sellers spend their time on people who already said
-      <em>"yes, tell me more."</em> Trace a single operator's path:</p>
+    <div class="subsec" style="margin-top:0">4.3 · Outreach: reaching them and turning attention into meetings</div>
+    <div class="tp" style="margin-bottom:12px">
+      <div class="h">The targeting engine <span style="font-size:9px;color:var(--blue);font-family:var(--mono)">· INCLUDED</span></div>
+      <p>Built regardless, as part of the foundation: an ad audience assembled inside Clay from <em>only</em> your
+        identified target contacts, so every LinkedIn impression lands on the right operators. No spray-and-pray.</p>
+    </div>
+
+    <div class="subsec" style="margin-top:0">LinkedIn outreach · your choice</div>
+    <div class="two-points" style="margin-top:0;margin-bottom:12px">
+      <div class="tp">
+        <div class="h">Advisory option</div>
+        <p>We audit sales rep LinkedIn profiles and coach disciplined, non-spammy outreach.</p>
+      </div>
+      <div class="tp">
+        <div class="h">Hands-on</div>
+        <p>We run high-touch campaigns directly in markets with lower legal and platform risk.</p>
+      </div>
+    </div>
+
+    <div class="subsec">Suggestion · Inbound-led outbound flow design</div>
+    <p class="muted mb10">Because the RFP mentioned the possibility of using LinkedIn Ads, we suggest adding a layer to
+      the customer experience.</p>
+    <p class="muted mb10">An opt-in lead funnel that gives operators a chance to raise their hands first. The targeted ad
+      audience is driven to a simple opt-in, turning a cold outbound motion into a hybrid, inbound-led outbound motion.</p>
+    <p class="muted mb14">A potential customer journey could look like this:</p>
 
     <div class="funnel">
       <div class="fnodes">
         <div class="fnode">
           <div class="fn">01</div><h3>First impression</h3>
-          <p>A precision-targeted operator sees LG on LinkedIn — only contacts from your market map.</p>
+          <p>A precision-targeted operator sees LG on LinkedIn, only contacts from your market map.</p>
           <span class="arr">→</span>
         </div>
         <div class="fnode">
           <div class="fn">02</div><h3>The click</h3>
-          <p>The pain-and-offer message earns attention and a click — not a generic blast.</p>
+          <p>The pain-and-offer message earns attention and a click, not a generic blast.</p>
           <span class="arr">→</span>
         </div>
         <div class="fnode">
@@ -785,7 +823,7 @@
         </div>
         <div class="fnode handoff">
           <div class="fn">04</div><h3>Warm hand-off</h3>
-          <p>The opted-in lead routes to your in-market rep — already interested, already consented.</p>
+          <p>The opted-in lead routes to your in-market rep, already interested, already consented.</p>
           <span class="arr">→</span>
         </div>
         <div class="fnode">
@@ -795,13 +833,13 @@
       </div>
 
       <div class="cwbar">
-        <div class="seg cold">Cold outbound — the hard way</div>
+        <div class="seg cold">Cold outbound, the hard way</div>
         <div class="seg warm">↑ flips at the opt-in → warm inbound</div>
       </div>
 
       <div class="callout ownnote" style="margin-bottom:0">
         <div class="eyebrow">Two things the funnel does at once</div>
-        <p>A far easier conversation for a local seller in these markets — <em>and</em> a compliance feature: because
+        <p style="font-size:15px;font-family:var(--serif);line-height:1.5">A far easier conversation for a local seller in these markets, <em>and</em> a compliance feature: because
           every lead has actively opted in, the warm funnel satisfies express-consent rules by design. Your team owns
           the live conversation and the in-region ad spend from node 04 onward.</p>
       </div>
@@ -812,57 +850,58 @@
 
 <!-- ===================== 12 · 07 INVESTMENT ===================== -->
 <section class="page">
-  <div class="rhead"><span class="mono-meta">Prepared by HDG</span><span class="mono-meta">Private · For LG Commercial Displays</span></div>
+  <div class="rhead" style="border-bottom:0;padding-bottom:0;margin-bottom:20px"><span class="layer-tag" style="font-size:11px;margin-bottom:0">05 · Investment</span></div>
   <div class="page-body">
-    <div class="sec-eyebrow">
-      <span class="left"><span class="dash"></span><span class="eyebrow">07 · Investment</span></span>
-      <span class="ital">A One-Time Asset + A Simple Choice</span>
-    </div>
-    <h2 class="sec-title">One foundation, <span class="accent">two postures.</span></h2>
+    <h2 class="sec-title">One Foundation + <span class="accent">Two Options.</span></h2>
     <div class="sec-rule"></div>
 
-    <div class="subsec" style="margin-top:0">The foundation — one-time</div>
+    <div class="subsec" style="margin-top:0">The foundation, one-time</div>
     <div class="price-foundation">
-      <div><div class="label">Enrichment database + Clay targeting workflow</div><div class="amount">$6,000</div></div>
-      <div class="note">Built once, owned by you forever. Identical in both options.</div>
+      <div><div class="label">Data enrichment + ad audiences using Clay</div><div class="amount">$6,000</div></div>
+      <div class="note">Built once, owned by you forever.<br><br>Identical in both options.</div>
     </div>
 
     <div class="callout" style="margin-top:0">
-      <div class="eyebrow">A note on data cost — kept separate &amp; transparent</div>
+      <div class="eyebrow">A note on data cost, kept separate &amp; transparent</div>
       <p>The third-party data itself (the contact and company records we source per region) is a cost LG pays directly,
-        as an asset you own — it is <em>not</em> included in or marked up within our fee. We source, sample-test, and
-        negotiate those providers on your behalf. Exact cost depends on your final target spec and is typically a
-        one-time purchase in the low-thousands range; we confirm it with you before any commitment.</p>
+        as an asset you own: it is <em>not</em> included in or marked up within our fee.</p>
+      <p style="margin-top:9px">We source, sample-test, and negotiate those providers on your behalf. Exact cost depends
+        on your final target spec and is typically a one-time purchase in the low-thousands range; we confirm it with you
+        before any commitment.</p>
     </div>
 
-    <div class="subsec">The partnership — monthly retainer (3-month pilot)</div>
-    <div class="pilot">
-      <div class="ph"></div>
-      <div class="ph">Advisory</div>
-      <div class="ph hand">Hands-on</div>
-
-      <div class="rl">One-time foundation</div>
-      <div class="c">$6,000</div>
-      <div class="c hand">$6,000</div>
-
-      <div class="rl">Monthly retainer</div>
-      <div class="c">$4,000 / mo</div>
-      <div class="c hand">$9,000 / mo</div>
-
-      <div class="rl">Retainer × 3 months</div>
-      <div class="c">$12,000</div>
-      <div class="c hand">$27,000</div>
-
-      <div class="rl total">Pilot total</div>
-      <div class="c total"><span class="big">$18,000</span></div>
-      <div class="c hand total"><span class="big">$33,000</span></div>
-    </div>
-
-    <div class="callout" style="margin-bottom:0">
-      <div class="eyebrow">And the asset is yours regardless</div>
-      <p>If the pilot doesn't convince you to continue, you still keep the market database and targeting workflow you
-        paid for. We've structured it this way on purpose — the decision to start should feel low-risk, because your
-        interest in a clean, fair deal comes before ours in locking you in.</p>
+    <div class="subsec">Advisory vs. Hands-On Comparison</div>
+    <div class="opt">
+      <div class="opt-row opt-head">
+        <div class="rl"></div>
+        <div class="adv"><div class="colh">Advisory</div><div class="sub">We guide; your team executes in-market</div></div>
+        <div class="hand"><div class="colh">Hands-on</div><div class="sub">We roll up our sleeves across the motion</div></div>
+      </div>
+      <div class="opt-row">
+        <div class="rl">Message-market-fit engineering</div>
+        <div class="adv"><p>We advise the pains and offers that should land per segment.</p></div>
+        <div class="hand"><p>A full operating playbook of pain + offer combos your reps can deploy and test in-market.</p></div>
+      </div>
+      <div class="opt-row">
+        <div class="rl">LinkedIn outreach</div>
+        <div class="adv"><p>We audit profiles and coach disciplined, non-spammy outreach.</p></div>
+        <div class="hand"><p>We run high-touch campaigns directly in lower-legal-risk markets.</p></div>
+      </div>
+      <div class="opt-row">
+        <div class="rl">Inbound-led outbound funnel</div>
+        <div class="adv"><p>We design the customer journey from a structural perspective.</p></div>
+        <div class="hand"><p><span class="bonus">Bonus</span>We build the opt-in customer journey for you, adding an inbound layer over cold outreach.</p></div>
+      </div>
+      <div class="opt-row">
+        <div class="rl">Monthly cost</div>
+        <div class="adv"><p style="font-family:var(--serif);font-size:15px;color:var(--ink)">$4,000 <span class="muted" style="font-size:11px">/ mo</span></p></div>
+        <div class="hand"><p style="font-family:var(--serif);font-size:15px;color:var(--navy)">$7,000 <span class="muted" style="font-size:11px">/ mo</span></p></div>
+      </div>
+      <div class="opt-row fee">
+        <div class="rl">Total</div>
+        <div class="adv"><p style="line-height:1.75">$6,000 + $4,000/mo × 3 = <span style="font-family:var(--serif);font-size:18px;color:var(--ink)">$18,000</span></p></div>
+        <div class="hand"><p style="line-height:1.75">$6,000 + $7,000/mo × 3 = <span style="font-family:var(--serif);font-size:18px;color:var(--navy)">$27,000</span></p></div>
+      </div>
     </div>
   </div>
   <div class="rfoot"><span class="mono-meta">Hana Digital Group</span><span class="ital">12 of 15</span></div>
@@ -870,41 +909,40 @@
 
 <!-- ===================== 13 · 06 + 08 OPERATE + COMPLIANCE ===================== -->
 <section class="page">
-  <div class="rhead"><span class="mono-meta">Prepared by HDG</span><span class="mono-meta">Private · For LG Commercial Displays</span></div>
+  <div class="rhead" style="border-bottom:0;padding-bottom:0;margin-bottom:20px"><span class="layer-tag" style="font-size:11px;margin-bottom:0">06 · How We Operate &amp; Compliance</span></div>
   <div class="page-body">
-    <div class="sec-eyebrow">
-      <span class="left"><span class="dash"></span><span class="eyebrow">06 · How we operate &nbsp;/&nbsp; 08 · Compliance</span></span>
-      <span class="ital">Rhythm &amp; Risk, By Design</span>
-    </div>
-    <h2 class="sec-title">A sustainable <span class="accent">operating rhythm.</span></h2>
+    <h2 class="sec-title">Our Sustainable <span class="accent">Operating Cadence.</span></h2>
     <div class="sec-rule"></div>
 
     <div class="two-points" style="margin-top:0;margin-bottom:6px">
       <div class="tp">
-        <div class="h">A weekly working session</div>
-        <p>We suggest Mondays — align on direction and priorities for the week.</p>
+        <div class="h">A weekly meeting session</div>
+        <p>We suggest Mondays (KST) to review the past week's progress and align on priorities for the week.</p>
       </div>
       <div class="tp">
         <div class="h">A written progress update</div>
-        <p>End of each week (Thursday/Friday) so you always have a clear, documented view of what moved — without
+        <p>End of each week (Thursday/Friday) so you always have a clear, documented view of what moved, without
           daily-reporting overhead that slows the build.</p>
       </div>
     </div>
-    <p class="muted mb14">If a phase needs tighter visibility, we step the cadence up for that stretch. Throughout, we
-      work consultatively — reverse-engineering each workflow with your team so you understand <em>why</em> it's built
-      the way it is. The goal is that your team grows more capable through this engagement, not more dependent on us.</p>
+    <p class="muted mb10">If a phase needs tighter visibility, we step the cadence up for that stretch. Throughout, we
+      work consultatively, reverse-engineering each workflow with your team so you understand <em>why</em> it's built
+      the way it is.</p>
+    <p class="muted mb14">The goal is that your team grows more capable through this engagement, not more dependent on
+      us.</p>
 
-    <div class="subsec">Keeping it compliant</div>
+    <div class="subsec" style="margin-top:42px">Keeping it compliant</div>
     <p class="muted mb10">Outreach rules vary significantly across the regions in scope, and we treat that as a design
       input, not an afterthought.</p>
     <div class="callout" style="margin:0">
       <div class="eyebrow">Compliance is built into the motion</div>
-      <p>Automated LinkedIn outreach carries different platform and legal tolerance country by country — which is
+      <p>Automated LinkedIn outreach carries different platform and legal tolerance country by country, which is
         exactly why our Hands-on outreach is scoped to <strong>lower-legal-risk markets</strong>, with coaching
-        everywhere else. Commercial messaging in most LATAM markets requires express consent and a clear opt-out —
-        which our opt-in funnel satisfies <em>by design</em>, because every lead has actively raised their hand. And we
-        map each market against its data-protection regime (Brazil's LGPD, Mexico's LFPDPPP, the Gulf frameworks)
-        before scaling — built safe at scale, not retrofitted later.</p>
+        everywhere else.</p>
+      <p style="margin-top:9px">Commercial messaging in most LATAM markets requires express consent and a clear opt-out,
+        which is why we suggested an opt-in funnel layer, because the compliance aspect is satisfied <em>by design</em>.</p>
+      <p style="margin-top:9px">We will approach each market against its data-protection laws (Brazil's LGPD, Mexico's
+        LFPDPPP, the Gulf frameworks) and always tread on the safer side before scaling.</p>
     </div>
   </div>
   <div class="rfoot"><span class="mono-meta">Hana Digital Group</span><span class="ital">13 of 15</span></div>
@@ -912,65 +950,44 @@
 
 <!-- ===================== 14 · 09 + 10 NEXT / NEED ===================== -->
 <section class="page">
-  <div class="rhead"><span class="mono-meta">Prepared by HDG</span><span class="mono-meta">Private · For LG Commercial Displays</span></div>
+  <div class="rhead" style="border-bottom:0;padding-bottom:0;margin-bottom:20px"><span class="layer-tag" style="font-size:11px;margin-bottom:0">07 · Thinking ahead</span></div>
   <div class="page-body">
-    <div class="sec-eyebrow">
-      <span class="left"><span class="dash"></span><span class="eyebrow">09 · Where this goes next</span></span>
-      <span class="ital">The Pilot Is The Beginning</span>
-    </div>
-    <h2 class="sec-title">The motion <span class="accent">beyond the pilot.</span></h2>
+    <h2 class="sec-title">Alignment &amp; Additional <span class="accent">Scope of Work.</span></h2>
     <div class="sec-rule"></div>
 
-    <div class="expand mb18">
+    <div class="subsec" style="margin-top:0">Alignment Elements from LG</div>
+    <ul class="agenda">
+      <li><span class="k">In-market coverage</span><p>How established is your sales representation in each region? The warm leads we generate need local sellers to work them; it's the other half of the partnership.</p></li>
+      <li><span class="k">LinkedIn ad appetite</span><p>Whether and how much you'll invest in LinkedIn Ads shapes how far we push the paid-funnel motion (the bonus funnel build is designed partly to help you decide).</p></li>
+      <li><span class="k">An offer-led approach</span><p>Are you open to leading with genuine lead-magnet offers? It can lift acquisition cost slightly, but self-liquidates fast, because one landed contract far outweighs the offers that won it.</p></li>
+      <li><span class="k">Channel + starting choices</span><p>Confirm LinkedIn as the starting channel, plus two we lock in week one: the exact retail enrichment fields and the table structure for the eventual Transportation expansion.</p></li>
+    </ul>
+
+    <div class="subsec" style="margin-top:40px">Potential future collaborations</div>
+    <div class="expand">
       <div class="exp"><div class="h">WhatsApp as a <span class="accent">conversational channel.</span></div>
-        <p>Where B2B conversations actually happen across much of LATAM and MEA. Deliberately not in the pilot — we prove
-          the LinkedIn-led motion first — but it's the obvious phase two, and it maps to the channel interest in your RFP.</p></div>
+        <p>Where B2B conversations actually happen across much of LATAM and MEA. Deliberately not in the pilot: we prove
+          the LinkedIn-led motion first, but it's the obvious phase two, and it maps to the channel interest in your RFP.</p></div>
       <div class="exp"><div class="h">The <span class="accent">Transportation</span> vertical.</div>
         <p>Your secondary vertical, ready to bring online once the retail motion is humming and the enrichment approach is proven.</p></div>
       <div class="exp"><div class="h">Regional &amp; segment <span class="accent">rollout.</span></div>
         <p>As early markets prove out, we widen across regions and into the deeper sub-niches mapped in Section 2.</p></div>
-      <div class="exp"><div class="h">Knowledge transfer from <span class="accent">adjacent verticals.</span></div>
-        <p>We fold in reasoning from comparable corporate and hotel-vertical motions to accelerate your retail program.</p></div>
+      <div class="exp"><div class="h">Knowledge transfer to <span class="accent">adjacent verticals.</span></div>
+        <p>Based on the learnings from this retail pilot, we transfer them into adjacent verticals LG has already enriched
+          the data for, such as the corporate and hospitality industries.</p></div>
     </div>
-
-    <div class="sec-eyebrow"><span class="left"><span class="dash"></span><span class="eyebrow">10 · What we need from you</span></span></div>
-    <h3 class="mb6">A short alignment agenda, <span class="accent">not a gate.</span></h3>
-    <ul class="agenda">
-      <li><span class="k">In-market coverage</span><p>How established is your sales representation in each region? The warm leads we generate need local sellers to work them — it's the other half of the partnership.</p></li>
-      <li><span class="k">LinkedIn ad appetite</span><p>Whether and how much you'll invest in LinkedIn Ads shapes how far we push the paid-funnel motion (the bonus funnel build is designed partly to help you decide).</p></li>
-      <li><span class="k">An offer-led approach</span><p>Are you open to leading with genuine lead-magnet offers? It can lift acquisition cost slightly — but self-liquidates fast, because one landed contract far outweighs the offers that won it.</p></li>
-      <li><span class="k">Channel + starting choices</span><p>Confirm LinkedIn as the starting channel, plus two we lock in week one: the exact retail enrichment fields and the table structure for the eventual Transportation expansion.</p></li>
-    </ul>
   </div>
   <div class="rfoot"><span class="mono-meta">Hana Digital Group</span><span class="ital">14 of 15</span></div>
 </section>
 
 <!-- ===================== 15 · 11 NEXT STEPS + SIGNATURE ===================== -->
 <section class="page">
-  <div class="rhead"><span class="mono-meta">Prepared by HDG</span><span class="mono-meta">Private · For LG Commercial Displays</span></div>
-  <div class="page-body">
-    <div class="sec-eyebrow"><span class="left"><span class="dash"></span><span class="eyebrow">11 · Next steps</span></span></div>
-    <h2 class="sec-title">How we <span class="accent">begin.</span></h2>
-    <div class="sec-rule"></div>
-
-    <div class="nsteps">
-      <div class="nstep"><div class="n">01</div><div><h3>Align.</h3><p>A short call to walk through this proposal and the agenda on the previous page.</p></div></div>
-      <div class="nstep"><div class="n">02</div><div><h3>Choose.</h3><p>Your selection of <strong>Advisory</strong> or <strong>Hands-on</strong>, and confirmation of the 3-month pilot.</p></div></div>
-      <div class="nstep"><div class="n">03</div><div><h3>Kick off.</h3><p>We begin the foundation build immediately, with your first weekly session scheduled in week one.</p></div></div>
-    </div>
-
-    <p class="lead" style="margin-top:20px">We're genuinely excited to build this with you. This is the start of a long
-      partnership, <span class="accent">and we intend to earn it.</span></p>
-
-    <div class="signature">
-      <div class="ph-lab">Signature &amp; contact — to be completed</div>
-      <p>[ &nbsp;NAME · TITLE · EMAIL · PHONE · SIGNATURE BLOCK&nbsp; ]</p>
-    </div>
+  <div class="page-body" style="display:flex;flex-direction:column;justify-content:center">
+    <h1 style="font-size:74px;line-height:1.05;margin-bottom:22px">Thank <span class="accent">you.</span></h1>
+    <p class="lead" style="max-width:5in">We're genuinely excited to build this with you. We hope this is the beginning of a
+      <span class="accent">long, valuable partnership.</span></p>
   </div>
-  <div class="rfoot">
-    <span class="mono-meta">Prepared by Hana Digital Group LLC for LG Commercial Displays · figures reflect a 3-month pilot, open to discussion</span>
-    <span class="ital">15 of 15</span>
-  </div>
+  <div class="rfoot"><span class="mono-meta">Hana Digital Group</span><span class="ital">15 of 15</span></div>
 </section>
 
 </body>
