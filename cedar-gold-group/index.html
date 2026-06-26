@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prepared for Cedar Gold Group · A Client-Acquisition System</title>
+<meta name="description" content="A custom client-acquisition system built for Cedar Gold Group: the angle, the ad gallery, and the full webinar funnel.">
+<style>
+  :root{
+    --navy:#1e2d1c; --navy-deep:#121a12; --navy-soft:#33493a;
+    --blue:#c5995a; --blue-soft:#e4c68e; --blue-deep:#8a6a2e;
+    --bg:#faf6ee; --surface:#ffffff; --ink:#17211a; --ink-soft:#54584f; --line:#e7e1d5;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;letter-spacing:-0.015em;line-height:1.12;margin:0;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+  .topbar{background:var(--navy-deep);color:#fff;}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;font-size:12px;letter-spacing:0.06em;}
+  .topbar b{font-family:'Playfair Display',serif;letter-spacing:0.12em;text-transform:uppercase;font-size:15px;}
+  .topbar .by{color:var(--blue-soft);text-transform:uppercase;letter-spacing:0.18em;font-size:10px;}
+
+  .cover{background:radial-gradient(120% 120% at 80% 0%, rgba(197,153,90,0.20), transparent 55%),var(--bg);
+    padding:90px 0 80px;text-align:center;border-bottom:1px solid var(--line);}
+  .cover .kicker{display:inline-block;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue-deep);font-weight:700;margin-bottom:24px;}
+  .cover h1{font-size:clamp(38px,6vw,68px);font-weight:800;max-width:900px;margin:0 auto;color:var(--navy);}
+  .cover h1 em{font-style:italic;color:var(--blue-deep);font-weight:500;}
+  .cover p{font-size:19px;color:var(--ink-soft);max-width:660px;margin:24px auto 0;}
+  .scrollcue{margin-top:46px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue-deep);}
+  .scrollcue span{display:block;font-size:24px;margin-top:6px;animation:bob 1.8s ease-in-out infinite;}
+  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
+
+  .intro{padding:60px 0 8px;text-align:center;border-bottom:1px solid var(--line);}
+  .intro .kick{display:inline-block;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue-deep);font-weight:700;margin-bottom:14px;}
+  .intro h2{font-size:clamp(26px,3.6vw,36px);color:var(--navy);max-width:760px;margin:0 auto;}
+  .intro p{font-size:18px;color:var(--ink-soft);max-width:600px;margin:14px auto 0;}
+  .video-card{max-width:860px;margin:34px auto 0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:0 30px 70px rgba(10,20,8,0.16);}
+  .video-frame{position:relative;width:100%;padding-bottom:56.25%;height:0;border-radius:10px;overflow:hidden;}
+  .video-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+  .video-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+    background:repeating-linear-gradient(45deg,#f3ede1,#f3ede1 14px,#ece4d4 14px,#ece4d4 28px);border:2px dashed var(--blue);border-radius:10px;}
+  .video-ph .tag{display:inline-block;background:var(--blue);color:var(--ink);font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:14px;}
+  .video-ph h3{font-size:22px;margin:0 0 6px;color:var(--navy);}
+  .video-ph p{font-size:14.5px;max-width:440px;margin:0;color:var(--ink-soft);}
+
+  .band{padding:64px 0 30px;}
+  .band .num{font-family:'Playfair Display',serif;font-size:15px;color:var(--blue-deep);font-weight:700;letter-spacing:0.1em;}
+  .band h2{font-size:clamp(26px,3.6vw,38px);font-weight:700;margin:10px 0 0;max-width:820px;color:var(--navy);}
+  .band p{font-size:18px;color:var(--ink-soft);max-width:720px;margin:16px 0 0;}
+  .band.dark{background:linear-gradient(180deg,var(--navy),var(--navy-deep));color:#fff;padding:70px 0;margin-top:40px;}
+  .band.dark h2{color:#fff;}
+  .band.dark p{color:#d4dac9;}
+  .band.dark .num{color:var(--blue-soft);}
+
+  .pains{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:30px 0 0;}
+  .pains div{background:rgba(255,255,255,0.06);border:1px solid var(--navy-soft);border-radius:10px;padding:16px 14px;font-size:13.5px;color:#e4e8dd;}
+  .pains b{display:block;font-family:'Playfair Display',serif;color:var(--blue-soft);font-size:22px;margin-bottom:6px;}
+
+  .embed-wrap{padding:0 0 30px;}
+  .embed-shell{max-width:1180px;margin:24px auto 0;padding:0 24px;}
+  .embed-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 30px 70px rgba(10,20,8,0.16);}
+  .embed-bar{display:flex;align-items:center;justify-content:space-between;padding:11px 18px;background:#f1ece1;border-bottom:1px solid var(--line);font-size:12px;letter-spacing:0.04em;color:var(--ink-soft);}
+  .embed-bar .dots{display:flex;gap:6px;}
+  .embed-bar .dots i{width:11px;height:11px;border-radius:50%;background:#d6cdba;display:block;}
+  .embed-bar a{color:var(--blue-deep);text-decoration:none;font-weight:600;}
+  iframe.page{width:100%;border:0;display:block;}
+
+  .close{background:linear-gradient(180deg,var(--navy),var(--navy-deep));color:#fff;text-align:center;padding:90px 0;margin-top:50px;}
+  .close h2{font-size:clamp(28px,4vw,44px);color:#fff;}
+  .close p{color:#d4dac9;max-width:580px;margin:18px auto 28px;font-size:18px;}
+  .cal-card{background:#fff;border-radius:16px;max-width:780px;margin:36px auto 0;padding:8px;box-shadow:0 30px 70px rgba(10,20,8,0.28);overflow:hidden;}
+  footer{background:var(--navy-deep);color:#8a9280;font-size:12px;text-align:center;padding:26px 0;}
+
+  @media(max-width:780px){
+    .pains{grid-template-columns:1fr 1fr;}
+    .wrap{padding:0 18px;}
+    .embed-shell{padding:0 18px;}
+    .band{padding-top:48px;}
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,800;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="topbar"><div class="wrap"><b>Cedar Gold Group</b><span class="by">Prepared by HANA Digital Group</span></div></div>
+
+  <section class="cover">
+    <div class="wrap">
+      <span class="kicker">A Custom Client-Acquisition System</span>
+      <h1>We built you a way to fill your pipeline with <em>pre-retirees ready to protect their savings with gold.</em></h1>
+      <p>Not a pitch deck. A working funnel: the angle, the ads, the registration page, the qualifying survey, and the thank-you page. Scroll through the whole thing below, no logins, no downloads.</p>
+      <div class="scrollcue">See what we made<span>↓</span></div>
+    </div>
+  </section>
+
+  <!-- WALKTHROUGH (watch first) -->
+  <section class="intro">
+    <div class="wrap">
+      <span class="kick">Start Here</span>
+      <h2>Watch this first, a quick walkthrough.</h2>
+      <p>A little context on what's inside this page and how to read it. Press play, then scroll.</p>
+      <div class="video-card">
+        <div class="video-frame">
+          <div class="video-ph">
+            <span class="tag">Walkthrough Loom</span>
+            <h3>▶ Your walkthrough video goes here</h3>
+            <p>A short Loom of Arthur narrating how to read this page drops in right here before it goes to the prospect.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band dark">
+    <div class="wrap">
+      <div class="num">01 / THE ANGLE</div>
+      <h2>We led with the buyer only you can truly serve: the saver who has no idea their 401(k) can hold real gold.</h2>
+      <p>Most gold companies blast everyone with fear and a hard sell. You have something sharper: a done-for-you, education-first rollover trusted by 2,500+ families and backed by the Miami Marlins. So we built the whole funnel around the five worries that keep these savers stuck in paper, even when they want out.</p>
+      <div class="pains">
+        <div><b>1</b>"I thought it was locked"</div>
+        <div><b>2</b>"It's all just paper"</div>
+        <div><b>3</b>"Won't I get taxed?"</div>
+        <div><b>4</b>"It sounds too complicated"</div>
+        <div><b>5</b>"Who can I trust?"</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADS (real gallery) -->
+  <section class="embed-wrap">
+    <div class="wrap band" style="padding-bottom:0;">
+      <div class="num">02 / THE ADS</div>
+      <h2>Five scroll-stopping ads, one per worry.</h2>
+      <p>Each ad dramatizes one worry and drives the click to the registration page. Here's the full gallery, with the strategy behind every creative.</p>
+    </div>
+    <div class="embed-shell">
+      <div class="embed-card">
+        <div class="embed-bar"><span class="dots"><i></i><i></i><i></i></span><span>editorial_gallery.html</span><a href="editorial_gallery.html" target="_blank">Open standalone ↗</a></div>
+        <iframe class="page" src="editorial_gallery.html" title="Cedar Gold Group ad gallery" scrolling="no"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTRATION (real) -->
+  <section class="embed-wrap">
+    <div class="wrap band" style="padding-bottom:0;">
+      <div class="num">03 / THE REGISTRATION PAGE</div>
+      <h2>Where every ad click lands.</h2>
+      <p>A live, by-invitation registration page in your brand, engineered to make pre-retirees register with intent and actually show up. The real page, fully interactive below.</p>
+    </div>
+    <div class="embed-shell">
+      <div class="embed-card">
+        <div class="embed-bar"><span class="dots"><i></i><i></i><i></i></span><span>webinar-registration.html</span><a href="webinar-registration.html" target="_blank">Open standalone ↗</a></div>
+        <iframe class="page" src="webinar-registration.html" title="Cedar Gold Group registration page" scrolling="no"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- SURVEY (real) -->
+  <section class="embed-wrap">
+    <div class="wrap band" style="padding-bottom:0;">
+      <div class="num">04 / THE SURVEY</div>
+      <h2>The step most funnels skip, and the one that prints first-party data.</h2>
+      <p>Instead of dropping registrants straight onto a thank-you page, we route them through a short qualifying survey. You learn which worry brought each saver in, you build first-party data the ad platforms can't take from you, and the few who are clearly a fit get invited to book a call with a Cedar specialist, before the training even airs. The real page, fully interactive below.</p>
+    </div>
+    <div class="embed-shell">
+      <div class="embed-card">
+        <div class="embed-bar"><span class="dots"><i></i><i></i><i></i></span><span>webinar-survey.html</span><a href="webinar-survey.html" target="_blank">Open standalone ↗</a></div>
+        <iframe class="page" src="webinar-survey.html" title="Cedar Gold Group survey page" scrolling="no"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- THANK YOU (real) -->
+  <section class="embed-wrap">
+    <div class="wrap band" style="padding-bottom:0;">
+      <div class="num">05 / THE THANK-YOU PAGE</div>
+      <h2>The moment the registration sticks.</h2>
+      <p>Where the survey sends them. It re-primes the promise, turns up early into a positive micro-commitment (no spammy lockout scarcity), and keeps your proof (2,500+ families, the Miami Marlins partnership) in view the entire scroll, so attending feels like the obvious next step. The real page, fully interactive below.</p>
+    </div>
+    <div class="embed-shell">
+      <div class="embed-card">
+        <div class="embed-bar"><span class="dots"><i></i><i></i><i></i></span><span>webinar-thank-you.html</span><a href="webinar-thank-you.html" target="_blank">Open standalone ↗</a></div>
+        <iframe class="page" src="webinar-thank-you.html" title="Cedar Gold Group thank-you page" scrolling="no"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="close">
+    <div class="wrap">
+      <h2>Interested in us running your first webinar campaign? Let's talk.</h2>
+      <p>Grab a time below and we'll walk through how this becomes a live system filling your calendar.</p>
+      <div class="cal-card">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/arthur-sung-hanadigitalgroup/implementation-call" style="min-width:320px;height:680px;"></div>
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <footer>Prepared by HANA Digital Group for Cedar Gold Group · For discussion purposes only.</footer>
+
+  <script>
+    function resizeFrames(){
+      document.querySelectorAll('iframe.page').forEach(function(f){
+        try{
+          var doc = f.contentDocument || f.contentWindow.document;
+          if(!doc || !doc.documentElement) return;
+          // Collapse first: documentElement.scrollHeight is clamped to at least the
+          // iframe's own height, so a tall (mobile) frame never shrinks when widened
+          // to desktop. Zeroing the height lets it remeasure the real content height.
+          f.style.height = '0px';
+          f.style.height = doc.documentElement.scrollHeight + 'px';
+        }catch(e){}
+      });
+    }
+    window.addEventListener('load', function(){ resizeFrames(); setTimeout(resizeFrames, 600); setTimeout(resizeFrames, 1500); });
+    window.addEventListener('resize', function(){ requestAnimationFrame(resizeFrames); });
+  </script>
+
+</body>
+</html>

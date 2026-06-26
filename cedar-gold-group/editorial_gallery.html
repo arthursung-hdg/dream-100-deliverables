@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cedar Gold Group, Private Training Ad Pack</title>
+<style>
+  :root {
+    --bg: #fbf7f0;
+    --surface: #ffffff;
+    --ink: #17211a;
+    --ink-soft: #5a584f;
+    --ink-faint: #94928a;
+    --line: #e9e6df;
+    --line-soft: #f1efea;
+    --accent: #b8863b;
+    --accent-deep: #1e2d1c;
+    /* Awareness-stage colors */
+    --cold: #2e6bf0;
+    --cold-bg: #eaf1ff;
+    --consid: #0d9488;
+    --consid-bg: #e6f5f3;
+    --mid: #7c3aed;
+    --mid-bg: #f1eafe;
+    --bottom: #ea580c;
+    --bottom-bg: #fdece1;
+    --edu: #16a34a;
+    --edu-bg: #e7f6ec;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 56px 32px 96px; }
+
+  /* ─── HEADER ─── */
+  header.masthead {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 40px;
+    margin-bottom: 64px;
+  }
+  .headline-pill {
+    display: inline-block;
+    background: #1e2d1c;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 9px 18px;
+    border-radius: 999px;
+    margin: 0 0 20px;
+  }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+    margin: 0 0 16px;
+  }
+  h1.title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    font-weight: 700;
+    margin: 0 0 24px;
+    letter-spacing: -0.02em;
+  }
+  h1.title em { font-style: italic; color: var(--accent); font-weight: 500; }
+  .deck {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 720px;
+    margin: 0;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 32px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .meta-row span strong {
+    color: var(--ink);
+    font-weight: 600;
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+    color: var(--ink-faint);
+  }
+
+  /* ─── SECTION ─── */
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 0 0 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-head h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .section-head .count {
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ─── AD CARD ─── */
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    margin-bottom: 96px;
+  }
+  .ad-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: minmax(0, 540px) minmax(0, 1fr);
+    gap: 0;
+  }
+  .ad-visual {
+    padding: 32px;
+    background: var(--line-soft);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  .ad-img-frame {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #ddd;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
+  }
+  .ad-img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .save-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--ink);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    border-radius: 2px;
+    border: 1px solid var(--ink);
+    transition: background 0.15s ease;
+  }
+  .save-btn:hover { background: #1e2d1c; border-color: #1e2d1c; }
+
+  .ad-body { padding: 40px 40px 36px; display: flex; flex-direction: column; gap: 20px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
+  .tag {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 5px 10px;
+    border-radius: 999px;
+    line-height: 1;
+  }
+  .tag.pain {
+    background: var(--line-soft);
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+  .tag.stage-cold { background: var(--cold-bg); color: var(--cold); }
+  .tag.stage-consid { background: var(--consid-bg); color: var(--consid); }
+  .tag.stage-mid { background: var(--mid-bg); color: var(--mid); }
+  .tag.stage-bottom { background: var(--bottom-bg); color: var(--bottom); }
+  .tag.stage-edu { background: var(--edu-bg); color: var(--edu); }
+
+  .concept-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .copy-block { display: flex; flex-direction: column; gap: 14px; }
+  .copy-row {
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+  }
+  .copy-row:first-child { border-top: none; padding-top: 0; }
+  .copy-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-faint);
+    font-weight: 600;
+    margin: 0 0 6px;
+  }
+  .copy-text {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+  }
+  .copy-text.headline { font-weight: 600; }
+  .copy-row.pain-row { border-top: 1px solid var(--line); }
+  .copy-row.pain-row .copy-label { color: var(--accent-deep); }
+  .copy-text.pain { color: var(--ink-soft); font-style: italic; }
+
+  /* ─── EXPORT SECTION ─── */
+  .export-section {
+    border-top: 2px solid var(--ink);
+    padding-top: 64px;
+  }
+  .export-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 32px;
+  }
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 32px;
+  }
+  .panel h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+  }
+  .panel h4 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin: 24px 0 10px;
+    font-weight: 600;
+  }
+  .panel h4:first-of-type { margin-top: 0; }
+  .panel p, .panel li { font-size: 14px; line-height: 1.6; color: var(--ink-soft); }
+  .panel ol, .panel ul { padding-left: 20px; margin: 8px 0; }
+  .panel ol li, .panel ul li { margin-bottom: 6px; }
+  .panel ol li::marker { color: var(--accent); font-weight: 700; }
+  /* targeting cards */
+  .target-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .target-card {
+    border-left: 3px solid var(--line);
+    padding: 4px 0 4px 14px;
+  }
+  .target-card.cold { border-color: var(--cold); }
+  .target-card.consid { border-color: var(--consid); }
+  .target-card.mid { border-color: var(--mid); }
+  .target-card.bottom { border-color: var(--bottom); }
+  .target-card.edu { border-color: var(--edu); }
+  .target-card .t-stage {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    margin: 0 0 4px;
+  }
+  .target-card.cold .t-stage { color: var(--cold); }
+  .target-card.consid .t-stage { color: var(--consid); }
+  .target-card.mid .t-stage { color: var(--mid); }
+  .target-card.bottom .t-stage { color: var(--bottom); }
+  .target-card.edu .t-stage { color: var(--edu); }
+  .target-card .t-body { font-size: 13.5px; color: var(--ink-soft); margin: 0; line-height: 1.5; }
+  .target-card .t-body strong { color: var(--ink); }
+
+  footer.bottom {
+    margin-top: 96px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 860px) {
+    .wrap { padding: 32px 20px 64px; }
+    .ad-card { grid-template-columns: 1fr; }
+    .ad-visual { padding: 20px; }
+    .ad-body { padding: 28px 24px; }
+    .export-grid { grid-template-columns: 1fr; gap: 24px; }
+    .panel { padding: 24px; }
+    h1.title { font-size: 36px; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ─────────── HEADER ─────────── -->
+  <header class="masthead">
+    <div class="headline-pill">Five pain-driven ads custom designed for Cedar Gold Group</div>
+    <h1 class="title">Five static creatives,<br><em>one private training.</em></h1>
+    <p class="deck">A hand-built ad set where each creative dramatizes one specific worry your future clients already carry, then invites them to a free private live training. No product pitch, no hard sell, just the right pain in front of the right person, every ad driving to one registration page. All assets are 1080x1080, Meta-compliant, and ready to upload.</p>
+    <div class="meta-row">
+      <span><strong>Prepared for</strong>Cedar Gold Group</span>
+      <span><strong>Audience</strong>Pre-Retirees with a 401(k), IRA, or TSP</span>
+      <span><strong>Channel</strong>Facebook + Instagram Feed</span>
+      <span><strong>Format</strong>1080x1080 Square Static</span>
+      <span><strong>Objective</strong>Private Training Registrations</span>
+    </div>
+  </header>
+
+  <!-- ─────────── GALLERY ─────────── -->
+  <section>
+    <div class="section-head">
+      <h2>The Creatives</h2>
+      <span class="count">01 → 05</span>
+    </div>
+
+    <div class="gallery">
+
+      <!-- ── AD 01 ── -->
+      <article class="ad-card">
+        <div class="ad-visual">
+          <div class="ad-img-frame">
+            <img src="images/01-locked-account-myth.png" alt="Man in his 60s at a sunlit kitchen table realizing his 401(k) can move into gold">
+          </div>
+          <a class="save-btn" href="images/01-locked-account-myth.png" download="cedar-gold-group-ad-01-locked-account-myth.png">↓ Save Image</a>
+        </div>
+        <div class="ad-body">
+          <div class="tags">
+            <span class="tag stage-cold">● Cold · Problem Unaware</span>
+            <span class="tag pain">Pain: The Locked-Account Myth</span>
+          </div>
+          <h3 class="concept-name">"The Door That Was Always Open"</h3>
+          <div class="copy-block">
+            <div class="copy-row">
+              <p class="copy-label">Ad Copy</p>
+              <p class="copy-text">For years you assumed the money in your 401(k) and IRA was locked in place, limited to the same handful of funds someone chose long ago. Almost no one tells you the truth: a portion of that retirement account can be moved into physical gold, with the same tax advantages, without cashing out or starting over. We host a free, no-pressure live training that shows you exactly how it works. Save your seat and finally see the door that was open the whole time.</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Headline</p>
+              <p class="copy-text headline">Your Retirement Account Was Never Locked</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Link Description</p>
+              <p class="copy-text">You're invited to a free live training. Save your seat.</p>
+            </div>
+            <div class="copy-row pain-row">
+              <p class="copy-label">Pain</p>
+              <p class="copy-text pain">Pre-retirees assume their 401(k) or IRA is frozen where it sits and have no idea a portion can legally move into physical gold. This ad breaks that myth and invites them to learn how.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── AD 02 ── -->
+      <article class="ad-card">
+        <div class="ad-visual">
+          <div class="ad-img-frame">
+            <img src="images/02-paper-fragility.png" alt="Older couple reviewing paper financial statements with a single gold coin on the stack">
+          </div>
+          <a class="save-btn" href="images/02-paper-fragility.png" download="cedar-gold-group-ad-02-paper-fragility.png">↓ Save Image</a>
+        </div>
+        <div class="ad-body">
+          <div class="tags">
+            <span class="tag stage-consid">● Cold · Problem Aware</span>
+            <span class="tag pain">Pain: Everything Is Paper</span>
+          </div>
+          <h3 class="concept-name">"When Paper Falls"</h3>
+          <div class="copy-block">
+            <div class="copy-row">
+              <p class="copy-label">Ad Copy</p>
+              <p class="copy-text">Your whole retirement lives as numbers on a screen: stocks, funds, dollars, all moving the same direction on a bad day. You remember 2008, and you are now the age where there is no decade left to wait for a rebound. There is a way to hold something real alongside the paper, and we will show you exactly how. Reserve your spot at our free live training and learn to add a counterweight before the next downturn, not after.</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Headline</p>
+              <p class="copy-text headline">When Paper Falls, What Do You Actually Hold?</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Link Description</p>
+              <p class="copy-text">Free live training for retirement savers. Reserve your spot.</p>
+            </div>
+            <div class="copy-row pain-row">
+              <p class="copy-label">Pain</p>
+              <p class="copy-text pain">Everything this audience owns is paper, and one badly timed downturn near retirement could permanently shrink the nest egg. This ad dramatizes that fragility and the need for a tangible counterweight.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── AD 03 ── -->
+      <article class="ad-card">
+        <div class="ad-visual">
+          <div class="ad-img-frame">
+            <img src="images/03-tax-penalty-trap.png" alt="Woman near retirement weighing whether moving savings into gold is safe">
+          </div>
+          <a class="save-btn" href="images/03-tax-penalty-trap.png" download="cedar-gold-group-ad-03-tax-penalty-trap.png">↓ Save Image</a>
+        </div>
+        <div class="ad-body">
+          <div class="tags">
+            <span class="tag stage-mid">● Warm · Solution Aware</span>
+            <span class="tag pain">Pain: The Tax-and-Penalty Trap</span>
+          </div>
+          <h3 class="concept-name">"The Penalty That Isn't There"</h3>
+          <div class="copy-block">
+            <div class="copy-row">
+              <p class="copy-label">Ad Copy</p>
+              <p class="copy-text">The moment you wonder whether you could move some retirement savings into gold, a second voice says you will get buried in taxes and a 10% penalty, so you let it go. Here is what that voice leaves out: done as a direct transfer, the move triggers no taxes and no penalties at all. At our free live training we walk through the right way, step by step, so a fear of getting it wrong never costs you the chance to protect what you built. Save your seat.</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Headline</p>
+              <p class="copy-text headline">No, Moving It Will Not Cost a Penalty</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Link Description</p>
+              <p class="copy-text">You're invited to a free live training. Save your seat.</p>
+            </div>
+            <div class="copy-row pain-row">
+              <p class="copy-label">Pain</p>
+              <p class="copy-text pain">Fear of a large tax bill and a 10% early-withdrawal penalty freezes people before they even ask. This ad defuses the fear and invites them to learn the penalty-free direct-transfer method.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── AD 04 ── -->
+      <article class="ad-card">
+        <div class="ad-visual">
+          <div class="ad-img-frame">
+            <img src="images/04-complexity-paralysis.png" alt="Man overwhelmed by retirement account paperwork at his desk">
+          </div>
+          <a class="save-btn" href="images/04-complexity-paralysis.png" download="cedar-gold-group-ad-04-complexity-paralysis.png">↓ Save Image</a>
+        </div>
+        <div class="ad-body">
+          <div class="tags">
+            <span class="tag stage-mid">● Warm · Solution Aware</span>
+            <span class="tag pain">Pain: Complexity Paralysis</span>
+          </div>
+          <h3 class="concept-name">"It Was Never Your Job to Figure Out"</h3>
+          <div class="copy-block">
+            <div class="copy-row">
+              <p class="copy-label">Ad Copy</p>
+              <p class="copy-text">Custodians, depositories, transfer forms, IRS purity rules. The moment you look into moving retirement savings into gold, it can feel like a project you do not have the time or the expertise to get right, so it stays on the someday list. It does not have to be your job to figure out. At our free live training we show you how the entire process is handled for you, paperwork and all, in plain English. Reserve your seat and see how simple it actually is.</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Headline</p>
+              <p class="copy-text headline">You Should Not Have to Figure This Out Alone</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Link Description</p>
+              <p class="copy-text">Free live training. We make it simple. Reserve your seat.</p>
+            </div>
+            <div class="copy-row pain-row">
+              <p class="copy-label">Pain</p>
+              <p class="copy-text pain">The process sounds complex (custodians, depositories, paperwork) and people fear making a costly mistake, so they delay indefinitely. This ad promises a done-for-you path and invites them to see it.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── AD 05 ── -->
+      <article class="ad-card">
+        <div class="ad-visual">
+          <div class="ad-img-frame">
+            <img src="images/05-dealer-distrust.png" alt="Skeptical man on the phone, wary of a pushy gold sales call">
+          </div>
+          <a class="save-btn" href="images/05-dealer-distrust.png" download="cedar-gold-group-ad-05-dealer-distrust.png">↓ Save Image</a>
+        </div>
+        <div class="ad-body">
+          <div class="tags">
+            <span class="tag stage-edu">● Warm · Most Aware</span>
+            <span class="tag pain">Pain: Who Can I Trust</span>
+          </div>
+          <h3 class="concept-name">"Educated, Never Sold"</h3>
+          <div class="copy-block">
+            <div class="copy-row">
+              <p class="copy-label">Ad Copy</p>
+              <p class="copy-text">You do not doubt gold. You doubt the people selling it: the fear-based late-night ads, the salesman who calls three times a week, the markup buried where you cannot see it. Being careful with your retirement is the right instinct. Our free live training is the opposite of a sales pitch: we teach first, show every cost up front, and let you decide on your own timeline. Save your seat and learn from a team that 2,500+ families across all 50 states already trust.</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Headline</p>
+              <p class="copy-text headline">Educated First. Never Pressured.</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Link Description</p>
+              <p class="copy-text">A no-pressure live training. Save your seat.</p>
+            </div>
+            <div class="copy-row pain-row">
+              <p class="copy-label">Pain</p>
+              <p class="copy-text pain">This audience distrusts gold dealers (hidden markups, high-pressure tactics, weak buyback) and does not know who to trust. This ad leads with education-first, no-pressure positioning and real social proof.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ─────────── STRATEGY / EXPERTISE ─────────── -->
+  <section class="export-section">
+    <div class="section-head">
+      <h2>The Thinking Behind These Creatives</h2>
+      <span class="count">Our Approach</span>
+    </div>
+    <p class="deck" style="margin-bottom:36px;">We don't point one ad at everyone and hope. Each creative is built for a different slice of your market, sorted by how aware that person already is of the opportunity, so the message meets them exactly where they are. Here is how the five fit together.</p>
+    <div class="export-grid">
+      <div class="panel">
+        <h3>Reaching Your Whole Market</h3>
+        <div class="target-grid">
+          <div class="target-card cold">
+            <p class="t-stage">Problem Unaware</p>
+            <p class="t-body">Savers who feel uneasy about the market but have never heard that retirement money can move into gold at all. <strong>Ad 01, The Door That Was Always Open</strong> makes the hidden possibility concrete and gets them to look.</p>
+          </div>
+          <div class="target-card consid">
+            <p class="t-stage">Problem Aware</p>
+            <p class="t-body">Savers who already fear a crash or inflation eroding what they built. <strong>Ad 02, When Paper Falls</strong> names the fragility of an all-paper nest egg and the pull toward something tangible.</p>
+          </div>
+          <div class="target-card mid">
+            <p class="t-stage">Solution Aware</p>
+            <p class="t-body">Savers who like the idea but are stuck on an objection. <strong>Ad 03, The Penalty That Isn't There</strong> removes the tax-and-penalty fear; <strong>Ad 04, It Was Never Your Job</strong> removes the it-sounds-too-complicated fear.</p>
+          </div>
+          <div class="target-card edu">
+            <p class="t-stage">Most Aware</p>
+            <p class="t-body">Savers ready to act but wary of who to trust. <strong>Ad 05, Educated, Never Sold</strong> leads with the education-first posture and the proof (2,500+ families, all 50 states) that separates Cedar from the late-night-ad crowd.</p>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Why One Pain Per Ad</h3>
+        <p>Most agencies run a single, generic ad ("invest in gold") and hope it lands. We build one creative per pain for two reasons. First, a sharp, specific worry stops the right person mid-scroll in a way that a generic gold pitch never will. Second, running all five together tells us which pain actually pulls registrations, so the budget goes behind the proven winner instead of a guess.</p>
+        <h4>Who each ad is built for</h4>
+        <p>The audience stays constant across the set: pre-retirees roughly age 50 to 65 with meaningful savings in a 401(k), IRA, or TSP, most of it sitting in paper assets. What changes is the pain, and therefore which person in that audience each ad pulls forward. Every ad sends to the same registration page for one free live training, so five different worries all funnel into one clean next step.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bottom">
+    Cedar Gold Group · Private Training Ad Pack · Open <code>images/</code> for raw PNG files at 1080x1080.
+  </footer>
+
+</div>
+</body>
+</html>
