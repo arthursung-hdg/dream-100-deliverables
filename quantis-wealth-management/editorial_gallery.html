@@ -13,9 +13,9 @@
     --ink-faint: #94928a;
     --line: #e9e6df;
     --line-soft: #f1efea;
-    --navy: #001a6c;
-    --accent: #e0701c;
-    --accent-deep: #c25e14;
+    --accent: #00186c;
+    --accent-deep: #b45f16;
+    /* Awareness-stage colors */
     --cold: #2e6bf0;
     --cold-bg: #eaf1ff;
     --consid: #0d9488;
@@ -30,70 +30,271 @@
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
-    background: var(--bg); color: var(--ink);
+    background: var(--bg);
+    color: var(--ink);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
   .wrap { max-width: 1240px; margin: 0 auto; padding: 56px 32px 96px; }
-  header.masthead { border-bottom: 1px solid var(--line); padding-bottom: 40px; margin-bottom: 64px; }
+
+  /* ─── HEADER ─── */
+  header.masthead {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 40px;
+    margin-bottom: 64px;
+  }
   .headline-pill {
-    display: inline-block; background: var(--accent); color: #fff; font-size: 12px; font-weight: 700;
-    letter-spacing: 0.06em; text-transform: uppercase; padding: 9px 18px; border-radius: 999px; margin: 0 0 20px;
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 9px 18px;
+    border-radius: 999px;
+    margin: 0 0 20px;
+  }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+    margin: 0 0 16px;
   }
   h1.title {
-    font-family: 'Playfair Display', Georgia, serif; font-size: clamp(36px, 5vw, 64px); line-height: 1.05;
-    font-weight: 700; margin: 0 0 24px; letter-spacing: -0.02em; color: var(--navy);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    font-weight: 700;
+    margin: 0 0 24px;
+    letter-spacing: -0.02em;
   }
   h1.title em { font-style: italic; color: var(--accent); font-weight: 500; }
-  .deck { font-size: 18px; color: var(--ink-soft); max-width: 760px; margin: 0; }
-  .meta-row { display: flex; flex-wrap: wrap; gap: 32px; margin-top: 32px; font-size: 13px; color: var(--ink-soft); }
-  .meta-row span strong { color: var(--ink-faint); font-weight: 600; display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
-  .section-head { display: flex; align-items: baseline; justify-content: space-between; margin: 0 0 32px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
-  .section-head h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 28px; font-weight: 700; margin: 0; letter-spacing: -0.01em; color: var(--navy); }
-  .section-head .count { font-size: 12px; color: var(--ink-faint); letter-spacing: 0.1em; text-transform: uppercase; }
-  .gallery { display: flex; flex-direction: column; gap: 64px; margin-bottom: 96px; }
-  .ad-card { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; display: grid; grid-template-columns: minmax(0, 540px) minmax(0, 1fr); gap: 0; }
-  .ad-visual { padding: 32px; background: var(--line-soft); display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 12px; }
-  .ad-img-frame { width: 100%; aspect-ratio: 1 / 1; background: #ddd; border-radius: 2px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06); }
-  .ad-img-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .save-btn { display: block; width: 100%; padding: 12px 16px; background: var(--navy); color: #fff; text-decoration: none; text-align: center; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; border-radius: 2px; border: 1px solid var(--navy); transition: background 0.15s ease; }
+  .deck {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 720px;
+    margin: 0;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 32px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .meta-row span strong {
+    color: var(--ink);
+    font-weight: 600;
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+    color: var(--ink-faint);
+  }
+
+  /* ─── SECTION ─── */
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 0 0 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-head h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .section-head .count {
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ─── AD CARD ─── */
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    margin-bottom: 96px;
+  }
+  .ad-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: minmax(0, 540px) minmax(0, 1fr);
+    gap: 0;
+  }
+  .ad-visual {
+    padding: 32px;
+    background: var(--line-soft);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  .ad-img-frame {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #ddd;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
+  }
+  .ad-img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .save-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--ink);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    border-radius: 2px;
+    border: 1px solid var(--ink);
+    transition: background 0.15s ease;
+  }
   .save-btn:hover { background: var(--accent); border-color: var(--accent); }
+
   .ad-body { padding: 40px 40px 36px; display: flex; flex-direction: column; gap: 20px; }
   .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
-  .tag { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; padding: 5px 10px; border-radius: 999px; line-height: 1; }
-  .tag.pain { background: var(--line-soft); color: var(--ink); border: 1px solid var(--line); }
+  .tag {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 5px 10px;
+    border-radius: 999px;
+    line-height: 1;
+  }
+  .tag.pain {
+    background: var(--line-soft);
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
   .tag.stage-cold { background: var(--cold-bg); color: var(--cold); }
   .tag.stage-consid { background: var(--consid-bg); color: var(--consid); }
   .tag.stage-mid { background: var(--mid-bg); color: var(--mid); }
   .tag.stage-bottom { background: var(--bottom-bg); color: var(--bottom); }
   .tag.stage-edu { background: var(--edu-bg); color: var(--edu); }
-  .concept-name { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 700; line-height: 1.2; margin: 0; letter-spacing: -0.01em; color: var(--navy); }
+
+  .concept-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
   .copy-block { display: flex; flex-direction: column; gap: 14px; }
-  .copy-row { border-top: 1px solid var(--line); padding-top: 14px; }
+  .copy-row {
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+  }
   .copy-row:first-child { border-top: none; padding-top: 0; }
-  .copy-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-faint); font-weight: 600; margin: 0 0 6px; }
-  .copy-text { font-size: 14.5px; line-height: 1.55; color: var(--ink); margin: 0; }
+  .copy-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-faint);
+    font-weight: 600;
+    margin: 0 0 6px;
+  }
+  .copy-text {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+  }
   .copy-text.headline { font-weight: 600; }
+  .copy-row.pain-row { border-top: 1px solid var(--line); }
   .copy-row.pain-row .copy-label { color: var(--accent-deep); }
   .copy-text.pain { color: var(--ink-soft); font-style: italic; }
-  .export-section { border-top: 2px solid var(--navy); padding-top: 64px; }
-  .export-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; }
-  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 32px; }
-  .panel h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-weight: 700; margin: 0 0 16px; letter-spacing: -0.01em; color: var(--navy); }
-  .panel h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); margin: 24px 0 10px; font-weight: 600; }
+
+  /* ─── EXPORT SECTION ─── */
+  .export-section {
+    border-top: 2px solid var(--ink);
+    padding-top: 64px;
+  }
+  .export-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 32px;
+  }
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 32px;
+  }
+  .panel h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+  }
+  .panel h4 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin: 24px 0 10px;
+    font-weight: 600;
+  }
   .panel h4:first-of-type { margin-top: 0; }
   .panel p, .panel li { font-size: 14px; line-height: 1.6; color: var(--ink-soft); }
   .panel ol, .panel ul { padding-left: 20px; margin: 8px 0; }
   .panel ol li, .panel ul li { margin-bottom: 6px; }
   .panel ol li::marker { color: var(--accent); font-weight: 700; }
-  .target-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 8px; }
-  .target-card { border-left: 3px solid var(--line); padding: 4px 0 4px 14px; }
+  /* targeting cards */
+  .target-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .target-card {
+    border-left: 3px solid var(--line);
+    padding: 4px 0 4px 14px;
+  }
   .target-card.cold { border-color: var(--cold); }
   .target-card.consid { border-color: var(--consid); }
   .target-card.mid { border-color: var(--mid); }
   .target-card.bottom { border-color: var(--bottom); }
   .target-card.edu { border-color: var(--edu); }
-  .target-card .t-stage { font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; margin: 0 0 4px; }
+  .target-card .t-stage {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    margin: 0 0 4px;
+  }
   .target-card.cold .t-stage { color: var(--cold); }
   .target-card.consid .t-stage { color: var(--consid); }
   .target-card.mid .t-stage { color: var(--mid); }
@@ -101,7 +302,17 @@
   .target-card.edu .t-stage { color: var(--edu); }
   .target-card .t-body { font-size: 13.5px; color: var(--ink-soft); margin: 0; line-height: 1.5; }
   .target-card .t-body strong { color: var(--ink); }
-  footer.bottom { margin-top: 96px; padding-top: 32px; border-top: 1px solid var(--line); text-align: center; font-size: 12px; color: var(--ink-faint); }
+
+  footer.bottom {
+    margin-top: 96px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+
+  /* ─── RESPONSIVE ─── */
   @media (max-width: 860px) {
     .wrap { padding: 32px 20px 64px; }
     .ad-card { grid-template-columns: 1fr; }
@@ -119,104 +330,200 @@
 <body>
 <div class="wrap">
 
+  <!-- ─────────── HEADER ─────────── -->
   <header class="masthead">
     <div class="headline-pill">Five pain-driven ads custom designed for Quantis Wealth Management</div>
-    <h1 class="title">Five static creatives,<br><em>one audience, five pains.</em></h1>
-    <p class="deck">A hand-built ad set for the affluent Northern Virginia retiree, each creative anchored to one of the five worries that actually keep this audience up at night: the chaos of uncoordinated advisors, the quiet tax leak, the fear of retiring too soon, the fear of outliving the money, and the legacy that may not hold together. Every ad invites them to one private training. All assets are 1080×1080, Meta-compliant, and ready to upload.</p>
+    <h1 class="title">Five static creatives,<br><em>one private training.</em></h1>
+    <p class="deck">A hand-built ad set where each creative dramatizes one specific worry your Northern Virginia clients carry into retirement, then invites them to a private live training. No product pitch, no hard sell, just the right pain in front of the right person, every ad driving to one registration page. All assets are 1080×1080, Meta-compliant, and ready to upload.</p>
     <div class="meta-row">
       <span><strong>Prepared for</strong>Quantis Wealth Management</span>
-      <span><strong>Audience</strong>Affluent DMV Pre-Retirees (55-70, $2M+)</span>
+      <span><strong>Audience</strong>Northern Virginia Pre-Retirees &amp; Retirees</span>
       <span><strong>Channel</strong>Facebook + Instagram Feed</span>
       <span><strong>Format</strong>1080×1080 Square Static</span>
       <span><strong>Objective</strong>Private Training Registrations</span>
     </div>
   </header>
 
+  <!-- ─────────── GALLERY ─────────── -->
   <section>
-    <div class="section-head"><h2>The Creatives</h2><span class="count">01 → 05</span></div>
+    <div class="section-head">
+      <h2>The Creatives</h2>
+      <span class="count">01 → 05</span>
+    </div>
+
     <div class="gallery">
 
+      <!-- ── AD 01 ── -->
       <article class="ad-card">
         <div class="ad-visual">
-          <div class="ad-img-frame"><img src="images/01-coordination-messenger.png" alt="Affluent man overwhelmed coordinating his own advisors at night"></div>
-          <a class="save-btn" href="images/01-coordination-messenger.png" download="quantis-ad-01-coordination-messenger.png">↓ Save Image</a>
+          <div class="ad-img-frame">
+            <img src="images/01-coordination-messenger.png" alt="Affluent man alone at his desk late at night, forwarding email between his advisor and CPA">
+          </div>
+          <a class="save-btn" href="images/01-coordination-messenger.png" download="quantis-wealth-management-ad-01-coordination-messenger.png">↓ Save Image</a>
         </div>
         <div class="ad-body">
-          <div class="tags"><span class="tag stage-cold">● Cold · Brand Intro</span><span class="tag pain">Pain: Uncoordinated Advisors</span></div>
-          <h3 class="concept-name">"The Lonely Quarterback"</h3>
+          <div class="tags">
+            <span class="tag stage-consid">● Cold · Problem Aware</span>
+            <span class="tag pain">Pain: Playing Messenger</span>
+          </div>
+          <h3 class="concept-name">"The Unpaid Project Manager"</h3>
           <div class="copy-block">
-            <div class="copy-row"><p class="copy-label">Ad Copy</p><p class="copy-text">Your advisor, your CPA, and your estate attorney have never spoken, and you are the one forwarding emails between them. At Quantis, tax and wealth planning live under one roof in Northern Virginia, so nothing falls through the cracks. Focus on enjoying your wealth, not managing its complexity.</p></div>
-            <div class="copy-row"><p class="copy-label">Headline</p><p class="copy-text headline">Stop Being Your Own Financial Quarterback</p></div>
-            <div class="copy-row"><p class="copy-label">Link Description</p><p class="copy-text">You're invited to a private retirement training. Save your seat.</p></div>
-            <div class="copy-row pain-row"><p class="copy-label">Pain</p><p class="copy-text pain">The advisor, CPA, and estate attorney never talk, so the retiree becomes the unpaid middleman and details slip through the cracks.</p></div>
+            <div class="copy-row">
+              <p class="copy-label">Ad Copy</p>
+              <p class="copy-text">It is 9pm and you are forwarding another email between your financial advisor and your CPA, retyping what one said so the other will understand. You are the only person who sees your whole financial picture, and you were never meant to be. We are hosting a private live training for Northern Virginia families who are done being the go-between for their own money.</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Headline</p>
+              <p class="copy-text headline">Stop Being The Go-Between</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Link Description</p>
+              <p class="copy-text">You're invited to a private live training. Save your seat.</p>
+            </div>
+            <div class="copy-row pain-row">
+              <p class="copy-label">Pain</p>
+              <p class="copy-text pain">Their advisor, CPA, and estate attorney never talk to each other, so the client is left stitching it all together, and things fall through the seams between them.</p>
+            </div>
           </div>
         </div>
       </article>
 
+      <!-- ── AD 02 ── -->
       <article class="ad-card">
         <div class="ad-visual">
-          <div class="ad-img-frame"><img src="images/02-tax-drag.png" alt="Tax documents, Social Security statement and calculator on a desk"></div>
-          <a class="save-btn" href="images/02-tax-drag.png" download="quantis-ad-02-tax-drag.png">↓ Save Image</a>
+          <div class="ad-img-frame">
+            <img src="images/02-tax-leak.png" alt="Woman at her kitchen table reviewing tax documents with a worried expression">
+          </div>
+          <a class="save-btn" href="images/02-tax-leak.png" download="quantis-wealth-management-ad-02-tax-leak.png">↓ Save Image</a>
         </div>
         <div class="ad-body">
-          <div class="tags"><span class="tag stage-consid">● Consideration · Problem Aware</span><span class="tag pain">Pain: Tax Drag</span></div>
-          <h3 class="concept-name">"The Silent Leak"</h3>
+          <div class="tags">
+            <span class="tag stage-cold">● Cold · Problem Unaware</span>
+            <span class="tag pain">Pain: The Silent Tax Leak</span>
+          </div>
+          <h3 class="concept-name">"The Silent Tax Leak"</h3>
           <div class="copy-block">
-            <div class="copy-row"><p class="copy-label">Ad Copy</p><p class="copy-text">Poorly coordinated withdrawals, missed Roth windows, and surprise Medicare premiums quietly cost retirees more tax than they ever need to pay. Quantis coordinates your withdrawals, RMDs, and Social Security timing as one plan, so you keep more of what you spent a lifetime building.</p></div>
-            <div class="copy-row"><p class="copy-label">Headline</p><p class="copy-text headline">The Biggest Leak In Your Retirement</p></div>
-            <div class="copy-row"><p class="copy-label">Link Description</p><p class="copy-text">A private training for retirees. Reserve your spot.</p></div>
-            <div class="copy-row pain-row"><p class="copy-label">Pain</p><p class="copy-text pain">Uncoordinated withdrawals and missed tax windows quietly drain money the retiree never needed to lose.</p></div>
+            <div class="copy-row">
+              <p class="copy-label">Ad Copy</p>
+              <p class="copy-text">You pulled from the wrong account in the wrong order, and months later you learn it pushed you into a higher bracket and raised next year's Medicare premiums. Poorly coordinated withdrawals are the largest controllable leak in most retirement plans, and most people never see it happening. Join a private live training on keeping more of what you have already earned.</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Headline</p>
+              <p class="copy-text headline">The Retirement Leak You Can't See</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Link Description</p>
+              <p class="copy-text">A private live training for near-retirees. Reserve your seat.</p>
+            </div>
+            <div class="copy-row pain-row">
+              <p class="copy-label">Pain</p>
+              <p class="copy-text pain">Uncoordinated withdrawals, Roth timing, and Social Security decisions quietly drain tax dollars every year, an invisible cost no one is actively managing.</p>
+            </div>
           </div>
         </div>
       </article>
 
+      <!-- ── AD 03 ── -->
       <article class="ad-card">
         <div class="ad-visual">
-          <div class="ad-img-frame"><img src="images/03-afford-retire.png" alt="Couple gazing out a window, uncertain about retirement"></div>
-          <a class="save-btn" href="images/03-afford-retire.png" download="quantis-ad-03-afford-retire.png">↓ Save Image</a>
+          <div class="ad-img-frame">
+            <img src="images/03-afford-retire.png" alt="Affluent couple looking out a large window of their home, contemplative and uncertain">
+          </div>
+          <a class="save-btn" href="images/03-afford-retire.png" download="quantis-wealth-management-ad-03-afford-retire.png">↓ Save Image</a>
         </div>
         <div class="ad-body">
-          <div class="tags"><span class="tag stage-mid">● Mid-Funnel · Core Desire</span><span class="tag pain">Pain: Can I Afford To Retire</span></div>
-          <h3 class="concept-name">"Permission To Retire"</h3>
+          <div class="tags">
+            <span class="tag stage-consid">● Cold · Problem Aware</span>
+            <span class="tag pain">Pain: Can We Actually Retire</span>
+          </div>
+          <h3 class="concept-name">"Enough On Paper"</h3>
           <div class="copy-block">
-            <div class="copy-row"><p class="copy-label">Ad Copy</p><p class="copy-text">You have done well, yet you still cannot answer the only question that matters: can we retire now, travel, and never run out? Quantis replaces guesswork with a real retirement model. One couple we planned for were able to retire two years ahead of schedule.</p></div>
-            <div class="copy-row"><p class="copy-label">Headline</p><p class="copy-text headline">Can You Actually Afford To Retire?</p></div>
-            <div class="copy-row"><p class="copy-label">Link Description</p><p class="copy-text">Join the live training. Save your seat.</p></div>
-            <div class="copy-row pain-row"><p class="copy-label">Pain</p><p class="copy-text pain">Despite real savings, they can't get a confident answer to the one question that matters: can we retire now and not run out?</p></div>
+            <div class="copy-row">
+              <p class="copy-label">Ad Copy</p>
+              <p class="copy-text">You have more than enough on paper and still cannot answer the one question that matters: can we actually retire, and spend on the travel and the second home, without running out? When the plan is built on guesswork, the number you are trusting is wrong in ways you cannot see. This private live training replaces the guessing with a real answer.</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Headline</p>
+              <p class="copy-text headline">Can You Actually Afford To Retire?</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Link Description</p>
+              <p class="copy-text">You're invited to a private live training. Save your seat.</p>
+            </div>
+            <div class="copy-row pain-row">
+              <p class="copy-label">Pain</p>
+              <p class="copy-text pain">They have the assets but no reliable model, so they cannot tell whether they can retire now, and they lose years to over-saving and under-living.</p>
+            </div>
           </div>
         </div>
       </article>
 
+      <!-- ── AD 04 ── -->
       <article class="ad-card">
         <div class="ad-visual">
-          <div class="ad-img-frame"><img src="images/04-outliving-fear.png" alt="Man awake at night worried about the market and outliving his money"></div>
-          <a class="save-btn" href="images/04-outliving-fear.png" download="quantis-ad-04-outliving-fear.png">↓ Save Image</a>
+          <div class="ad-img-frame">
+            <img src="images/04-outliving-fear.png" alt="Man at a dark window at night, a declining market chart reflected in the glass">
+          </div>
+          <a class="save-btn" href="images/04-outliving-fear.png" download="quantis-wealth-management-ad-04-outliving-fear.png">↓ Save Image</a>
         </div>
         <div class="ad-body">
-          <div class="tags"><span class="tag stage-bottom">● Bottom-Funnel · Urgency</span><span class="tag pain">Pain: Outliving The Money</span></div>
+          <div class="tags">
+            <span class="tag stage-mid">● Warm · Solution Aware</span>
+            <span class="tag pain">Pain: Outliving The Money</span>
+          </div>
           <h3 class="concept-name">"The 4am Question"</h3>
           <div class="copy-block">
-            <div class="copy-row"><p class="copy-label">Ad Copy</p><p class="copy-text">If a bad market early in retirement keeps you up at 4am, you do not have an income plan, you have a hope. Quantis builds a withdrawal strategy that flexes with the market, so a down year becomes a managed event instead of a threat to the next thirty.</p></div>
-            <div class="copy-row"><p class="copy-label">Headline</p><p class="copy-text headline">Will Your Money Outlast You?</p></div>
-            <div class="copy-row"><p class="copy-label">Link Description</p><p class="copy-text">You're invited to the live session. Reserve a spot.</p></div>
-            <div class="copy-row pain-row"><p class="copy-label">Pain</p><p class="copy-text pain">A downturn early in retirement could unravel the plan; they have a pile of money but no income strategy that survives a bad market.</p></div>
+            <div class="copy-row">
+              <p class="copy-label">Ad Copy</p>
+              <p class="copy-text">A down quarter hits and the old fear returns: what if a bad decade early in retirement drains the accounts while you still have thirty years to live? Without an income plan that flexes with the market, every dip feels like a threat instead of a managed event. Join a private live training on building retirement income designed to last.</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Headline</p>
+              <p class="copy-text headline">Will Your Money Outlast You?</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Link Description</p>
+              <p class="copy-text">A private live training on retirement income. Save a seat.</p>
+            </div>
+            <div class="copy-row pain-row">
+              <p class="copy-label">Pain</p>
+              <p class="copy-text pain">With no withdrawal plan that adapts to the market, a bad early stretch can trigger fear-driven moves that lock in losses and threaten the whole retirement.</p>
+            </div>
           </div>
         </div>
       </article>
 
+      <!-- ── AD 05 ── -->
       <article class="ad-card">
         <div class="ad-visual">
-          <div class="ad-img-frame"><img src="images/05-legacy.png" alt="Warm multigenerational family on a porch at golden hour"></div>
-          <a class="save-btn" href="images/05-legacy.png" download="quantis-ad-05-legacy.png">↓ Save Image</a>
+          <div class="ad-img-frame">
+            <img src="images/05-legacy.png" alt="Older couple reviewing estate and trust documents together at their dining table">
+          </div>
+          <a class="save-btn" href="images/05-legacy.png" download="quantis-wealth-management-ad-05-legacy.png">↓ Save Image</a>
         </div>
         <div class="ad-body">
-          <div class="tags"><span class="tag stage-edu">● Education · Trust Builder</span><span class="tag pain">Pain: Legacy That Holds Together</span></div>
-          <h3 class="concept-name">"Leave A Legacy, Not A Mess"</h3>
+          <div class="tags">
+            <span class="tag stage-edu">● Warm · Solution Aware</span>
+            <span class="tag pain">Pain: Legacy At Risk</span>
+          </div>
+          <h3 class="concept-name">"A Legacy, Not A Mess"</h3>
           <div class="copy-block">
-            <div class="copy-row"><p class="copy-label">Ad Copy</p><p class="copy-text">Does your trust actually agree with how your portfolio is invested, or will your children inherit a tax bill and a tangle? Quantis aligns your estate plan, your investments, and your taxes so what you leave behind reaches the people and the causes you choose.</p></div>
-            <div class="copy-row"><p class="copy-label">Headline</p><p class="copy-text headline">Leave A Legacy, Not A Mess</p></div>
-            <div class="copy-row"><p class="copy-label">Link Description</p><p class="copy-text">A private retirement training. Save your seat.</p></div>
-            <div class="copy-row pain-row"><p class="copy-label">Pain</p><p class="copy-text pain">Estate documents, investments, and taxes don't agree, risking a tax bill and a tangle the children inherit.</p></div>
+            <div class="copy-row">
+              <p class="copy-label">Ad Copy</p>
+              <p class="copy-text">You want to leave something meaningful to your kids and a cause you love. But you cannot tell whether your trust, your accounts, and your tax plan actually agree with each other, or whether they quietly contradict. Left unchecked, that gap becomes a tax bill and a mess instead of a legacy. This private live training shows how the pieces are meant to fit together.</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Headline</p>
+              <p class="copy-text headline">Leave A Legacy, Not A Mess</p>
+            </div>
+            <div class="copy-row">
+              <p class="copy-label">Link Description</p>
+              <p class="copy-text">You're invited to a private live training. Save your seat.</p>
+            </div>
+            <div class="copy-row pain-row">
+              <p class="copy-label">Pain</p>
+              <p class="copy-text pain">Trust, accounts, and tax plan may silently conflict, so heirs receive far less than intended and inherit a mess instead of a legacy.</p>
+            </div>
           </div>
         </div>
       </article>
@@ -224,23 +531,36 @@
     </div>
   </section>
 
+  <!-- ─────────── STRATEGY / EXPERTISE (not a setup guide) ─────────── -->
   <section class="export-section">
-    <div class="section-head"><h2>The Thinking Behind These Creatives</h2><span class="count">Our Approach</span></div>
+    <div class="section-head">
+      <h2>The Thinking Behind These Creatives</h2>
+      <span class="count">Our Approach</span>
+    </div>
     <p class="deck" style="margin-bottom:36px;">We don't point one ad at everyone and hope. Each creative is built for a different slice of your market, sorted by how aware that person already is of the problem, so the message meets them exactly where they are. Here is how the five fit together.</p>
     <div class="export-grid">
       <div class="panel">
         <h3>Reaching Your Whole Market</h3>
         <div class="target-grid">
-          <div class="target-card cold"><p class="t-stage">Problem Unaware</p><p class="t-body">Affluent retirees who feel scattered and worn down by their own finances but have never named the cause. <strong>Ad 01, The Lonely Quarterback</strong> shows them the problem: they have quietly become the middleman between advisors who never talk.</p></div>
-          <div class="target-card consid"><p class="t-stage">Problem Aware</p><p class="t-body">Retirees already worried about a specific threat to their plan. <strong>Ad 02, The Silent Leak</strong> names the tax drain; <strong>Ad 03, Permission To Retire</strong> names the "can we actually retire" fear; <strong>Ad 04, The 4am Question</strong> names the fear of outliving the money.</p></div>
-          <div class="target-card mid"><p class="t-stage">Solution Aware</p><p class="t-body">Retirees who know they need a real plan and are thinking about how to lock it in. <strong>Ad 05, Leave A Legacy</strong> reaches those focused on what they pass on, and on getting the estate, taxes, and investments to finally agree.</p></div>
+          <div class="target-card cold">
+            <p class="t-stage">Problem Unaware</p>
+            <p class="t-body">Affluent households who feel vaguely uneasy but have not named the leak. <strong>Ad 02, The Silent Tax Leak</strong> makes the invisible cost of uncoordinated withdrawals concrete and gets them to look.</p>
+          </div>
+          <div class="target-card consid">
+            <p class="t-stage">Problem Aware</p>
+            <p class="t-body">People already living the frustration. <strong>Ad 01, The Unpaid Project Manager</strong> speaks to those tired of relaying messages between their advisor and CPA; <strong>Ad 03, Enough On Paper</strong> speaks to those who cannot tell if they can truly afford to retire.</p>
+          </div>
+          <div class="target-card mid">
+            <p class="t-stage">Solution Aware</p>
+            <p class="t-body">People ready to act and weighing how. <strong>Ad 04, The 4am Question</strong> reaches those afraid of outliving their money in a shaky market; <strong>Ad 05, A Legacy, Not A Mess</strong> reaches those who want their estate and tax plan to finally agree.</p>
+          </div>
         </div>
       </div>
       <div class="panel">
         <h3>Why One Pain Per Ad</h3>
-        <p>Most agencies run a single, generic ad and hope it lands. We build one creative per pain for two reasons. First, a sharp, specific worry stops the right person mid-scroll in a way that "we do retirement planning" never will. Second, running all five together tells us which pain actually pulls registrations, so we put the budget behind the winner instead of guessing.</p>
+        <p>Most firms run a single, generic ad and hope it lands. We build one creative per pain for two reasons. First, a sharp, specific worry stops the right person mid-scroll in a way that "integrated wealth and tax planning" never will. Second, running all five together tells us which pain actually pulls registrations, so the budget goes behind the winner instead of a guess.</p>
         <h4>Who each ad is built for</h4>
-        <p>The audience stays constant across the set (affluent Northern Virginia pre-retirees and retirees, roughly ages 55 to 70 with $2M or more). What changes is the pain, and therefore which person in that audience each ad pulls forward. That is what a coordinated funnel looks like before a single dollar goes to ad management.</p>
+        <p>The audience stays constant across the set: affluent Northern Virginia and greater DC households within roughly 5 to 10 years of retirement, typically $2M and up in investable assets, often former executives or business owners making the decision as a couple. What changes is the pain, and therefore which person in that audience each ad pulls forward. That is what a coordinated funnel looks like before a single dollar goes to ad management.</p>
       </div>
     </div>
   </section>
