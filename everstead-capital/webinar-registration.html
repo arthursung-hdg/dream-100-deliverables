@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+  ============================================================================
+  DREAM 100 · PHASE 3 · WEBINAR REGISTRATION PAGE (TEMPLATE)
+  ============================================================================
+  Doctrine: LESS IS MORE. A simple, linear, single-column page that packs value
+  through simplicity, not complexity. No flashy visuals, no dense columns.
+
+  Section order (locked): 1 Hero -> 2 What You'll Learn -> 3 Meet Your Presenters
+  -> 4 Who This Is For -> 5 Registration Form. Every section 1-4 ends with a CTA
+  button that scrolls down to the form (#register).
+
+  PLACEHOLDERS: every client-specific value is a [bracketed placeholder], shown in
+  orange (.ph). Swap them per client. Sources are noted in comments:
+    - 03-webinar-angle.md  -> headline/promise (point B), the "What You'll Learn" curriculum, CTAs
+    - 01-audience-and-pains.md -> brand hex, the pains (Who This Is For), the specialist/host, proof
+  Do NOT hardcode a specific client here. Keep this file generic.
+  ============================================================================
+-->
+<title>Everstead Capital · Private Live Training · Registration</title>
+<meta name="description" content="A private online training for retirees and near-retirees: the process to know exactly how much you can safely spend each year, without fear of running out.">
+
+<!-- ======================= META PIXEL (base — PageView only) =======================
+     Retargeting + funnel visibility (build an audience of everyone who hit this page).
+     SINGLE SOURCE: the Phase 3 skill injects the client's Pixel ID — the SAME
+     [META_PIXEL_ID] used on all four funnel pages. The conversion "Lead" event fires
+     ONLY on the two thank-you pages, never here. -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '[META_PIXEL_ID]');   /* <- skill injects the client's Pixel ID */
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=[META_PIXEL_ID]&ev=PageView&noscript=1"/></noscript>
+<!-- ===================== END META PIXEL ===================== -->
+
+<style>
+  :root{
+    /* THEME — Everstead Capital: deep navy primary + terracotta accent (pixel-sampled from logo).
+       Sampled accent #DDAC8A is a light tan; deepened to #a66a38 so buttons/links stay legible
+       with white text, with the tan kept as --accent-soft. All four funnel pages share this block. */
+    --brand:#0a1f44; --brand-deep:#06132e; --brand-soft:#24386a;
+    --accent:#a66a38; --accent-soft:#ddac8a; --accent-deep:#834f27;
+    --brand-rgb:10,31,68; --accent-rgb:166,106,56;
+    /* NEUTRALS — warm ivory ground; kept across prospects */
+    --bg:#f4efe6; --surface:#ffffff; --ink:#1a1a1a; --ink-soft:#59554c; --ink-faint:#8a8578;
+    --line:#d8d0bd; --line-soft:#eae3d3; --green:#1f9d52; --red:#d92d20; --band:#f1e5d8;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;letter-spacing:-0.015em;line-height:1.14;margin:0;}
+  a{color:inherit;}
+  p{margin:0;}
+
+  /* single narrow column keeps the whole page linear + readable */
+  .wrap{max-width:780px;margin:0 auto;padding:0 24px;}
+  .ph{color:var(--accent-deep);background:rgba(var(--accent-rgb),0.09);border-bottom:1px dashed var(--accent);padding:0 3px;border-radius:2px;font-style:normal;}
+  .hero .ph,.final .ph{color:var(--accent-soft);border-bottom-color:var(--accent-soft);background:rgba(255,255,255,0.07);}
+
+  .eyebrow{display:block;width:fit-content;margin:0 auto 20px;font-size:12px;letter-spacing:0.16em;
+    text-transform:uppercase;color:var(--accent-deep);font-weight:700;
+    background:rgba(var(--accent-rgb),0.10);padding:7px 16px;border-radius:999px;}
+  .section-title{font-size:clamp(27px,4vw,38px);font-weight:700;text-align:center;color:var(--brand);margin:0 auto;}
+  .hl{color:var(--accent);}
+  .section-intro{font-size:17px;color:var(--ink-soft);text-align:center;max-width:620px;margin:16px auto 0;}
+
+  /* the one reusable CTA button (sections 1-4 scroll to the form) */
+  .cta-btn{display:block;width:fit-content;margin:36px auto 0;background:var(--accent);color:#fff;
+    font-weight:700;font-size:17px;letter-spacing:0.01em;text-decoration:none;
+    padding:15px 40px;border-radius:10px;transition:background .15s ease,transform .05s ease;}
+  .cta-btn:hover{background:var(--accent-deep);}
+  .cta-btn:active{transform:translateY(1px);}
+
+  /* brand (footer) */
+  .brand{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:0.12em;font-size:17px;text-transform:uppercase;}
+  .brand small{display:block;font-family:'Inter',sans-serif;font-weight:400;letter-spacing:0.22em;font-size:9px;color:var(--accent-soft);margin-top:2px;}
+
+  /* 1. HERO */
+  .hero{background:linear-gradient(180deg,var(--brand) 0%,var(--brand-deep) 100%);color:#fff;
+    padding:64px 0 74px;text-align:center;}
+  .hero .wrap{max-width:1020px;}
+  .hero .eyebrow{color:var(--accent-soft);background:rgba(255,255,255,0.06);}
+  .hero h1{font-size:clamp(38px,5.8vw,60px);font-weight:800;color:#fff;max-width:970px;margin:0 auto;}
+  .hero h1 em{font-style:italic;color:var(--accent-soft);font-weight:500;}
+  .hero .lede{font-size:21px;color:#d8dce6;margin:24px auto 0;max-width:760px;}
+  .when{font-size:18px;color:#eef0f4;font-weight:600;margin:32px 0 0;}
+  .cd-label{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-soft);margin:26px 0 10px;}
+  .countdown{display:flex;gap:10px;justify-content:center;margin:0;}
+  .cd-box{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.16);border-radius:10px;padding:10px 0;text-align:center;min-width:70px;}
+  .cd-box b{display:block;font-family:'Playfair Display',serif;font-size:30px;color:#fff;line-height:1;}
+  .cd-box span{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-soft);}
+  .hero .cta-btn{margin-top:34px;}
+
+  /* generic section shell */
+  section.block{padding:72px 0;}
+
+  /* 2. WHAT YOU'LL LEARN — a simple vertical stack of cards (no grid columns) */
+  .learn{background:var(--surface);border-bottom:1px solid var(--line);}
+  .learn-list{display:flex;flex-direction:column;gap:16px;margin:44px auto 0;}
+  .learn-item{display:grid;grid-template-columns:52px 1fr;gap:22px;align-items:start;
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 26px;}
+  .learn-item .no{width:52px;height:52px;border-radius:12px;background:var(--brand);color:var(--accent-soft);
+    font-family:'Playfair Display',serif;font-size:22px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+  .learn-item h3{font-size:20px;color:var(--brand);margin-bottom:6px;line-height:1.2;}
+  .learn-item p{font-size:15.5px;color:var(--ink-soft);}
+
+  /* 3. MEET YOUR PRESENTERS — specialist leads, host second */
+  .hosts{background:var(--bg);}
+  .host-list{display:flex;flex-direction:column;gap:20px;max-width:680px;margin:44px auto 0;}
+  .host{display:grid;grid-template-columns:112px 1fr;gap:26px;align-items:center;
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 30px;text-align:left;}
+  .host.lead{border:1px solid var(--accent-soft);box-shadow:0 2px 4px rgba(0,0,0,0.03);}
+  .host-photo{width:112px;height:112px;border-radius:50%;flex:none;background:var(--line-soft);overflow:hidden;
+    display:flex;align-items:center;justify-content:center;color:var(--ink-faint);font-size:11px;text-align:center;padding:6px;}
+  .host-photo img{width:100%;height:100%;object-fit:cover;border-radius:50%;padding:0;}
+  .host .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+    color:#fff;background:var(--accent);padding:5px 11px;border-radius:999px;margin-bottom:10px;}
+  .host.second .tag{color:var(--brand);background:rgba(var(--brand-rgb),0.08);}
+  .host h3{font-size:21px;margin:0 0 2px;color:var(--brand);}
+  .host .role{color:var(--accent-deep);font-weight:600;font-size:13.5px;margin:0;}
+  .host p.bio{font-size:15px;color:var(--ink-soft);margin:10px 0 0;}
+
+  /* 4. WHO THIS IS FOR — stacked for/not-for blocks (push-pull) */
+  .whofor{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .who-list{display:flex;flex-direction:column;gap:20px;max-width:680px;margin:44px auto 0;}
+  .who-col{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 30px;}
+  .who-col.yes{border-top:4px solid var(--green);}
+  .who-col.no{border:1px solid #f4cfcb;border-top:4px solid var(--red);background:#fff7f6;}
+  .who-col h3{font-size:20px;color:var(--brand);margin-bottom:18px;}
+  .who-col.no h3{color:#c0211a;}
+  .who-col ul{list-style:none;margin:0;padding:0;}
+  .who-col li{display:flex;gap:12px;align-items:flex-start;font-size:16px;color:var(--ink-soft);margin-bottom:14px;line-height:1.5;}
+  .who-col li:last-child{margin-bottom:0;}
+  .who-col.no li{color:#8a3b35;}
+  .who-col li .mk{flex:none;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:2px;}
+  .who-col.yes .mk{background:#eaf7ee;color:var(--green);}
+  .who-col.no .mk{background:var(--red);color:#fff;}
+
+  /* 5. REGISTRATION FORM */
+  .final{background:linear-gradient(180deg,var(--brand) 0%,var(--brand-deep) 100%);color:#fff;text-align:center;}
+  .final .eyebrow{color:var(--accent-soft);background:rgba(255,255,255,0.06);}
+  .final .section-title{color:#fff;}
+  .final .section-intro{color:#d0d5e2;}
+  .final .when{color:#eef0f4;margin:22px 0 0;}
+  .signup{background:var(--surface);color:var(--ink);border-radius:14px;box-shadow:0 24px 60px rgba(0,8,40,0.34);
+    padding:32px 30px;border-top:5px solid var(--accent);max-width:460px;margin:36px auto 0;text-align:left;}
+  .field{margin-bottom:14px;}
+  .field label{display:block;font-size:12px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:6px;}
+  .field input{width:100%;padding:13px 14px;font-size:16px;border:1px solid var(--line);border-radius:8px;background:#fcfcfb;font-family:inherit;color:var(--ink);}
+  .field input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(var(--accent-rgb),0.18);}
+  .btn{display:block;width:100%;border:none;cursor:pointer;font-family:inherit;background:var(--accent);color:#fff;
+    font-size:17px;font-weight:700;letter-spacing:0.02em;padding:15px 18px;border-radius:8px;transition:background .15s ease,transform .05s ease;margin-top:4px;}
+  .btn:hover{background:var(--accent-deep);}
+  .btn:active{transform:translateY(1px);}
+  .fineprint{font-size:12px;color:var(--ink-faint);text-align:center;margin:12px 0 0;}
+  .confirm{display:none;text-align:center;padding:18px 4px;}
+  .confirm .check{width:56px;height:56px;border-radius:50%;background:#eaf7ee;color:var(--green);display:flex;align-items:center;justify-content:center;font-size:30px;margin:0 auto 14px;}
+  .confirm h3{font-size:22px;margin-bottom:8px;color:var(--brand);}
+  .confirm p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+
+  /* footer */
+  footer.site{background:var(--brand-deep);color:#aeb5c8;font-size:13px;padding:44px 0 52px;}
+  footer.site .wrap{display:flex;flex-direction:column;gap:16px;}
+  footer.site .brand{color:#fff;}
+  .disclaimer{font-size:11.5px;line-height:1.6;color:#7e86a0;border-top:1px solid var(--brand-soft);padding-top:18px;}
+
+  @media(max-width:720px){
+    .learn-item{grid-template-columns:1fr;gap:14px;}
+    .host{grid-template-columns:1fr;text-align:center;}
+    .host-photo{margin:0 auto;}
+    section.block{padding:56px 0;}
+    .countdown{flex-wrap:wrap;}
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,800;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============ 1. HERO ============ -->
+  <!-- HEADLINE (rigid format): the Phase 3 skill picks ONE of these 4 approved formats and fills it.
+       The template only holds the placeholder; content is decided in reasoning, not here.
+         1. The process we use to help [Target Audience] [achieve the core desired outcome] from [current state]
+         2. How [Target Audience] went from [current state] to [core desired outcome] in [timeframe]
+         3. Learn how to [achieve the core desired outcome] in [timeframe]
+         4. The process to [achieve the core desired outcome] without [objection people don't want to do]
+       Below is a format-1 example showing intended length/weight; the skill replaces it wholesale. -->
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">An Exclusive Live Training · By Invitation</span>
+      <h1>The Process We Use to Help Retirees <em>Know Exactly How Much They Can Safely Spend Each Year</em>, Without Fear of Running Out</h1>
+      <p class="lede">Learn how to spend on the trips and the grandkids without the guilt, draw down your savings without overpaying the IRS, and turn your nest egg into a paycheck that lasts for life.</p>
+      <p class="when">📅 Thursday, July 23 &nbsp;·&nbsp; 🕣 8:30 PM EST &nbsp;·&nbsp; 💻 Live Online</p>
+
+      <!-- No countdown timer: Everstead's research mandates NO scarcity/urgency (compliance + hype-averse audience). -->
+      <a href="#register" class="cta-btn">Reserve My Seat →</a>
+    </div>
+  </header>
+
+  <!-- ============ 2. WHAT YOU'LL LEARN ============ -->
+  <!-- The webinar content = 3 to 5 progressive STEPS the training teaches (each step builds on the last).
+       Each card = a step: a bold headline (the specific thing taught in that step) + a takeaway line (the benefit).
+       The steps + copy are generated in the Phase 3 skill from 03-webinar-angle.md's curriculum and injected here.
+       The template only holds placeholders; keep 3 to 5 cards. -->
+  <section class="block learn">
+    <div class="wrap">
+      <span class="eyebrow">What You'll Learn</span>
+      <h2 class="section-title">What You'll Learn Inside this <span class="hl">LIVE</span> Training:</h2>
+      <div class="learn-list">
+        <div class="learn-item">
+          <div class="no">1</div>
+          <div><h3>Why "plan to 85" is the quiet mistake that shrinks your number</h3><p>So your money is measured against how long you'll actually live, not a horizon that leaves you thin at 82.</p></div>
+        </div>
+        <div class="learn-item">
+          <div class="no">2</div>
+          <div><h3>The "fragile decade" around your retirement date, where one bad year can permanently lower what you can spend</h3><p>So a downturn at the wrong moment can't quietly cut your income for the rest of your life.</p></div>
+        </div>
+        <div class="learn-item">
+          <div class="no">3</div>
+          <div><h3>Why the number on your statement isn't your spendable number, and the withdrawal order that keeps more of it yours</h3><p>So you stop handing the IRS thousands you never needed to lose on the way out.</p></div>
+        </div>
+        <div class="learn-item">
+          <div class="no">4</div>
+          <div><h3>How to turn your savings into one coordinated paycheck, and finally get the permission to spend it</h3><p>So you can book the trip and help the grandkids, knowing the exact number that still lasts as long as you do.</p></div>
+        </div>
+      </div>
+      <a href="#register" class="cta-btn">Reserve My Seat →</a>
+    </div>
+  </section>
+
+  <!-- ============ 3. MEET YOUR PRESENTERS ============ -->
+  <!-- ORDER MATTERS: the client's own SPECIALIST leads (card 1, .lead), framed as the expert
+       with credentials for social proof. Arthur Sung is card 2 (.second), the client's
+       education-team presenter. Do not flip this order. -->
+  <section class="block hosts">
+    <div class="wrap">
+      <span class="eyebrow">Led By Experts</span>
+      <h2 class="section-title">Meet Your Hosts</h2>
+      <div class="host-list">
+        <div class="host lead">
+          <div class="host-photo">[ photo ]</div>
+          <div class="host-info">
+            <span class="tag">Retirement Specialist · Live Q&amp;A</span>
+            <h3 class="ph">[Specialist Name]</h3>
+            <p class="role"><span class="ph">[Title / Credentials, e.g. RICP, CFP]</span> · Everstead Capital</p>
+            <!-- Specialist name/title/bio deliberately left as placeholders (client fills their own; explained on the Loom). -->
+            <p class="bio"><span class="ph">[Short credibility bio: years of experience, credentials, what they specialize in.]</span> <span class="ph">[First Name]</span> is here to answer your most specific questions live.</p>
+          </div>
+        </div>
+        <div class="host second">
+          <!-- Arthur Sung headshot is a FIXED shared asset (assets/arthur-sung-headshot.png), consistent across every deliverable. -->
+          <div class="host-photo"><img src="assets/arthur-sung-headshot.png" alt="Arthur Sung"></div>
+          <div class="host-info">
+            <span class="tag">Your Host</span>
+            <h3>Arthur Sung</h3>
+            <p class="role">Everstead Capital Education Team</p>
+            <p class="bio">Part of the Everstead Capital education team, here to lead the session and distill any complex information into easy to understand, actionable insights.</p>
+          </div>
+        </div>
+      </div>
+      <a href="#register" class="cta-btn">Reserve My Seat →</a>
+    </div>
+  </section>
+
+  <!-- ============ 4. WHO THIS IS FOR ============ -->
+  <!-- Push-pull. The "for you if" list is PAIN-RICH: describe their real situation and problems
+       in detail (from the five pains / scenario bank) so the right people feel seen and self-select IN.
+       The "not for you if" list repels tire-kickers and unqualified people so they self-select OUT. -->
+  <section class="block whofor">
+    <div class="wrap">
+      <span class="eyebrow">Is This For You?</span>
+      <h2 class="section-title">Who this training is for (and who it isn't)</h2>
+      <div class="who-list">
+        <div class="who-col yes">
+          <h3>This is for you if…</h3>
+          <ul>
+            <li><span class="mk">✓</span><span class="t">You look at the balance you spent 40 years building and still can't say how much of it you can actually spend each year, so you under-spend and quietly resent it.</span></li>
+            <li><span class="mk">✓</span><span class="t">Your plan for making it last is really just "hope it lasts," and no one has ever handed you a real number, only a portfolio.</span></li>
+            <li><span class="mk">✓</span><span class="t">You have a seven-figure statement but suspect a chunk of it belongs to the IRS, and nobody has shown you how to keep more of it as you draw it down.</span></li>
+            <li><span class="mk">✓</span><span class="t">You're close enough to retiring that a market drop right after you stop working keeps you up at night, because you know you'd be selling while it's down.</span></li>
+            <li><span class="mk">✓</span><span class="t">You're roughly 55 to 70, at or near retirement, with a substantial nest egg ($1M+) you can't afford to get wrong.</span></li>
+          </ul>
+        </div>
+        <div class="who-col no">
+          <h3>This is NOT for you if…</h3>
+          <ul>
+            <li><span class="mk">✕</span><span class="t">You're decades from retirement and just starting to save. This training is built for people at or near the finish line, not the start.</span></li>
+            <li><span class="mk">✕</span><span class="t">You're not actually willing to look honestly at your own plan and make a change, even if you see one clearly worth making.</span></li>
+            <li><span class="mk">✕</span><span class="t">You're hunting for a hot stock tip, a market-timing trick, or a shortcut. This is about a coordinated plan, not a secret.</span></li>
+            <li><span class="mk">✕</span><span class="t">You only want someone to pick investments, not to look at taxes, income, market risk, and estate as one connected picture.</span></li>
+          </ul>
+        </div>
+      </div>
+      <a href="#register" class="cta-btn">Reserve My Seat →</a>
+    </div>
+  </section>
+
+  <!-- ============ 5. REGISTRATION FORM ============ -->
+  <section class="block final" id="register">
+    <div class="wrap">
+      <span class="eyebrow">Reserve Your Seat</span>
+      <h2 class="section-title">Reserve your seat and find your number.</h2>
+      <p class="when">📅 Thursday, July 23 &nbsp;·&nbsp; 🕣 8:30 PM EST &nbsp;·&nbsp; 💻 Live Online</p>
+      <div class="signup">
+        <form id="signupForm">
+          <div class="field"><label for="name">Full Name</label><input id="name" name="name" type="text" placeholder="Jane Smith" required></div>
+          <div class="field"><label for="email">Email Address</label><input id="email" name="email" type="email" placeholder="jane@email.com" required></div>
+          <div class="field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" placeholder="(555) 123-4567" required></div>
+          <button class="btn" type="submit">Reserve My Seat →</button>
+          <p class="fineprint">By invitation · Your details stay private.</p>
+        </form>
+        <div class="confirm" id="confirmMsg">
+          <div class="check">✓</div>
+          <h3>You're registered!</h3>
+          <p>Check your email for the training link and calendar invite. See you there.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site">
+    <div class="wrap" style="max-width:1080px;">
+      <div class="brand">Everstead Capital<small>Wealth &amp; Retirement Planning</small></div>
+      <div>York, PA &amp; Towson, MD · <span class="ph">[phone number]</span> · <span class="ph">[address]</span></div>
+      <p class="disclaimer">This training is for educational purposes only and does not constitute investment, tax, or legal advice. Advisory services offered through Alphastar Capital Management, LLC, an SEC-registered investment adviser; brokerage services through Oakwood Capital Securities, Inc. (member FINRA/SIPC); insurance products offered through Everstead Capital. Any client experiences referenced are individual and not a guarantee of future results. © 2026 Everstead Capital. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ===== EDIT THE LIVE DATE/TIME HERE (ISO 8601 with timezone offset) =====
+    // RULE (Dream 100 demo pages): always a Tuesday, Wednesday, or Thursday at 8:30 PM EST,
+    // and at least 3 days out from the build date. Pick the next Tue/Wed/Thu that clears 3 days.
+    // 8:30 PM EST keeps it out of work hours, which protects the show rate.
+    const WEBINAR_DATE = new Date("2026-07-23T20:30:00-04:00");
+
+    function pad(n){ return String(n).padStart(2,'0'); }
+    function setText(id,v){ var el=document.getElementById(id); if(el) el.textContent=v; }
+    function tick(){
+      var diff = WEBINAR_DATE.getTime() - Date.now();
+      if (diff < 0) diff = 0;
+      var d = Math.floor(diff/86400000); diff -= d*86400000;
+      var h = Math.floor(diff/3600000); diff -= h*3600000;
+      var m = Math.floor(diff/60000);   diff -= m*60000;
+      var s = Math.floor(diff/1000);
+      setText('cd-d',pad(d)); setText('cd-h',pad(h)); setText('cd-m',pad(m)); setText('cd-s',pad(s));
+    }
+    tick(); setInterval(tick, 1000);
+
+    // On submit, carry name + email + phone forward to the survey (step 2 of the funnel).
+    // Swap the redirect for a real POST when the client provides infrastructure.
+    var form = document.getElementById('signupForm');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name  = encodeURIComponent((document.getElementById('name').value  || '').trim());
+      var email = encodeURIComponent((document.getElementById('email').value || '').trim());
+      var phone = encodeURIComponent((document.getElementById('phone').value || '').trim());
+      window.location.href = 'webinar-survey.html?name=' + name + '&email=' + email + '&phone=' + phone;
+    });
+  </script>
+
+  <!-- Auto-height reporter: when embedded (e.g. the Phase 4 showroom), post this page's height
+       to the parent so the iframe sizes to fit (no inner scrollbar). Harmless when standalone. -->
+  <script>
+  (function(){
+    if(window.parent===window) return;
+    function H(){return Math.max(document.documentElement.scrollHeight, document.body?document.body.scrollHeight:0);}
+    function post(){try{window.parent.postMessage({type:'d100-embed-height',height:H()},'*');}catch(e){}}
+    window.addEventListener('load',post); window.addEventListener('resize',post);
+    if(window.ResizeObserver){try{new ResizeObserver(post).observe(document.documentElement);}catch(e){}}
+    var n=0,iv=setInterval(function(){post(); if(++n>20)clearInterval(iv);},500); post();
+  })();
+  </script>
+</body>
+</html>
