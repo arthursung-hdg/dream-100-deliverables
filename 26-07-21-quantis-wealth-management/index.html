@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prepared for Quantis Wealth Management · Your Client-Acquisition System</title>
+<meta name="description" content="A complete webinar funnel + ad pack built for Quantis Wealth Management. Watch the walkthrough, then scroll.">
+
+<!--
+  ════════════════════════════════════════════════════════════════════════
+  DREAM 100 · PHASE 4 · SHOWROOM TEMPLATE  (reusable)
+  ════════════════════════════════════════════════════════════════════════
+  Default skin = HANA Digital Group house colors. To reskin per prospect,
+  overwrite the brand tokens in :root (sampled from the prospect's site).
+
+  PLACEHOLDERS TO SWAP (search & replace):
+    [First Name]        recipient's first name (the person we emailed)
+    [Prospect Name]     the prospect company, full        e.g. Cedar Gold Group
+    [ Client Logo ]     replace the .logo-ph span with the client's <img> logo
+    [LOOM_WALKTHROUGH_ID]  the walkthrough Loom embed id
+  Baked defaults to adjust if a run differs: "40 hours", "5 static ads",
+  and the promise line ("14 days" / "15 qualified sales meetings in 30 days").
+
+  HIGHLIGHT COLOR: any highlighted word is wrapped in <span class="hl"> and uses
+    var(--brand) — i.e. the prospect's highlight color. Reskin only by swapping
+    the brand tokens in :root; never hardcode a color onto copy.
+  FIXED COPY: all wording is permanent template copy, identical for every prospect.
+    The ONLY per-prospect changes are the brand tokens, the enumerated [placeholders],
+    and the ad cards injected between the ADS markers. Never reword section copy — if
+    something reads wrong, fix it HERE in the template, not in a per-prospect instance.
+  ════════════════════════════════════════════════════════════════════════
+-->
+
+<style>
+  :root{
+    /* ── BRAND TOKENS (swap these per prospect) ── */
+    --brand:#F87830;        /* primary accent (Quantis orange) */
+    --brand-deep:#001B71;   /* deep accent / bands (Quantis navy) */
+    --brand-tint:#FCEEE3;   /* pale accent fill */
+    --brand-soft:#FBB183;   /* light accent (on dark) */
+
+    /* ── NEUTRALS (HDG house, usually kept) ── */
+    --bg:#f4efe6;           /* warm ivory canvas */
+    --surface:#ffffff;      /* paper */
+    --panel:#fbf7ee;        /* warm feature panel */
+    --ink:#1a1a1a;          /* headings */
+    --body:#2c2a26;         /* body text */
+    --muted:#59554c;        /* secondary */
+    --line:#d8d0bd;         /* taupe-gold hairline */
+    --tag:#ece5d7;          /* pill fill */
+    --alert:#e11414;        /* "don't skip" bar — CONSTANT bright red on every deliverable (never brand-variable) */
+
+    --serif:"Newsreader",Georgia,serif;
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--body);
+    font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4,h5,h6{font-family:var(--serif);font-weight:400;color:var(--ink);letter-spacing:-0.01em;line-height:1.08;margin:0;text-wrap:balance;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px;}
+  .eyebrow{font-family:var(--sans);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--brand);font-weight:600;}
+  /* highlight utility — any highlighted word uses the prospect's brand color (swaps per prospect) */
+  .hl{color:var(--brand);}
+
+  /* ── hero ── */
+  .hero{padding:56px 0 76px;text-align:center;border-bottom:1px solid var(--line);
+    background:radial-gradient(130% 120% at 50% -10%, var(--brand-tint), transparent 55%),var(--bg);}
+  /* prospect logo slot — drop the client's downloaded logo here (see markup) */
+  .logo{display:inline-flex;align-items:center;justify-content:center;margin:0 0 38px;}
+  .logo img{max-height:52px;max-width:260px;width:auto;display:block;}
+  .logo .logo-ph{padding:16px 30px;border:1px dashed var(--line);border-radius:10px;color:var(--muted);
+    font-family:var(--sans);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;}
+
+  /* video */
+  .video-card{max-width:720px;margin:40px auto 0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:9px;
+    box-shadow:0 30px 70px rgba(20,18,12,0.14);}
+  .video-frame{position:relative;width:100%;padding-bottom:56.25%;height:0;border-radius:9px;overflow:hidden;background:var(--brand-deep);}
+  .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .video-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;
+    background:radial-gradient(120% 120% at 50% 30%, #2a4bb0, var(--brand-deep));cursor:pointer;}
+  .video-ph .play{width:66px;height:66px;border-radius:50%;background:var(--brand);display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.3);transition:transform .2s ease;}
+  .video-ph:hover .play{transform:scale(1.06);}
+  .video-ph .lbl{font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#fff;font-weight:600;}
+  .video-ph .sub{font-size:13px;color:var(--brand-soft);margin-top:5px;}
+
+  .hero .wrap{max-width:1120px;}
+  .hero h1{font-size:clamp(36px,5vw,60px);max-width:1020px;margin:0 auto;}
+  .hero h1 .nm{color:var(--brand);font-style:italic;}
+
+  .promise{display:flex;align-items:center;gap:13px;max-width:640px;margin:26px auto 0;padding:16px 22px;text-align:left;
+    background:var(--brand-tint);border-left:4px solid var(--brand);border-radius:4px 12px 12px 4px;}
+  .promise .ic{flex:none;width:24px;height:24px;color:var(--brand-deep);}
+  .promise p{margin:0;font-size:16px;color:var(--body);font-weight:500;}
+  .promise b{color:var(--brand-deep);font-weight:700;}
+
+  .dontskip{display:inline-flex;align-items:center;gap:13px;margin:28px auto 0;padding:18px 38px;border-radius:11px;
+    background:var(--alert);color:#fff;font-weight:800;font-size:20px;letter-spacing:0.03em;text-transform:uppercase;
+    box-shadow:0 12px 32px rgba(225,20,20,0.42);}
+  .dontskip svg{flex:none;width:22px;height:22px;}
+
+  .scrollcue{margin-top:44px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);}
+  .scrollcue span{display:block;font-size:22px;margin-top:6px;color:var(--brand);animation:bob 1.8s ease-in-out infinite;}
+  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
+  @media(prefers-reduced-motion:reduce){.scrollcue span{animation:none;}}
+
+  /* ── generic section shell (reused by all sections below) ── */
+  .section{padding:78px 0;border-bottom:1px solid var(--line);}
+  .section .head{text-align:center;max-width:840px;margin:0 auto 48px;}
+  .section .head h2{font-size:clamp(28px,3.8vw,44px);margin:12px 0 0;}
+  .section .head p{color:var(--muted);font-size:18px;margin:15px auto 0;max-width:600px;}
+  .section .head.wide{max-width:980px;}
+  .sublead{max-width:900px;margin:20px auto 0;}
+  .section .head .sublead p{color:var(--muted);font-size:18px;line-height:1.5;margin:0;max-width:none;}
+  .section .head .sublead p + p{margin-top:18px;}
+  /* per-section number — own fixed column so every section's number aligns to the same right edge */
+  .secnum{max-width:1000px;margin:0 auto 4px;padding:0 24px;text-align:right;font-family:var(--serif);font-size:15px;letter-spacing:0.08em;color:var(--muted);font-variant-numeric:tabular-nums;}
+  .secnum b{color:var(--brand);font-weight:500;}
+
+  /* ── 02 · numbered process ── */
+  .steps{display:flex;flex-direction:column;gap:16px;max-width:780px;margin:0 auto;}
+  .step{display:flex;align-items:center;gap:26px;background:var(--surface);border:1px solid var(--line);
+    border-radius:14px;padding:22px 30px;box-shadow:0 8px 22px rgba(20,18,12,0.04);}
+  .step .n{flex:none;width:78px;height:78px;border-radius:13px;background:var(--brand-tint);color:var(--brand);
+    font-family:var(--serif);font-size:40px;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums;}
+  .step .txt h3{font-size:24px;margin:0;}
+  .step .txt p{margin:6px 0 0;color:var(--muted);font-size:15.5px;line-height:1.45;}
+  .step .txt .lead4{margin:7px 0 0;color:var(--body);font-size:15.5px;font-weight:600;}
+  .step .txt .checks{list-style:none;margin:9px 0 0;padding:0;display:flex;flex-direction:column;gap:5px;}
+  .step .txt .checks li{position:relative;padding-left:24px;color:var(--muted);font-size:15px;}
+  .step .txt .checks li::before{content:"\2713";position:absolute;left:0;top:0;color:var(--brand);font-weight:700;}
+
+  /* ── 03 · funnel diagram ── */
+  .funnel{max-width:720px;margin:0 auto;display:flex;flex-direction:column;align-items:center;}
+  .fstage{background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    display:flex;align-items:center;gap:20px;padding:19px 26px;box-shadow:0 10px 24px rgba(20,18,12,0.05);}
+  .fstage .fic{flex:none;width:46px;height:46px;border-radius:11px;background:var(--brand-tint);color:var(--brand);display:flex;align-items:center;justify-content:center;}
+  .fstage .fic svg{width:24px;height:24px;}
+  .fstage .flabel{flex:1;text-align:left;}
+  .fstage .flabel .t{font-family:var(--serif);font-size:20px;color:var(--ink);line-height:1.12;}
+  .fstage .flabel .d{color:var(--muted);font-size:14.5px;line-height:1.4;margin-top:3px;}
+  .fstage .fstat{flex:none;text-align:center;font-family:var(--serif);font-size:30px;color:var(--brand);font-variant-numeric:tabular-nums;line-height:1;}
+  .fstage .fstat small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:5px;}
+  .farrow{width:2px;height:22px;background:var(--line);position:relative;margin:8px 0;}
+  .farrow::after{content:"";position:absolute;left:50%;bottom:-1px;transform:translateX(-50%);
+    border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid var(--line);}
+  .fstage.dest{background:var(--brand-deep);border-color:var(--brand-deep);box-shadow:0 16px 34px rgba(15,42,122,0.28);}
+  .fstage.dest .fic{background:rgba(255,255,255,0.15);color:#fff;}
+  .fstage.dest .flabel .t{color:#fff;}
+  .fstage.dest .flabel .d{color:var(--brand-soft);}
+  .fnote{text-align:center;color:var(--muted);font-size:13px;font-style:italic;margin:24px 0 0;}
+
+  /* ── 03 · horizontal flow diagram ── */
+  .flow-svg{max-width:1010px;margin:10px auto 0;overflow-x:auto;}
+  .flow-svg svg{width:100%;min-width:720px;height:auto;display:block;}
+  .flow-svg .conn{stroke:#c3baa4;stroke-width:2;fill:none;}
+  .flow-svg .node-c{fill:var(--surface);stroke:var(--line);stroke-width:2;}
+  .flow-svg .node-n{fill:var(--brand);font-family:var(--serif);font-size:23px;text-anchor:middle;dominant-baseline:central;}
+  .flow-svg .node-l{fill:var(--ink);font-family:var(--sans);font-size:15px;font-weight:500;text-anchor:middle;}
+  .flow-svg .dest .node-c{fill:var(--brand-deep);stroke:var(--brand-deep);}
+  .flow-svg .dest .node-n{fill:#fff;}
+  .flow-svg .bypass{stroke:var(--brand);stroke-width:2.5;stroke-dasharray:7 6;fill:none;}
+  .flow-svg .bypass-l{fill:var(--brand);font-family:var(--sans);font-size:14px;font-weight:600;text-anchor:middle;}
+  .flow-svg .mk{fill:#c3baa4;}
+  .flow-svg .mkB{fill:var(--brand);}
+  /* per-stage explainer cards under the diagram */
+  .flow-legend{max-width:1010px;margin:44px auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;}
+  .lcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 8px 22px rgba(20,18,12,0.04);}
+  .lcard .lh{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+  .lcard .lnum{flex:none;width:32px;height:32px;border-radius:50%;background:var(--brand-tint);color:var(--brand);font-family:var(--serif);font-size:16px;display:flex;align-items:center;justify-content:center;}
+  .lcard .lt{font-family:var(--serif);font-size:19px;color:var(--ink);line-height:1.1;}
+  .lcard p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.5;}
+  .lcard.dest{border-color:var(--brand);}
+  .lcard.dest .lnum{background:var(--brand-deep);color:#fff;}
+
+  /* ── 04 · sticky funnel walkthrough ── */
+  .walk{padding:78px 0;border-bottom:1px solid var(--line);}
+  .walk .head{text-align:center;max-width:840px;margin:0 auto 46px;}
+  .walk .head h2{font-size:clamp(28px,3.8vw,44px);}
+  .walk .head p{color:var(--muted);font-size:18px;margin:14px auto 0;max-width:600px;}
+  .walk-grid{max-width:1120px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:220px 1fr;gap:36px;align-items:start;}
+  /* sticky rail — vertical stepper, vertically centered in the viewport */
+  .rail{position:sticky;top:50%;transform:translateY(-50%);}
+  .rail ol{list-style:none;margin:0;padding:0;}
+  .rail li{position:relative;padding:0 0 32px 48px;}
+  .rail li:last-child{padding-bottom:0;}
+  .rail li::before{content:"";position:absolute;left:14px;top:33px;bottom:1px;width:2px;background:var(--line);transition:background .3s;}
+  .rail li:last-child::before{display:none;}
+  .rail .dot{position:absolute;left:0;top:0;width:31px;height:31px;border-radius:50%;border:2px solid var(--line);background:var(--surface);
+    display:flex;align-items:center;justify-content:center;color:var(--muted);font-family:var(--serif);font-size:14px;transition:.3s;}
+  .rail .rlabel{font-family:var(--serif);font-size:18px;color:var(--muted);line-height:1.18;padding-top:3px;transition:color .3s;}
+  .rail .rsub{display:block;font-family:var(--sans);font-size:12px;color:var(--muted);opacity:.65;margin-top:2px;}
+  .rail li.done .dot,.rail li.active .dot{border-color:var(--brand);background:var(--brand);color:#fff;}
+  .rail li.done::before{background:var(--brand);}
+  .rail li.active .dot{transform:scale(1.14);box-shadow:0 0 0 5px var(--brand-tint);}
+  .rail li.active .rlabel{color:var(--ink);}
+  /* right content */
+  .walk-content{min-width:0;}
+  .stage{min-height:78vh;display:flex;flex-direction:column;justify-content:center;padding:64px 0;}
+  .stage + .stage{border-top:1px solid var(--line);}
+  .stage .slabel{align-self:flex-start;font-family:var(--sans);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--brand);font-weight:700;background:var(--brand-tint);padding:6px 14px;border-radius:999px;margin-bottom:14px;}
+  .stage h3{font-size:clamp(24px,3vw,32px);margin:0 0 18px;}
+  .stage>p{color:var(--muted);font-size:17px;margin:0 0 24px;max-width:820px;}
+  .ph-frame{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 16px 40px rgba(20,18,12,0.08);
+    min-height:320px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);
+    background-image:repeating-linear-gradient(45deg,transparent,transparent 13px,rgba(20,18,12,0.02) 13px,rgba(20,18,12,0.02) 26px);}
+  .ph-frame span{font-size:14px;letter-spacing:0.02em;padding:0 20px;}
+  /* sticky counter that syncs 04→07 while scrolling the walkthrough */
+  .walk-num{position:sticky;top:22px;z-index:6;}
+
+  /* ── 08 · CTA (invitation + steps + book a call) — same paper ground as every other section ── */
+  .cta{text-align:center;padding:90px 0;border-bottom:none;}
+  .cta .head h2{color:var(--brand);}
+  .cta-lead{max-width:760px;margin:16px auto 0;}
+  .cta-lead p{color:var(--muted);font-size:18px;line-height:1.55;margin:0;}
+  .cta-lead p + p{margin-top:14px;}
+  .cta-steps{list-style:none;max-width:620px;margin:42px auto 0;padding:0;display:flex;flex-direction:column;gap:12px;text-align:left;}
+  .cta-steps li{display:flex;align-items:center;gap:22px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 26px;box-shadow:0 8px 22px rgba(20,18,12,0.04);}
+  .cta-steps .csn{flex:none;width:46px;height:46px;border-radius:50%;background:var(--brand-tint);color:var(--brand);font-family:var(--serif);font-size:21px;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums;}
+  .cta-steps .cst{font-family:var(--serif);font-size:20px;color:var(--ink);line-height:1.15;}
+  .cal-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;max-width:760px;margin:46px auto 0;padding:8px;box-shadow:0 16px 40px rgba(20,18,12,0.08);overflow:hidden;min-height:200px;}
+
+  /* framed live-page embeds (registration / survey / thank-you) — auto-height, no inner scroll */
+  .embed-card{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 16px 40px rgba(20,18,12,0.08);}
+  .fw + .pointer{margin-top:38px;}
+  .embed-bar{display:flex;align-items:center;gap:12px;padding:11px 16px;background:var(--panel);border-bottom:1px solid var(--line);font-size:12px;color:var(--muted);}
+  .embed-bar .dots{display:flex;gap:6px;flex:none;}
+  .embed-bar .dots i{width:10px;height:10px;border-radius:50%;background:var(--line);display:block;}
+  .embed-bar .fn{flex:1;text-align:center;letter-spacing:0.02em;}
+  .embed-bar a{flex:none;color:var(--brand);text-decoration:none;font-weight:600;white-space:nowrap;}
+  .embed-frame{position:relative;width:100%;overflow:hidden;min-height:420px;}
+  iframe.embed-page{width:1080px;border:0;display:block;background:#fff;transform-origin:top left;}
+
+  /* explanation block under a walkthrough embed (e.g. compare/contrast) */
+  .explain{margin:44px 0;}
+  /* "your custom page" pointer down to an embed */
+  .explain:has(+ .pointer){margin-top:16px;margin-bottom:24px;}
+  .pointer{text-align:center;margin:10px 0 44px;}
+  .pointer-label{display:inline-block;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--brand-deep);}
+  .pointer-arrow{display:block;font-size:26px;color:var(--brand);margin-top:4px;line-height:1;animation:bob 1.8s ease-in-out infinite;}
+  @media(prefers-reduced-motion:reduce){.pointer-arrow{animation:none;}}
+  .vs{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start;}
+  .vs-card{border-radius:14px;padding:24px 26px;border:1px solid var(--line);background:var(--surface);}
+  .vs-card.win{background:var(--brand-tint);border-color:var(--brand);box-shadow:0 12px 30px rgba(31,79,217,0.10);}
+  .vs-tag{display:inline-block;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;color:var(--brand);background:#fff;padding:4px 11px;border-radius:999px;margin-bottom:10px;}
+  .vs-card h4{font-family:var(--serif);font-size:20px;margin:0 0 16px;color:var(--ink);}
+  .vs-card.win h4{color:var(--brand-deep);}
+  .vs-card ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .vs-card li{position:relative;padding-left:26px;font-size:14.5px;line-height:1.45;color:var(--body);}
+  .vs-card li::before{position:absolute;left:0;top:0;font-weight:700;}
+  .vs-card.win li{color:var(--brand-deep);}
+  .vs-card.win li::before{content:"\2713";color:var(--brand);}
+  .vs-card.lose li{color:var(--muted);}
+  .vs-card.lose li::before{content:"\2715";color:#b5544a;}
+
+  /* survey · recapture flow diagram */
+  .stage > p:has(+ .fw){margin-bottom:6px;}
+  .fw{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:30px 26px;box-shadow:0 8px 22px rgba(20,18,12,0.04);}
+  .fw-flow{display:flex;align-items:center;gap:10px;}
+  .fw-node{flex:1;text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center;}
+  .fw-ic{display:flex;gap:6px;}
+  .fw-ic span{width:38px;height:38px;border-radius:10px;background:var(--brand-tint);color:var(--brand);display:flex;align-items:center;justify-content:center;}
+  .fw-ic svg{width:20px;height:20px;}
+  .fw-n{font-family:var(--serif);font-size:30px;color:var(--ink);line-height:1;}
+  .fw-lab{font-size:12px;color:var(--muted);line-height:1.35;}
+  .fw-arrow{flex:none;color:#c3baa4;font-size:20px;font-weight:700;}
+  .fw-split{flex:1.7;display:flex;flex-direction:column;gap:10px;}
+  .fw-branch{border-radius:11px;padding:11px 14px;font-size:12.5px;line-height:1.4;border:1px solid var(--line);color:var(--muted);text-align:left;}
+  .fw-branch b{display:block;font-family:var(--serif);font-size:16px;color:var(--ink);margin-bottom:1px;}
+  .fw-branch.win{background:var(--brand-tint);border-color:var(--brand);color:var(--brand-deep);}
+  .fw-branch.win b{color:var(--brand-deep);}
+  .fw-payoff{flex:1.15;background:var(--brand-deep);color:#fff;border-radius:14px;padding:18px 14px;text-align:center;display:flex;flex-direction:column;gap:5px;align-items:center;}
+  .fw-payoff .fw-n{color:#fff;}
+  .fw-payoff .fw-lab{color:var(--brand-soft);}
+  .fw-cap{text-align:center;color:var(--muted);font-size:13.5px;margin:22px auto 0;max-width:660px;line-height:1.5;}
+  .fw-cap + .fw-cap{margin-top:7px;}
+  .fw-cap b{color:var(--brand-deep);}
+
+  /* ── Step 1 · ad cards (creative + the layman logic behind it) ── */
+  .ad-list{display:flex;flex-direction:column;gap:24px;}
+  .adc{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 10px 28px rgba(20,18,12,0.06);display:grid;grid-template-columns:440px 1fr;}
+  .adc-visual{background:var(--panel);padding:22px;display:flex;flex-direction:column;gap:12px;justify-content:center;}
+  .adc-visual .frame{aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:#e6e0d4;box-shadow:0 6px 18px rgba(0,0,0,0.12);}
+  .adc-visual .frame img{width:100%;height:100%;object-fit:cover;display:block;}
+  .adc-visual .save{text-align:center;font-size:12px;font-weight:600;color:var(--brand);text-decoration:none;padding:10px;border:1px solid var(--line);border-radius:8px;background:#fff;}
+  .adc-visual .save:hover{background:var(--brand-tint);}
+  .adc-body{padding:30px 32px;display:flex;flex-direction:column;gap:18px;justify-content:center;min-width:0;}
+  .adc-body .rl{display:inline-block;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;padding:5px 12px;border-radius:999px;margin:0 0 8px;}
+  .adc-body .rt{font-size:15px;line-height:1.5;color:var(--body);margin:0;}
+  .adc-pain .rl{background:var(--tag);color:var(--muted);}
+  .adc-scenario .rl{background:var(--brand-tint);color:var(--brand);}
+  .adc-claim .rl{background:var(--brand);color:#fff;}
+  .adc-claim .claim{font-family:var(--serif);font-size:clamp(20px,1.9vw,24px);color:var(--ink);line-height:1.2;letter-spacing:-0.01em;margin:0;}
+
+  @media(max-width:860px){
+    .walk-grid{grid-template-columns:1fr;gap:0;padding:0 18px;}
+    .rail{display:none;}
+    .stage{min-height:auto;padding:28px 0;}
+    .adc{grid-template-columns:1fr;}
+    .adc-visual{flex-direction:row;align-items:center;}
+    .adc-visual .frame{width:120px;flex:none;}
+    .adc-visual .save{flex:1;}
+    .vs{grid-template-columns:1fr;}
+    .fw-flow{flex-direction:column;align-items:stretch;}
+    .fw-arrow{align-self:center;transform:rotate(90deg);}
+    .fw-split,.fw-node,.fw-payoff{flex:none;}
+  }
+
+  @media(max-width:720px){
+    .wrap{padding:0 18px;}
+    .secnum{padding:0 18px;}
+    .hero{padding-bottom:56px;}
+    .section{padding:54px 0;}
+    .section .head{margin-bottom:34px;}
+    .step{gap:18px;padding:18px 20px;}
+    .step .n{width:58px;height:58px;font-size:30px;border-radius:11px;}
+    .step .txt h3{font-size:20px;}
+    .fstage{width:100%!important;gap:14px;padding:16px 18px;}
+    .fstage .fic{width:40px;height:40px;}
+    .fstage .flabel .t{font-size:17.5px;}
+    .fstage .flabel .d{font-size:13.5px;}
+    .fstage .fstat{font-size:24px;}
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ══ 01 · WHY THIS MATTERS ══ -->
+  <section class="section">
+    <div class="secnum"><b>01</b> / 07</div>
+    <div class="wrap">
+      <!-- Quantis logo relocated here from the retired hero section -->
+      <div class="logo" style="display:flex;margin:0 0 34px;"><img src="logo.png" alt="Quantis Wealth Management"></div>
+      <div class="head">
+        <h2>Why this is the best strategy for 15 new qualified sales meetings <span class="paren">(we already did the work)</span></h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="n">1</span>
+          <div class="txt"><h3>We researched your business</h3><p>We reviewed your positioning, value prop, offer, and where you're losing potential clients.</p></div>
+        </div>
+        <div class="step">
+          <span class="n">2</span>
+          <div class="txt"><h3>We defined one <span class="hl">Ideal Customer Profile</span></h3><p>We defined a single buyer to build your acquisition engine around.</p></div>
+        </div>
+        <div class="step">
+          <span class="n">3</span>
+          <div class="txt"><h3>We mapped the acquisition strategy</h3><p>You get a proven webinar opt-in funnel and an ad approach designed to turn completely cold traffic into warm, ready-to-close leads.</p></div>
+        </div>
+        <div class="step">
+          <span class="n">4</span>
+          <div class="txt">
+            <h3>We already built all the <span class="hl">Assets</span></h3>
+            <p class="lead4">40 hours of work already done</p>
+            <ul class="checks">
+              <li>Your funnels are already built</li>
+              <li>Your ads are ready</li>
+              <li>Your webinar topic has been selected</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 02 · HOW IT WORKS (funnel diagram) ══ -->
+  <section class="section">
+    <div class="secnum"><b>02</b> / 07</div>
+    <div class="wrap">
+      <div class="head wide">
+        <h2>An education-led client acquisition system that <span class="hl">closes deals.</span></h2>
+        <div class="sublead">
+          <p>Most paid ad funnels try to book a call with cold traffic that's still skeptical about everything.</p>
+          <p>Your sales team gets buried in friction and hard objections.</p>
+          <p>A webinar funnel condenses hours of education and several touchpoints into <b class="hl">days, not months.</b></p>
+        </div>
+      </div>
+      <div class="flow-svg">
+        <svg viewBox="0 0 1160 190" role="img" aria-label="Acquisition path: the ad, registration page, survey, thank-you page, live webinar, then a booked call — plus a shortcut where qualified survey leads book a call directly.">
+          <defs>
+            <marker id="mArw" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="5.5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" class="mk"/></marker>
+            <marker id="mArwB" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="5.5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" class="mkB"/></marker>
+          </defs>
+
+          <!-- straight path connectors -->
+          <line class="conn" x1="128" y1="64" x2="246" y2="64" marker-end="url(#mArw)"/>
+          <line class="conn" x1="324" y1="64" x2="442" y2="64" marker-end="url(#mArw)"/>
+          <line class="conn" x1="520" y1="64" x2="638" y2="64" marker-end="url(#mArw)"/>
+          <line class="conn" x1="716" y1="64" x2="834" y2="64" marker-end="url(#mArw)"/>
+          <line class="conn" x1="912" y1="64" x2="1030" y2="64" marker-end="url(#mArw)"/>
+
+          <!-- SHORTCUT: qualified survey leads bypass straight to a booked call -->
+          <path class="bypass" d="M482,96 C482,128 505,144 585,144 L960,144 C1045,144 1070,128 1070,102" marker-end="url(#mArwB)"/>
+          <text class="bypass-l" x="772" y="168">Qualified leads book a call now</text>
+
+          <!-- nodes -->
+          <g><circle class="node-c" cx="90" cy="64" r="30"/><text class="node-n" x="90" y="64">1</text><text class="node-l" x="90" y="22">Meta Ads</text></g>
+          <g><circle class="node-c" cx="286" cy="64" r="30"/><text class="node-n" x="286" y="64">2</text><text class="node-l" x="286" y="22">Registration</text></g>
+          <g><circle class="node-c" cx="482" cy="64" r="30"/><text class="node-n" x="482" y="64">3</text><text class="node-l" x="482" y="22">Survey</text></g>
+          <g><circle class="node-c" cx="678" cy="64" r="30"/><text class="node-n" x="678" y="64">4</text><text class="node-l" x="678" y="22">Thank-You</text></g>
+          <g><circle class="node-c" cx="874" cy="64" r="30"/><text class="node-n" x="874" y="64">5</text><text class="node-l" x="874" y="22">Live Webinar</text></g>
+          <g class="dest"><circle class="node-c" cx="1070" cy="64" r="30"/><text class="node-n" x="1070" y="64">6</text><text class="node-l" x="1070" y="22">Sales Call</text></g>
+        </svg>
+      </div>
+
+      <div class="flow-legend">
+        <div class="lcard"><div class="lh"><span class="lnum">1</span><span class="lt">Meta Ads</span></div><p>Pain-focused ads that put your offer in front of cold prospects who've never heard of you. The ad's job is to earn the click.</p></div>
+        <div class="lcard"><div class="lh"><span class="lnum">2</span><span class="lt">Registration Page</span></div><p>We invite the lead to a value-packed 60–90 minute live training session that they can't afford to miss.</p></div>
+        <div class="lcard"><div class="lh"><span class="lnum">3</span><span class="lt">Survey Page</span></div><p>After basic info collection, we ask 6–8 qualifying questions and give the most qualified leads a chance to book a call on the spot.</p></div>
+        <div class="lcard"><div class="lh"><span class="lnum">4</span><span class="lt">Thank-You Page</span></div><p>We build anticipation right after the leads register to maximize the live show-rate.</p></div>
+        <div class="lcard"><div class="lh"><span class="lnum">5</span><span class="lt">Live Webinar</span></div><p>A value-packed education event where we teach, build trust, and present your offer to everyone in the room.</p></div>
+        <div class="lcard dest"><div class="lh"><span class="lnum">6</span><span class="lt">Sales Call Booked</span></div><p>The finish line: a qualified sales meeting on your calendar, with someone who's eager to take action.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 03 · THE WALKTHROUGH (sticky funnel rail + deliverables) ══ -->
+  <section class="walk" id="walk">
+    <div class="secnum walk-num"><b id="walkNum">03</b> / 07</div>
+    <div class="head">
+      <h2>Everything we built, in the order your buyer sees it.</h2>
+      <p>Scroll down and experience the journey your prospects will go through.</p>
+    </div>
+    <div class="walk-grid">
+
+      <aside class="rail" aria-hidden="true">
+        <ol>
+          <li><span class="dot">1</span><div class="rlabel">Meta Ads<span class="rsub">Stops the scroll</span></div></li>
+          <li><span class="dot">2</span><div class="rlabel">Registration Page<span class="rsub">Captures the lead</span></div></li>
+          <li><span class="dot">3</span><div class="rlabel">Survey Page<span class="rsub">Qualifies &amp; books early</span></div></li>
+          <li><span class="dot">4</span><div class="rlabel">Thank-You Page<span class="rsub">Builds anticipation</span></div></li>
+        </ol>
+      </aside>
+
+      <div class="walk-content">
+        <article class="stage" data-stage="0">
+          <div class="slabel">Step 1 · Meta Ads</div>
+          <h3>Get their attention</h3>
+          <p>Five pain-focused ads that paint a picture of the exact situation they're living through and thinking about.</p>
+          <div class="ad-list">
+            <!-- ADS:START — Phase 2 injects one <article class="adc"> per ad creative. Duplicate this block per ad. -->
+            <article class="adc">
+              <div class="adc-visual">
+                <div class="frame"><img src="images/01-quantis_ad1.png" alt="Quantis ad creative 1"></div>
+                <a class="save" href="images/01-quantis_ad1.png" download>↓ Save image</a>
+              </div>
+              <div class="adc-body">
+                <div class="adc-pain"><p class="rl">The Pain</p><p class="rt">You've saved diligently for decades, but you honestly don't know how much you can safely spend each year, so you're guessing at the most important number of your life.</p></div>
+                <div class="adc-scenario"><p class="rl">The Real-Life Scenario</p><p class="rt">You've tracked every dollar since you were 25, and the single most important number of your life is the one you're now purely guessing at.</p></div>
+                <div class="adc-claim"><p class="rl">The Bold Claim</p><p class="claim">"Know what you can spend in retirement"</p></div>
+              </div>
+            </article>
+            <article class="adc">
+              <div class="adc-visual">
+                <div class="frame"><img src="images/02-quantis_ad2.png" alt="Quantis ad creative 2"></div>
+                <a class="save" href="images/02-quantis_ad2.png" download>↓ Save image</a>
+              </div>
+              <div class="adc-body">
+                <div class="adc-pain"><p class="rl">The Pain</p><p class="rt">You spent forty years learning to save, but no one has shown you how to turn a pile of accounts into a steady monthly income once the paychecks stop.</p></div>
+                <div class="adc-scenario"><p class="rl">The Real-Life Scenario</p><p class="rt">You know the exact date your final paycheck will hit, and the silence you imagine after it frightens you more than you'll say out loud.</p></div>
+                <div class="adc-claim"><p class="rl">The Bold Claim</p><p class="claim">"Turn your savings into a monthly paycheck"</p></div>
+              </div>
+            </article>
+            <article class="adc">
+              <div class="adc-visual">
+                <div class="frame"><img src="images/03-quantis_ad3.png" alt="Quantis ad creative 3"></div>
+                <a class="save" href="images/03-quantis_ad3.png" download>↓ Save image</a>
+              </div>
+              <div class="adc-body">
+                <div class="adc-pain"><p class="rl">The Pain</p><p class="rt">Coordinating your portfolio, taxes, estate, and Social Security has quietly become a second job, when the money was supposed to buy freedom, not homework.</p></div>
+                <div class="adc-scenario"><p class="rl">The Real-Life Scenario</p><p class="rt">The money was supposed to buy freedom. Instead it bought you a spreadsheet, a filing cabinet, and a to-do list that never ends.</p></div>
+                <div class="adc-claim"><p class="rl">The Bold Claim</p><p class="claim">"You saved to enjoy your life, not to manage it like a job"</p></div>
+              </div>
+            </article>
+            <article class="adc">
+              <div class="adc-visual">
+                <div class="frame"><img src="images/04-quantis_ad4.png" alt="Quantis ad creative 4"></div>
+                <a class="save" href="images/04-quantis_ad4.png" download>↓ Save image</a>
+              </div>
+              <div class="adc-body">
+                <div class="adc-pain"><p class="rl">The Pain</p><p class="rt">Most of your nest egg sits in pre-tax accounts, and you've never reckoned with how much of it is actually the IRS's, or what happens when forced withdrawals begin.</p></div>
+                <div class="adc-scenario"><p class="rl">The Real-Life Scenario</p><p class="rt">You get the first notice about required withdrawals and realize the government has a schedule for your money that you never agreed to and can't opt out of.</p></div>
+                <div class="adc-claim"><p class="rl">The Bold Claim</p><p class="claim">"Your 401(k) has a hidden tax bill"</p></div>
+              </div>
+            </article>
+            <article class="adc">
+              <div class="adc-visual">
+                <div class="frame"><img src="images/05-quantis_ad5.png" alt="Quantis ad creative 5"></div>
+                <a class="save" href="images/05-quantis_ad5.png" download>↓ Save image</a>
+              </div>
+              <div class="adc-body">
+                <div class="adc-pain"><p class="rl">The Pain</p><p class="rt">Your financial advisor and your CPA operate in separate silos, so nobody owns the whole picture and you're the only one left connecting the dots.</p></div>
+                <div class="adc-scenario"><p class="rl">The Real-Life Scenario</p><p class="rt">You ask your advisor a tax question and he says check with your accountant; you ask your accountant an investment question and she says that's your advisor's call. You're standing between two shrugs.</p></div>
+                <div class="adc-claim"><p class="rl">The Bold Claim</p><p class="claim">"One advisor runs your money. Another files your taxes. They have never spoken."</p></div>
+              </div>
+            </article>
+            <!-- ADS:END -->
+          </div>
+        </article>
+        <article class="stage" data-stage="1">
+          <div class="slabel">Step 2 · Registration Page</div>
+          <h3>Get people to say "yes"</h3>
+          <p>When people don't know you, they couldn't care less about what you do.</p>
+          <p>That's why we lead with <b class="hl">value first</b>: an invitation to a 60–90 minute live webinar.</p>
+
+          <div class="explain">
+            <div class="vs">
+              <div class="vs-card win">
+                <h4>The Webinar Funnel</h4>
+                <ul>
+                  <li>Invites people to free, valuable training. An easy yes.</li>
+                  <li>Low-commitment, so far more people opt in.</li>
+                  <li>They show up ready to learn, not with their sales guard up.</li>
+                  <li>Education-led: we teach, they convince themselves.</li>
+                  <li>Booking a call with you at the end of the webinar feels like the natural next step.</li>
+                </ul>
+              </div>
+              <div class="vs-card lose">
+                <h4>Book-a-Call or Video Sales Letter Funnel</h4>
+                <ul>
+                  <li>"Book a call" when they don't even know you. Hard pass.</li>
+                  <li>High-commitment, so the cost per meeting is $400+.</li>
+                  <li>You repeat the same pitch to a skeptical and uninformed lead.</li>
+                  <li>Hard-sell: pitch, handle objections, push for the close.</li>
+                  <li>They feel pressured and get their sales guard up.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="pointer">
+            <span class="pointer-label">Your custom registration page</span>
+            <span class="pointer-arrow">&darr;</span>
+          </div>
+
+          <div class="embed-card">
+            <div class="embed-bar"><span class="dots"><i></i><i></i><i></i></span><span class="fn">webinar-registration.html</span><a href="webinar-registration.html" target="_blank" rel="noopener">Open full page ↗</a></div>
+            <div class="embed-frame"><iframe class="embed-page" src="webinar-registration.html" title="Registration page" scrolling="no" loading="lazy"></iframe></div>
+          </div>
+        </article>
+        <article class="stage" data-stage="2">
+          <div class="slabel">Step 3 · Survey Page</div>
+          <h3>Get the most out of every lead</h3>
+          <p>You paid for every registration, but only about 40% of leads will make it to the webinar live.</p>
+          <p>What if we could get the most out of the other 60%, <b class="hl">before the webinar even airs</b>?</p>
+
+          <div class="fw">
+              <div class="fw-flow">
+                <div class="fw-node">
+                  <span class="fw-ic">
+                    <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h2.7l.4-3.2H13V8.7c0-.9.3-1.6 1.6-1.6h1.7V4.3c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H6.8V14H9.6v8H13z"/></svg></span>
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></span>
+                  </span>
+                  <span class="fw-lab">Paid traffic<br>Meta &amp; Instagram</span>
+                </div>
+                <span class="fw-arrow">&rarr;</span>
+                <div class="fw-node"><span class="fw-n">100</span><span class="fw-lab">register for the webinar</span></div>
+                <span class="fw-arrow">&rarr;</span>
+                <div class="fw-split">
+                  <div class="fw-branch"><b>~40 show up</b>the industry-average live show-rate most funnels bank everything on</div>
+                  <div class="fw-branch win"><b>~60 no-shows</b>but already surveyed &amp; routed, so the strong-fit book a call before the webinar</div>
+                </div>
+                <span class="fw-arrow">&rarr;</span>
+                <div class="fw-payoff"><span class="fw-n">100</span><span class="fw-lab">worked, not just the 40%</span></div>
+              </div>
+              <p class="fw-cap">The survey qualifies all 100 up front, so <b>strong-fit leads book a call whether or not they ever show up live</b>, while everyone else is nurtured toward the webinar.</p>
+              <p class="fw-cap">That's how you capture meetings from the <b>60% who'd otherwise be money down the drain</b>.</p>
+            </div>
+
+          <div class="pointer">
+            <span class="pointer-label">Your custom survey page</span>
+            <span class="pointer-arrow">&darr;</span>
+          </div>
+
+          <div class="embed-card">
+            <div class="embed-bar"><span class="dots"><i></i><i></i><i></i></span><span class="fn">webinar-survey.html</span><a href="webinar-survey.html" target="_blank" rel="noopener">Open full page ↗</a></div>
+            <div class="embed-frame"><iframe class="embed-page" src="webinar-survey.html" title="Survey page" scrolling="no" loading="lazy"></iframe></div>
+          </div>
+        </article>
+        <article class="stage" data-stage="3">
+          <div class="slabel">Step 4 · Thank-You Page</div>
+          <h3>Get them excited</h3>
+          <p>We confirm their spot and, for the strong-fit leads, put a booking calendar right on the page so they can grab a call while their interest is at its peak.</p>
+
+          <div class="pointer">
+            <span class="pointer-label">Your custom thank-you page</span>
+            <span class="pointer-arrow">&darr;</span>
+          </div>
+
+          <div class="embed-card">
+            <div class="embed-bar"><span class="dots"><i></i><i></i><i></i></span><span class="fn">webinar-thank-you-call.html</span><a href="webinar-thank-you-call.html" target="_blank" rel="noopener">Open full page ↗</a></div>
+            <div class="embed-frame"><iframe class="embed-page" src="webinar-thank-you-call.html" title="Thank-you page" scrolling="no" loading="lazy"></iframe></div>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ 07 · CTA — invitation to run the first campaign together ══ -->
+  <section class="section cta">
+    <div class="secnum"><b>07</b> / 07</div>
+    <div class="wrap">
+      <div class="head">
+        <h2>Let's Run Our First Webinar Campaign Together</h2>
+      </div>
+      <div class="cta-lead">
+        <p>Most of the heavy lifting is already done. We built the ads and the funnel system.</p>
+        <p>What's left is for us to determine the perfect webinar topic, combining your expertise and our system.</p>
+      </div>
+      <ol class="cta-steps">
+        <li><span class="csn">1</span><span class="cst">Get on a quick call</span></li>
+        <li><span class="csn">2</span><span class="cst">Refine our webinar topic</span></li>
+        <li><span class="csn">3</span><span class="cst">We write the full webinar script and slides</span></li>
+        <li><span class="csn">4</span><span class="cst">We launch the Meta campaign</span></li>
+        <li><span class="csn">5</span><span class="cst">You watch sales calls fill in your calendar</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <script>
+    /* Live-page embeds: render each page at DESKTOP width, then scale the whole iframe down to fit the
+       frame — so it shows the real desktop layout, minimized, not the page's tablet breakpoint. Height
+       is the page's reported content height × the scale, so it still scrolls as ONE continuous page
+       (no inner scrollbar / double-scroll). Each funnel page posts {type:'d100-embed-height', height:px}
+       via postMessage (cross-origin safe, works on file://); we match the iframe by its source window.
+       contentDocument is the same-origin fallback. Rescales on resize. */
+    (function(){
+      var frames = [].slice.call(document.querySelectorAll('iframe.embed-page'));
+      if(!frames.length) return;
+      var DESKTOP = 1080;            // width each page is rendered at (above its ~880px tablet breakpoint)
+      var H = {};                    // last known content height, keyed by iframe src
+      function layout(f){
+        var wrap = f.parentElement;  // .embed-frame
+        var k = wrap.clientWidth / DESKTOP;
+        f.style.transform = 'scale(' + k + ')';
+        var h = H[f.getAttribute('src')];
+        if(h){ f.style.height = h + 'px'; wrap.style.height = (h * k) + 'px'; }
+      }
+      window.addEventListener('message', function(e){
+        var d = e.data;
+        if(!d || d.type !== 'd100-embed-height' || typeof d.height !== 'number') return;
+        frames.forEach(function(f){ if(f.contentWindow === e.source){ H[f.getAttribute('src')] = d.height; layout(f); } });
+      });
+      function fallback(){
+        frames.forEach(function(f){
+          try{ var doc=f.contentDocument; if(doc && doc.documentElement){ H[f.getAttribute('src')] = doc.documentElement.scrollHeight; layout(f); } }catch(_){}
+        });
+      }
+      window.addEventListener('load', function(){ frames.forEach(layout); setTimeout(fallback,500); setTimeout(fallback,1500); });
+      window.addEventListener('resize', function(){ frames.forEach(layout); });
+    })();
+  </script>
+
+  <script>
+    /* Scroll-spy: light the rail stage whose deliverable is centered, and sync the 03→06 counter. */
+    (function(){
+      var stages = [].slice.call(document.querySelectorAll('.walk-content .stage'));
+      var items  = [].slice.call(document.querySelectorAll('.rail li'));
+      var numEl  = document.getElementById('walkNum');
+      if(!stages.length || !items.length) return;
+      function setActive(idx){
+        items.forEach(function(li,i){
+          li.classList.toggle('active', i===idx);
+          li.classList.toggle('done',   i<idx);
+        });
+        if(numEl) numEl.textContent = ('0'+(idx+3)).slice(-2);
+      }
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting) setActive(stages.indexOf(e.target)); });
+      }, {rootMargin:'-45% 0px -45% 0px', threshold:0});
+      stages.forEach(function(s){ obs.observe(s); });
+      setActive(0);
+    })();
+  </script>
+
+</body>
+</html>
