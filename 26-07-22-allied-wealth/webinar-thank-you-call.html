@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+  ============================================================================
+  DREAM 100 · PHASE 3 · WEBINAR THANK-YOU PAGE — WITH BOOK-A-CALL (TEMPLATE)
+  ============================================================================
+  Doctrine: LESS IS MORE. Reassure, give the next steps, answer objections.
+
+  TWO SIBLING FILES. Survey QUALIFIED leads land here (4 steps): this file is the
+  plain thank-you PLUS a book-a-call step (Step 1) with an embedded scheduler.
+    - template-webinar-thank-you-call.html  -> THIS file (adds the book-a-call step)
+    - template-webinar-thank-you.html        -> twin: plain, no book-a-call (3 steps)
+  The two are identical except for that one step (steps auto-number, so it is just
+  Step 1 here). Keep them IN SYNC: shared content (pixel, FAQ, testimonials, EVENT,
+  footer) must be injected identically into both.
+
+  BOTH pages fire the Meta "Lead" event on load (see the pixel block below). That
+  is the ad set's single optimization event; scoring on the survey only decides
+  WHICH page a lead lands on, never whether the conversion is recorded.
+
+  PLACEHOLDERS: every client-specific value is a [bracketed placeholder] (.ph).
+  Sources: 03-webinar-angle.md (title, video, FAQ), 01-audience-and-pains.md
+  (brand hex, proof/testimonials). The Phase 3 skill generates + injects content.
+  ============================================================================
+-->
+<title>You're Confirmed · Allied Wealth Live Training</title>
+<meta name="description" content="Your seat is confirmed. Here are your next steps before the live training.">
+
+<!-- ======================= META PIXEL (fires "Lead" on load) =======================
+     SINGLE SOURCE: the Phase 3 skill injects the client's Pixel ID and stamps this
+     IDENTICAL block into BOTH thank-you pages. Never hand-edit one without the other.
+     Firing on PAGE LOAD (not a button) is the reliable trigger; fbq has no callback,
+     so a click-then-redirect fire would race the navigation and drop conversions. -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '[META_PIXEL_ID]');   /* <- skill injects the client's Pixel ID */
+  fbq('track', 'PageView');
+  fbq('track', 'Lead');             /* the single optimization conversion */
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=[META_PIXEL_ID]&ev=Lead&noscript=1"/></noscript>
+<!-- ===================== END META PIXEL ===================== -->
+
+<style>
+  :root{
+    /* THEME — HANA Digital Group house palette. Identical block across all three
+       funnel pages. Per prospect, swap --brand + --accent (and shades + -rgb triples)
+       for the pixel-sampled hex in 01-audience-and-pains.md > Brand Assets. */
+    --brand:#2C2E26; --brand-deep:#1f211b; --brand-soft:#4a4d40;
+    --accent:#5F6B49; --accent-soft:#A3AD8E; --accent-deep:#4a5439;
+    --brand-rgb:44,46,38; --accent-rgb:95,107,73;
+    --bg:#f4efe6; --surface:#ffffff; --ink:#1a1a1a; --ink-soft:#59554c; --ink-faint:#8a8578;
+    --line:#d8d0bd; --line-soft:#eae3d3; --green:#1f9d52; --red:#d92d20;
+    /* --band = the middle-section background (sections alternate white / band / white).
+       HDG default = the ivory ground. PER PROSPECT the skill swaps this to the client's
+       branded band tint (their accent color, or a soft tint of it) to match branding. */
+    --band:#eef0e6;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Libre Franklin',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;letter-spacing:-0.015em;line-height:1.14;margin:0;}
+  a{color:inherit;}
+  p{margin:0;}
+
+  .wrap{max-width:780px;margin:0 auto;padding:0 24px;}
+  .ph{color:var(--accent-deep);background:rgba(var(--accent-rgb),0.09);border-bottom:1px dashed var(--accent);padding:0 3px;border-radius:2px;font-style:normal;}
+
+  .eyebrow{display:block;width:fit-content;margin:0 auto 20px;font-size:12px;letter-spacing:0.16em;
+    text-transform:uppercase;color:var(--accent-deep);font-weight:700;
+    background:rgba(var(--accent-rgb),0.10);padding:7px 16px;border-radius:999px;}
+  .section-title{font-size:clamp(26px,3.6vw,36px);font-weight:700;text-align:center;color:var(--brand);margin:0 auto;}
+  .hl{color:var(--accent);}
+  section.block{padding:64px 0;}
+  .step-label{display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:8px;}
+  .step-label::before{content:"Step " counter(step);} /* steps auto-number; add/remove the book-a-call step and the rest renumber */
+
+  /* ---- hero / confirmation ---- */
+  .hero{background:var(--surface);text-align:center;padding-top:72px;padding-bottom:80px;}
+  .hero h1{font-size:clamp(29px,4.6vw,42px);font-weight:800;color:var(--brand);max-width:720px;margin:0 auto;}
+
+  /* each next-step is its own card */
+  .steps{max-width:680px;margin:46px auto 0;text-align:left;counter-reset:step;}
+  .step{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 30px;margin-bottom:20px;box-shadow:0 10px 30px rgba(15,42,122,0.10);counter-increment:step;}
+  .step:last-child{margin-bottom:0;}
+  .step h3{font-size:21px;color:var(--brand);margin:0;}
+
+  /* responsive 16:9 video */
+  .video{position:relative;width:100%;padding-top:56.25%;margin-top:16px;border-radius:14px;overflow:hidden;
+    background:#0d1636;border:1px solid var(--line);}
+  .video iframe,.video .vph{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .video .vph{display:flex;align-items:center;justify-content:center;color:var(--accent-soft);font-size:14px;letter-spacing:0.04em;text-align:center;padding:20px;}
+
+  /* date / calendar block (inside the Step 2 card) */
+  .when{display:flex;flex-wrap:wrap;gap:14px 26px;justify-content:flex-start;align-items:center;
+    background:rgba(var(--accent-rgb),0.07);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-top:16px;}
+  .when span{font-size:15.5px;color:var(--ink);font-weight:500;}
+  .when b{color:var(--accent-deep);}
+  .cal-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:18px;}
+  .cal-btn{display:inline-flex;align-items:center;gap:11px;background:var(--accent);color:#fff;font-weight:700;
+    font-size:15.5px;text-decoration:none;padding:12px 22px;border-radius:9px;transition:background .15s ease;}
+  .cal-btn:hover{background:var(--accent-deep);}
+  .cal-btn .ic{width:22px;height:22px;background:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;flex:none;}
+  .cal-btn .ic svg{width:15px;height:15px;display:block;}
+  .cal-note{font-size:13px;color:var(--ink-faint);margin-top:12px;text-align:center;}
+  .step p.body{font-size:15.5px;color:var(--ink-soft);margin-top:8px;}
+
+  /* ---- FAQ ---- */
+  .faq{background:var(--band);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .faq-list{max-width:720px;margin:40px auto 0;display:flex;flex-direction:column;gap:12px;}
+  .qa{border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden;}
+  .qa button{width:100%;text-align:left;background:none;border:none;cursor:pointer;font-family:inherit;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;padding:19px 22px;
+    font-size:16.5px;font-weight:600;color:var(--brand);}
+  .qa .chev{flex:none;transition:transform .2s ease;color:var(--accent);font-size:16px;}
+  .qa.open .chev{transform:rotate(180deg);}
+  .qa .a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
+  .qa .a p{padding:0 22px 20px;font-size:15.5px;color:var(--ink-soft);}
+
+  /* ---- testimonials ---- */
+  .proof{background:var(--surface);}
+  .tst-list{max-width:720px;margin:40px auto 0;display:flex;flex-direction:column;gap:18px;}
+  .tst{background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:24px 26px;}
+  .tst .stars{color:#e8a13c;font-size:14px;letter-spacing:2px;margin-bottom:10px;}
+  .tst .quote{font-size:16.5px;color:var(--ink);line-height:1.6;}
+  .tst .who{margin-top:14px;font-size:14px;color:var(--ink-faint);font-weight:600;}
+  .tst .who b{color:var(--brand);font-weight:700;}
+
+  /* footer */
+  footer.site{background:var(--brand-deep);color:#aeb5c8;font-size:13px;padding:44px 0 52px;}
+  footer.site .wrap{display:flex;flex-direction:column;gap:16px;max-width:1080px;}
+  footer.site .brand{color:#fff;font-family:'Libre Franklin',sans-serif;font-weight:700;letter-spacing:0.06em;}
+  footer.site .brand small{display:block;font-family:'Inter',sans-serif;font-weight:400;letter-spacing:0.2em;font-size:10px;color:var(--accent-soft);margin-top:3px;text-transform:uppercase;}
+  .disclaimer{font-size:11.5px;line-height:1.6;color:#7e86a0;border-top:1px solid var(--brand-soft);padding-top:18px;}
+
+  @media(max-width:640px){
+    section.block{padding:52px 0;}
+    .callbar .in{flex-direction:column;gap:12px;}
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============ HERO / NEXT STEPS ============ -->
+  <header class="hero block">
+    <div class="wrap">
+      <h1>Your spot is confirmed. Here's what to do next.</h1>
+
+      <div class="steps">
+        <!-- book-a-call step (Step 1) — the one thing this file adds over the plain twin.
+             Embedded scheduler so the lead books without leaving the page. Steps auto-number. -->
+        <div class="step">
+          <span class="step-label"></span>
+          <h3>Want to chat with an expert before the training?</h3>
+          <p class="body">Based on your answers, you seem uniquely qualified for the kind of thing we help people with, so we wanted to personally extend this to you.</p>
+          <p class="body">If you'd like, grab a quick 1-on-1 with a specialist before the live training. It's the best way to talk through your specific situation directly, not just the general framework.</p>
+          <p class="body">Totally optional, no pressure. Pick a time below, or just continue to Step 2 whenever you're ready.</p>
+          <!-- DEMO url = Arthur Sung's implementation call. PER PROSPECT the skill swaps this
+               data-url for the client's specialist scheduler. primary_color matches --accent. -->
+          <div class="calendly-inline-widget" data-url="https://calendly.com/arthur-sung-hanadigitalgroup/implementation-call?hide_gdpr_banner=1&primary_color=5f6b49" style="min-width:320px;height:680px;margin-top:16px;"></div>
+          <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </div>
+
+        <!-- video (card) -->
+        <div class="step">
+          <span class="step-label"></span>
+          <h3>Watch this quick video before the training</h3>
+          <!-- If VIDEO.embedUrl is set the skill swaps the .vph placeholder for an <iframe>. -->
+          <div class="video" id="video">
+            <div class="vph">[ Your next-steps video embeds here — set VIDEO.embedUrl ]</div>
+          </div>
+        </div>
+
+        <!-- date + add to calendar (card) -->
+        <div class="step">
+          <span class="step-label"></span>
+          <h3>Add the training to your calendar</h3>
+          <div class="when">
+            <span>📅 <b id="w-date">[Weekday, Month DD]</b></span>
+            <span>🕣 <b>8:30 PM EST</b></span>
+            <span>💻 <b id="w-loc">Live on Zoom</b></span>
+          </div>
+          <div class="cal-actions">
+            <a class="cal-btn" id="calGoogle" href="#" target="_blank" rel="noopener">
+              <span class="ic"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span>
+              Add to Google Calendar
+            </a>
+            <a class="cal-btn" id="calMicrosoft" href="#" target="_blank" rel="noopener">
+              <span class="ic"><svg viewBox="0 0 23 23" aria-hidden="true"><path fill="#F25022" d="M1 1h10v10H1z"/><path fill="#7FBA00" d="M12 1h10v10H12z"/><path fill="#00A4EF" d="M1 12h10v10H1z"/><path fill="#FFB900" d="M12 12h10v10H12z"/></svg></span>
+              Add to Microsoft Calendar
+            </a>
+          </div>
+          <p class="cal-note">Adding it holds your spot and sends the join link straight to your calendar.</p>
+        </div>
+
+        <!-- check email (card) -->
+        <div class="step">
+          <span class="step-label"></span>
+          <h3>Check your email</h3>
+          <p class="body">You should also have the link in your email. We'll be sending valuable insights and reminders there leading up to the live training.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ FAQ ============ -->
+  <!-- 6 to 8 objection-handling Q&As, generated from the ICP's real hesitations
+       (03-webinar-angle.md + the 5 pains). Add/remove .qa blocks to fit. -->
+  <section class="block faq">
+    <div class="wrap">
+      <span class="eyebrow">Questions</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="qa">
+          <button type="button"><span>I already have a financial advisor.</span><span class="chev">▾</span></button>
+          <div class="a"><p>Most advisors focus on growing the pile. This training is about the second half: turning what you've built into protected, tax-smart income you won't outlive. Bring what you already have, with zero pressure to change a thing.</p></div>
+        </div>
+        <div class="qa">
+          <button type="button"><span>Is this just a sales pitch?</span><span class="chev">▾</span></button>
+          <div class="a"><p>No. It's education, in the spirit of Allied's own approach: no confusing jargon, no high-pressure sales. You'll get the actual framework. Any next step is entirely your call.</p></div>
+        </div>
+        <div class="qa">
+          <button type="button"><span>I've saved plenty. Do I really need this?</span><span class="chev">▾</span></button>
+          <div class="a"><p>Saving enough and structuring it to last are two very different things. This is built exactly for people who've saved seven figures and still aren't sure it's set up to fund the life they want.</p></div>
+        </div>
+        <div class="qa">
+          <button type="button"><span>I've been to retirement dinners before.</span><span class="chev">▾</span></button>
+          <div class="a"><p>This is a working session from your own home, not a steak dinner. You'll leave with a clear framework for your own safe-to-spend number and the specific traps to avoid.</p></div>
+        </div>
+        <div class="qa">
+          <button type="button"><span>I don't have 90 minutes to spare.</span><span class="chev">▾</span></button>
+          <div class="a"><p>It's one evening, from your couch, after the workday. Weigh 90 minutes against the years of income a single avoidable mistake can quietly cost.</p></div>
+        </div>
+        <div class="qa">
+          <button type="button"><span>Will you try to move all my money?</span><span class="chev">▾</span></button>
+          <div class="a"><p>No. Education first. There's an optional, no-pressure alignment conversation for those who want one, but nobody asks you to move a dollar or fire your current advisor to attend.</p></div>
+        </div>
+        <div class="qa">
+          <button type="button"><span>I'm not sure I'm the right fit.</span><span class="chev">▾</span></button>
+          <div class="a"><p>It's built for people with roughly $1 million to $5 million saved who want their money structured to last. If that's you, it's squarely for you.</p></div>
+        </div>
+        <div class="qa">
+          <button type="button"><span>What if I can't make it live?</span><span class="chev">▾</span></button>
+          <div class="a"><p>Register anyway. Live is best for the Q&A, but getting on the list means we can help you catch what you missed.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <!-- Text testimonials / social proof. Pull REAL quotes from 01-audience-and-pains.md
+       Proof Points. Never invent a quote or a name. 3 to 5 cards. -->
+  <section class="block proof">
+    <div class="wrap">
+      <span class="eyebrow">Social Proof</span>
+      <h2 class="section-title">What past attendees say</h2>
+      <div class="tst-list">
+        <div class="tst">
+          <div class="stars">★★★★★</div>
+          <p class="quote ph">"[Client testimonial — a specific outcome in their own words. Allied Wealth to provide a real, attributable client quote (compliance sign-off required before use).]"</p>
+          <p class="who"><b class="ph">[Name / initials]</b> · <span class="ph">[descriptor, e.g. retired, Texas]</span></p>
+        </div>
+        <div class="tst">
+          <div class="stars">★★★★★</div>
+          <p class="quote ph">"[Client testimonial 2 - Allied Wealth to provide.]"</p>
+          <p class="who"><b class="ph">[Name / initials]</b> · <span class="ph">[descriptor]</span></p>
+        </div>
+        <div class="tst">
+          <div class="stars">★★★★★</div>
+          <p class="quote ph">"[Client testimonial 3 - Allied Wealth to provide.]"</p>
+          <p class="who"><b class="ph">[Name / initials]</b> · <span class="ph">[descriptor]</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site">
+    <div class="wrap">
+      <div class="brand">Allied Wealth<small>Live a limitless life</small></div>
+      <div><span class="ph">[Location]</span> · <span class="ph">[phone number]</span> · <span class="ph">[address]</span></div>
+      <p class="disclaimer">This training is for educational purposes only and does not constitute investment, tax, or legal advice. Allied Wealth is a registered investment adviser; any client outcomes referenced are individual experiences and are not a guarantee of future results. No specific return or outcome is promised. © 2026 Allied Wealth. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ========================================================================
+    // CONTENT BLOCK — generated and injected by the Dream 100 Phase 3 skill.
+    // Prospect-specific values live here; the logic below never changes.
+    // ========================================================================
+    const EVENT = {
+      title:       "The Limitless Retirement Blueprint: How to Turn What You've Saved Into Income You Can't Outlive, and Actually Enjoy It",
+      details:     "A live training on the process we use to help people with seven-figure savings structure their money into lasting income, keep more from taxes, and finally enjoy retirement. The Zoom join link is in this calendar invite and your confirmation email.",
+      location:    "Live on Zoom",
+      dateISO:     "2026-07-28T20:30:00-04:00",
+      dateLabel:   "Tuesday, July 28",
+      durationMin: 90
+    };
+    const VIDEO = { embedUrl: "" };  // next-steps video (YouTube/Vimeo EMBED url). Empty -> keeps the placeholder box.
+
+    // ---- paint injected copy into the shell ----
+    document.getElementById('w-date').textContent = EVENT.dateLabel;
+    document.getElementById('w-loc').textContent  = EVENT.location;
+
+    // ---- next-steps video (swap placeholder for an iframe if a URL is set) ----
+    if(VIDEO.embedUrl){
+      document.getElementById('video').innerHTML =
+        '<iframe src="'+VIDEO.embedUrl+'" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    }
+
+    // ---- Add-to-calendar links (both built from EVENT so the date is single-sourced) ----
+    (function(){
+      function z(n){ return String(n).padStart(2,'0'); }
+      function gfmt(d){ return d.getUTCFullYear()+z(d.getUTCMonth()+1)+z(d.getUTCDate())+'T'+z(d.getUTCHours())+z(d.getUTCMinutes())+'00Z'; }
+      var start=new Date(EVENT.dateISO);
+      var end=new Date(start.getTime()+EVENT.durationMin*60000);
+
+      // Google Calendar (dates as YYYYMMDDTHHMMSSZ, UTC)
+      var google='https://calendar.google.com/calendar/render?action=TEMPLATE'
+        +'&text='+encodeURIComponent(EVENT.title)
+        +'&dates='+gfmt(start)+'/'+gfmt(end)
+        +'&details='+encodeURIComponent(EVENT.details)
+        +'&location='+encodeURIComponent(EVENT.location);
+      document.getElementById('calGoogle').setAttribute('href', google);
+
+      // Microsoft (personal Outlook.com compose deeplink; ISO 8601 UTC)
+      var microsoft='https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent'
+        +'&subject='+encodeURIComponent(EVENT.title)
+        +'&startdt='+start.toISOString()
+        +'&enddt='+end.toISOString()
+        +'&body='+encodeURIComponent(EVENT.details)
+        +'&location='+encodeURIComponent(EVENT.location);
+      document.getElementById('calMicrosoft').setAttribute('href', microsoft);
+    })();
+
+    // ---- FAQ accordion ----
+    document.querySelectorAll('.qa button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var qa=btn.parentElement, a=qa.querySelector('.a'), open=qa.classList.contains('open');
+        if(open){ qa.classList.remove('open'); a.style.maxHeight=null; }
+        else{ qa.classList.add('open'); a.style.maxHeight=a.scrollHeight+'px'; }
+      });
+    });
+  </script>
+
+  <!-- Auto-height reporter: when embedded (e.g. the Phase 4 showroom), post this page's height
+       to the parent so the iframe sizes to fit (no inner scrollbar). Harmless when standalone. -->
+  <script>
+  (function(){
+    if(window.parent===window) return;
+    function H(){return Math.max(document.documentElement.scrollHeight, document.body?document.body.scrollHeight:0);}
+    function post(){try{window.parent.postMessage({type:'d100-embed-height',height:H()},'*');}catch(e){}}
+    window.addEventListener('load',post); window.addEventListener('resize',post);
+    if(window.ResizeObserver){try{new ResizeObserver(post).observe(document.documentElement);}catch(e){}}
+    var n=0,iv=setInterval(function(){post(); if(++n>20)clearInterval(iv);},500); post();
+  })();
+  </script>
+</body>
+</html>
