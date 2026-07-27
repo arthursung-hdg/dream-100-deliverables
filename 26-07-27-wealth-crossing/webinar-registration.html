@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WealthCrossing · Private Live Training · Registration</title>
+<meta name="description" content="A private live training for professionals and executives near retirement: turn your accounts and company stock into one clear number, and keep more of it from the IRS.">
+
+<!-- ======================= META PIXEL (base — PageView only) ======================= -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '[META_PIXEL_ID]');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=[META_PIXEL_ID]&ev=PageView&noscript=1"/></noscript>
+<!-- ===================== END META PIXEL ===================== -->
+
+<style>
+  :root{
+    /* THEME — WealthCrossing: elm teal primary + warm gold accent (pixel-sampled brand #286e6e).
+       Gold accent gives CTA contrast on the teal hero and echoes the firm's warm imagery. */
+    --brand:#286e6e; --brand-deep:#1c4d4d; --brand-soft:#4a9090;
+    --accent:#c2a15e; --accent-soft:#e2cea2; --accent-deep:#a8843f;
+    --brand-rgb:40,110,110; --accent-rgb:194,161,94;
+    /* NEUTRALS — warm ivory ground */
+    --bg:#f4efe6; --surface:#ffffff; --ink:#1a1a1a; --ink-soft:#59554c; --ink-faint:#8a8578;
+    --line:#d8d0bd; --line-soft:#eae3d3; --green:#1f9d52; --red:#d92d20;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Libre Franklin',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;letter-spacing:-0.015em;line-height:1.14;margin:0;}
+  a{color:inherit;}
+  p{margin:0;}
+
+  .wrap{max-width:780px;margin:0 auto;padding:0 24px;}
+  .ph{color:var(--accent-deep);background:rgba(var(--accent-rgb),0.09);border-bottom:1px dashed var(--accent);padding:0 3px;border-radius:2px;font-style:normal;}
+  .hero .ph,.final .ph{color:var(--accent-soft);border-bottom-color:var(--accent-soft);background:rgba(255,255,255,0.07);}
+
+  .eyebrow{display:block;width:fit-content;margin:0 auto 20px;font-size:12px;letter-spacing:0.16em;
+    text-transform:uppercase;color:var(--accent-deep);font-weight:700;
+    background:rgba(var(--accent-rgb),0.10);padding:7px 16px;border-radius:999px;}
+  .section-title{font-size:clamp(27px,4vw,38px);font-weight:700;text-align:center;color:var(--brand);margin:0 auto;}
+  .hl{color:var(--accent);}
+  .section-intro{font-size:17px;color:var(--ink-soft);text-align:center;max-width:620px;margin:16px auto 0;}
+
+  .cta-btn{display:block;width:fit-content;margin:36px auto 0;background:var(--accent);color:#3a2e12;
+    font-weight:700;font-size:17px;letter-spacing:0.01em;text-decoration:none;
+    padding:15px 40px;border-radius:10px;transition:background .15s ease,transform .05s ease;}
+  .cta-btn:hover{background:var(--accent-deep);color:#fff;}
+  .cta-btn:active{transform:translateY(1px);}
+
+  .brand{font-family:'Libre Franklin',sans-serif;font-weight:700;letter-spacing:0.12em;font-size:17px;text-transform:uppercase;}
+  .brand small{display:block;font-family:'Inter',sans-serif;font-weight:400;letter-spacing:0.22em;font-size:9px;color:var(--accent-soft);margin-top:2px;}
+
+  /* 1. HERO */
+  .hero{background:linear-gradient(180deg,var(--brand) 0%,var(--brand-deep) 100%);color:#fff;
+    padding:64px 0 74px;text-align:center;}
+  .hero .wrap{max-width:1020px;}
+  .hero .eyebrow{color:var(--accent-soft);background:rgba(255,255,255,0.06);}
+  .hero h1{font-size:clamp(38px,5.8vw,60px);font-weight:800;color:#fff;max-width:970px;margin:0 auto;}
+  .hero h1 em{font-style:italic;color:var(--accent-soft);font-weight:500;}
+  .hero .lede{font-size:21px;color:#dbe4e2;margin:24px auto 0;max-width:760px;}
+  .when{font-size:18px;color:#eef3f2;font-weight:600;margin:32px 0 0;}
+  .cd-label{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-soft);margin:26px 0 10px;}
+  .countdown{display:flex;gap:10px;justify-content:center;margin:0;}
+  .cd-box{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.16);border-radius:10px;padding:10px 0;text-align:center;min-width:70px;}
+  .cd-box b{display:block;font-family:'Libre Franklin',sans-serif;font-size:30px;color:#fff;line-height:1;}
+  .cd-box span{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-soft);}
+  .hero .cta-btn{margin-top:34px;}
+
+  section.block{padding:72px 0;}
+
+  /* 2. WHAT YOU'LL LEARN */
+  .learn{background:var(--surface);border-bottom:1px solid var(--line);}
+  .learn-list{display:flex;flex-direction:column;gap:16px;margin:44px auto 0;}
+  .learn-item{display:grid;grid-template-columns:52px 1fr;gap:22px;align-items:start;
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 26px;}
+  .learn-item .no{width:52px;height:52px;border-radius:12px;background:var(--brand);color:var(--accent-soft);
+    font-family:'Libre Franklin',sans-serif;font-size:22px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+  .learn-item h3{font-size:20px;color:var(--brand);margin-bottom:6px;line-height:1.2;}
+  .learn-item p{font-size:15.5px;color:var(--ink-soft);}
+
+  /* 3. MEET YOUR PRESENTERS */
+  .hosts{background:var(--bg);}
+  .host-list{display:flex;flex-direction:column;gap:20px;max-width:680px;margin:44px auto 0;}
+  .host{display:grid;grid-template-columns:112px 1fr;gap:26px;align-items:center;
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 30px;text-align:left;}
+  .host.lead{border:1px solid var(--accent-soft);box-shadow:0 2px 4px rgba(0,0,0,0.03);}
+  .host-photo{width:112px;height:112px;border-radius:50%;flex:none;background:var(--line-soft);overflow:hidden;
+    display:flex;align-items:center;justify-content:center;color:var(--ink-faint);font-size:11px;text-align:center;padding:6px;}
+  .host-photo img{width:100%;height:100%;object-fit:cover;border-radius:50%;padding:0;}
+  .host .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+    color:#3a2e12;background:var(--accent);padding:5px 11px;border-radius:999px;margin-bottom:10px;}
+  .host.second .tag{color:var(--brand);background:rgba(var(--brand-rgb),0.08);}
+  .host h3{font-size:21px;margin:0 0 2px;color:var(--brand);}
+  .host .role{color:var(--accent-deep);font-weight:600;font-size:13.5px;margin:0;}
+  .host p.bio{font-size:15px;color:var(--ink-soft);margin:10px 0 0;}
+
+  /* 4. WHO THIS IS FOR */
+  .whofor{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .who-list{display:flex;flex-direction:column;gap:20px;max-width:680px;margin:44px auto 0;}
+  .who-col{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 30px;}
+  .who-col.yes{border-top:4px solid var(--green);}
+  .who-col.no{border:1px solid #f4cfcb;border-top:4px solid var(--red);background:#fff7f6;}
+  .who-col h3{font-size:20px;color:var(--brand);margin-bottom:18px;}
+  .who-col.no h3{color:#c0211a;}
+  .who-col ul{list-style:none;margin:0;padding:0;}
+  .who-col li{display:flex;gap:12px;align-items:flex-start;font-size:16px;color:var(--ink-soft);margin-bottom:14px;line-height:1.5;}
+  .who-col li:last-child{margin-bottom:0;}
+  .who-col.no li{color:#8a3b35;}
+  .who-col li .mk{flex:none;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:2px;}
+  .who-col.yes .mk{background:#eaf7ee;color:var(--green);}
+  .who-col.no .mk{background:var(--red);color:#fff;}
+
+  /* 5. REGISTRATION FORM */
+  .final{background:linear-gradient(180deg,var(--brand) 0%,var(--brand-deep) 100%);color:#fff;text-align:center;}
+  .final .eyebrow{color:var(--accent-soft);background:rgba(255,255,255,0.06);}
+  .final .section-title{color:#fff;}
+  .final .section-intro{color:#d0dad8;}
+  .final .when{color:#eef3f2;margin:22px 0 0;}
+  .signup{background:var(--surface);color:var(--ink);border-radius:14px;box-shadow:0 24px 60px rgba(0,20,18,0.34);
+    padding:32px 30px;border-top:5px solid var(--accent);max-width:460px;margin:36px auto 0;text-align:left;}
+  .field{margin-bottom:14px;}
+  .field label{display:block;font-size:12px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:6px;}
+  .field input{width:100%;padding:13px 14px;font-size:16px;border:1px solid var(--line);border-radius:8px;background:#fcfcfb;font-family:inherit;color:var(--ink);}
+  .field input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(var(--accent-rgb),0.18);}
+  .btn{display:block;width:100%;border:none;cursor:pointer;font-family:inherit;background:var(--accent);color:#3a2e12;
+    font-size:17px;font-weight:700;letter-spacing:0.02em;padding:15px 18px;border-radius:8px;transition:background .15s ease,transform .05s ease;margin-top:4px;}
+  .btn:hover{background:var(--accent-deep);color:#fff;}
+  .btn:active{transform:translateY(1px);}
+  .fineprint{font-size:12px;color:var(--ink-faint);text-align:center;margin:12px 0 0;}
+  .confirm{display:none;text-align:center;padding:18px 4px;}
+  .confirm .check{width:56px;height:56px;border-radius:50%;background:#eaf7ee;color:var(--green);display:flex;align-items:center;justify-content:center;font-size:30px;margin:0 auto 14px;}
+  .confirm h3{font-size:22px;margin-bottom:8px;color:var(--brand);}
+  .confirm p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+
+  /* footer */
+  footer.site{background:var(--brand-deep);color:#b8c9c9;font-size:13px;padding:44px 0 52px;}
+  footer.site .wrap{display:flex;flex-direction:column;gap:16px;}
+  footer.site .brand{color:#fff;}
+  .disclaimer{font-size:11.5px;line-height:1.6;color:#8ba5a5;border-top:1px solid var(--brand-soft);padding-top:18px;}
+
+  @media(max-width:720px){
+    .learn-item{grid-template-columns:1fr;gap:14px;}
+    .host{grid-template-columns:1fr;text-align:center;}
+    .host-photo{margin:0 auto;}
+    section.block{padding:56px 0;}
+    .countdown{flex-wrap:wrap;}
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============ 1. HERO ============ -->
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">An Exclusive Live Training · By Invitation</span>
+      <h1>The Process We Use to Help Successful Professionals <em>Retire With a Clear Number</em> and Keep More of It From the IRS</h1>
+      <p class="lede">Learn how to turn your accounts and company stock into one retirement number, draw them down in the order that saves the most tax, and time your equity comp so a vesting year doesn't spike your bracket.</p>
+      <p class="when">📅 Thursday, July 30 &nbsp;·&nbsp; 🕣 8:30 PM EST &nbsp;·&nbsp; 💻 Live Online</p>
+
+      <p class="cd-label">We're going live in</p>
+      <div class="countdown" id="countdown" aria-label="Time until the training begins">
+        <div class="cd-box"><b id="cd-d">00</b><span>Days</span></div>
+        <div class="cd-box"><b id="cd-h">00</b><span>Hours</span></div>
+        <div class="cd-box"><b id="cd-m">00</b><span>Mins</span></div>
+        <div class="cd-box"><b id="cd-s">00</b><span>Secs</span></div>
+      </div>
+
+      <a href="#register" class="cta-btn">Reserve My Seat →</a>
+    </div>
+  </header>
+
+  <!-- ============ 2. WHAT YOU'LL LEARN ============ -->
+  <section class="block learn">
+    <div class="wrap">
+      <span class="eyebrow">What You'll Learn</span>
+      <h2 class="section-title">What You'll Learn Inside this <span class="hl">LIVE</span> Training:</h2>
+      <div class="learn-list">
+        <div class="learn-item">
+          <div class="no">1</div>
+          <div><h3>The "Safe-to-Spend" calculation that turns your balance into one honest yearly number</h3><p>So "will it last?" becomes a figure you can plan around, instead of a question you lie awake on.</p></div>
+        </div>
+        <div class="learn-item">
+          <div class="no">2</div>
+          <div><h3>Why the five years around your retirement date decide everything, and how to position for a bad first year</h3><p>So one ugly market right at the start doesn't quietly follow you for the next thirty years.</p></div>
+        </div>
+        <div class="learn-item">
+          <div class="no">3</div>
+          <div><h3>The withdrawal order, the Roth-conversion window, and the RSU/ISO timing that decide what you actually keep</h3><p>So you stop handing the IRS tens of thousands you never needed to lose on the way out.</p></div>
+        </div>
+        <div class="learn-item">
+          <div class="no">4</div>
+          <div><h3>How to turn "one more year, just in case" into a number you can live on, and a clean handoff</h3><p>So you finally enjoy what you built, and what's left lands as a gift, not a tax bill and a mess.</p></div>
+        </div>
+      </div>
+      <a href="#register" class="cta-btn">Reserve My Seat →</a>
+    </div>
+  </section>
+
+  <!-- ============ 3. MEET YOUR PRESENTERS ============ -->
+  <section class="block hosts">
+    <div class="wrap">
+      <span class="eyebrow">Led By Experts</span>
+      <h2 class="section-title">Meet Your Hosts</h2>
+      <div class="host-list">
+        <div class="host lead">
+          <div class="host-photo">[ photo ]</div>
+          <div class="host-info">
+            <span class="tag">Wealth &amp; Tax Specialist · Live Q&amp;A</span>
+            <h3 class="ph">[Specialist Name]</h3>
+            <p class="role"><span class="ph">[Title / Credentials, e.g. CPA, CFP]</span> · WealthCrossing</p>
+            <p class="bio"><span class="ph">[Short credibility bio: years of experience, credentials, what they specialize in.]</span> <span class="ph">[First Name]</span> is here to answer your most specific questions live.</p>
+          </div>
+        </div>
+        <div class="host second">
+          <div class="host-photo"><img src="assets/arthur-sung-headshot.png" alt="Arthur Sung"></div>
+          <div class="host-info">
+            <span class="tag">Your Host</span>
+            <h3>Arthur Sung</h3>
+            <p class="role">WealthCrossing Education Team</p>
+            <p class="bio">Part of the WealthCrossing education team, here to lead the session and distill any complex information into easy to understand, actionable insights.</p>
+          </div>
+        </div>
+      </div>
+      <a href="#register" class="cta-btn">Reserve My Seat →</a>
+    </div>
+  </section>
+
+  <!-- ============ 4. WHO THIS IS FOR ============ -->
+  <section class="block whofor">
+    <div class="wrap">
+      <span class="eyebrow">Is This For You?</span>
+      <h2 class="section-title">Who this training is for (and who it isn't)</h2>
+      <div class="who-list">
+        <div class="who-col yes">
+          <h3>This is for you if…</h3>
+          <ul>
+            <li><span class="mk">✓</span><span class="t">You've built a pile of company stock and a sizeable 401(k), and no one has ever shown you the tax bill waiting when you start pulling it out.</span></li>
+            <li><span class="mk">✓</span><span class="t">You lie awake running the math, and you still can't say for certain how much you can spend each year without one day running out.</span></li>
+            <li><span class="mk">✓</span><span class="t">You could probably retire now, but the market feels high, so you keep working "one more year" out of a fear no one has helped you size.</span></li>
+            <li><span class="mk">✓</span><span class="t">Your advisor manages the money and your CPA files in April, and as far as you can tell the two have never once spoken.</span></li>
+            <li><span class="mk">✓</span><span class="t">You're a professional, executive, or business owner within about ten years of retirement, with $1 million or more saved.</span></li>
+          </ul>
+        </div>
+        <div class="who-col no">
+          <h3>This is NOT for you if…</h3>
+          <ul>
+            <li><span class="mk">✕</span><span class="t">You're decades from retirement and just getting started. This training is built for people near the finish line.</span></li>
+            <li><span class="mk">✕</span><span class="t">You know your plan needs a second look, but you're not willing to set aside 45 minutes to actually do something about it.</span></li>
+            <li><span class="mk">✕</span><span class="t">You're hunting for a hot stock tip or a way to beat the market, not a plan for keeping and spending what you already have.</span></li>
+            <li><span class="mk">✕</span><span class="t">You want someone to fix one narrow thing, not look at how your investments, taxes, and retirement actually fit together.</span></li>
+          </ul>
+        </div>
+      </div>
+      <a href="#register" class="cta-btn">Reserve My Seat →</a>
+    </div>
+  </section>
+
+  <!-- ============ 5. REGISTRATION FORM ============ -->
+  <section class="block final" id="register">
+    <div class="wrap">
+      <span class="eyebrow">Reserve Your Seat</span>
+      <h2 class="section-title">Spots are limited. Save your seat today.</h2>
+      <p class="when">📅 Thursday, July 30 &nbsp;·&nbsp; 🕣 8:30 PM EST &nbsp;·&nbsp; 💻 Live Online</p>
+      <div class="signup">
+        <form id="signupForm">
+          <div class="field"><label for="name">Full Name</label><input id="name" name="name" type="text" placeholder="Jane Smith" required></div>
+          <div class="field"><label for="email">Email Address</label><input id="email" name="email" type="email" placeholder="jane@email.com" required></div>
+          <div class="field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" placeholder="(555) 123-4567" required></div>
+          <button class="btn" type="submit">Reserve My Seat →</button>
+          <p class="fineprint">By invitation · Limited seating · Your details stay private.</p>
+        </form>
+        <div class="confirm" id="confirmMsg">
+          <div class="check">✓</div>
+          <h3>You're registered!</h3>
+          <p>Check your email for the training link and calendar invite. See you there.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site">
+    <div class="wrap" style="max-width:1080px;">
+      <div class="brand">WealthCrossing<small>Where planning, investments, and taxes intersect</small></div>
+      <div>Richmond, VA · 804-237-1700 · 1001 Haxall Point, Suite 705, Richmond, VA 23219</div>
+      <p class="disclaimer">This training is for educational purposes only and does not constitute investment, tax, or legal advice. WealthCrossing is an independent, fee-only registered investment adviser. Any outcomes referenced are individual experiences and are not a guarantee of future results. © 2026 WealthCrossing. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Webinar: Tuesday/Wednesday/Thursday 8:30 PM EST, >= 3 days out. Built 2026-07-27 (Mon) -> Thu Jul 30.
+    const WEBINAR_DATE = new Date("2026-07-30T20:30:00-04:00");
+
+    function pad(n){ return String(n).padStart(2,'0'); }
+    function setText(id,v){ var el=document.getElementById(id); if(el) el.textContent=v; }
+    function tick(){
+      var diff = WEBINAR_DATE.getTime() - Date.now();
+      if (diff < 0) diff = 0;
+      var d = Math.floor(diff/86400000); diff -= d*86400000;
+      var h = Math.floor(diff/3600000); diff -= h*3600000;
+      var m = Math.floor(diff/60000);   diff -= m*60000;
+      var s = Math.floor(diff/1000);
+      setText('cd-d',pad(d)); setText('cd-h',pad(h)); setText('cd-m',pad(m)); setText('cd-s',pad(s));
+    }
+    tick(); setInterval(tick, 1000);
+
+    var form = document.getElementById('signupForm');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name  = encodeURIComponent((document.getElementById('name').value  || '').trim());
+      var email = encodeURIComponent((document.getElementById('email').value || '').trim());
+      var phone = encodeURIComponent((document.getElementById('phone').value || '').trim());
+      window.location.href = 'webinar-survey.html?name=' + name + '&email=' + email + '&phone=' + phone;
+    });
+  </script>
+
+  <script>
+  (function(){
+    if(window.parent===window) return;
+    function H(){return Math.max(document.documentElement.scrollHeight, document.body?document.body.scrollHeight:0);}
+    function post(){try{window.parent.postMessage({type:'d100-embed-height',height:H()},'*');}catch(e){}}
+    window.addEventListener('load',post); window.addEventListener('resize',post);
+    if(window.ResizeObserver){try{new ResizeObserver(post).observe(document.documentElement);}catch(e){}}
+    var n=0,iv=setInterval(function(){post(); if(++n>20)clearInterval(iv);},500); post();
+  })();
+  </script>
+</body>
+</html>
