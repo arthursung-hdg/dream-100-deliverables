@@ -162,6 +162,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Vercel Web Analytics (static-site install). Self-visits excluded via
+       localStorage 'va-disable' (run: localStorage.setItem('va-disable','1') in your own browser). -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    window.va('beforeSend', function (event) {
+      try { return localStorage.getItem('va-disable') ? null : event; } catch (e) { return event; }
+    });
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
