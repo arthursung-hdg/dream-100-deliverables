@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Quick Step · Quest Commonwealth</title>
+<meta name="description" content="A few quick questions to confirm your seat for the private training.">
+
+<!-- ======================= META PIXEL (base — PageView only) ======================= -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '[META_PIXEL_ID]');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=[META_PIXEL_ID]&ev=PageView&noscript=1"/></noscript>
+<!-- ===================== END META PIXEL ===================== -->
+
+<style>
+  :root{
+    /* THEME — Quest Commonwealth. Identical block across all four funnel pages. */
+    --brand:#bf5a22; --brand-deep:#3a2410; --brand-soft:#d98a5a;
+    --accent:#e0a24e; --accent-soft:#f0cf9a; --accent-deep:#b87d2c;
+    --brand-rgb:191,90,34; --accent-rgb:224,162,78;
+    --bg:#f4efe6; --surface:#ffffff; --ink:#1a1a1a; --ink-soft:#59554c;
+    --ink-faint:#8a8578; --line:#d8d0bd; --line-soft:#eae3d3; --green:#1f9d52;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+    min-height:100vh;display:flex;flex-direction:column;}
+  h1,h2,h3{font-family:'Libre Franklin',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;letter-spacing:-0.015em;line-height:1.15;margin:0;}
+
+  .stage{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 20px;}
+  .card{width:100%;max-width:640px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--accent);
+    border-radius:16px;box-shadow:0 24px 60px rgba(58,36,16,0.10);padding:38px 40px 34px;}
+
+  .lead{text-align:center;margin-bottom:22px;}
+  .lead .kick{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-deep);background:rgba(var(--accent-rgb),0.14);padding:6px 14px;border-radius:999px;margin-bottom:12px;}
+  .lead p{font-size:14.5px;color:var(--ink-soft);margin:8px 0 0;}
+  .pbar{height:7px;background:var(--line-soft);border-radius:999px;overflow:hidden;margin-bottom:8px;}
+  .pbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-soft));border-radius:999px;transition:width .35s ease;}
+  .pcount{font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink-faint);text-align:right;}
+
+  .q-wrap{margin-top:26px;}
+  .q-num{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:10px;}
+  .q-text{font-size:25px;font-weight:700;color:var(--brand-deep);margin-bottom:22px;}
+  .opts{display:flex;flex-direction:column;gap:11px;}
+  .opt{display:flex;align-items:center;gap:13px;width:100%;text-align:left;cursor:pointer;font-family:inherit;font-size:16px;color:var(--ink);
+    background:#fff;border:1.5px solid var(--line);border-radius:11px;padding:15px 17px;transition:border-color .12s ease,background .12s ease,transform .04s ease;}
+  .opt:hover{border-color:var(--accent);background:rgba(var(--accent-rgb),0.05);}
+  .opt:active{transform:translateY(1px);}
+  .opt .dot{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid var(--line);transition:border-color .12s ease,background .12s ease;}
+  .opt.sel{border-color:var(--accent);background:rgba(var(--accent-rgb),0.10);}
+  .opt.sel .dot{border-color:var(--accent);background:var(--accent);box-shadow:inset 0 0 0 3px #fff;}
+  .nav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;}
+  .back{background:none;border:none;cursor:pointer;font-family:inherit;font-size:14px;color:var(--ink-faint);padding:6px 2px;}
+  .back:hover{color:var(--brand-deep);}
+  .back[disabled]{opacity:0;pointer-events:none;}
+  .micro{font-size:12px;color:var(--ink-faint);}
+
+  .result{display:none;text-align:center;padding:6px 4px 4px;}
+  .result.show{display:block;}
+  .result .crest{width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;margin:0 auto 18px;background:rgba(var(--accent-rgb),0.14);color:var(--accent-deep);}
+  .result h2{font-size:28px;color:var(--brand-deep);margin-bottom:12px;}
+  .result p{font-size:16px;color:var(--ink-soft);max-width:460px;margin:0 auto 8px;}
+  .btn{display:block;width:100%;border:none;cursor:pointer;font-family:inherit;background:var(--accent);color:#3a2410;font-size:16.5px;font-weight:700;
+    letter-spacing:0.02em;padding:16px 22px;border-radius:9px;text-decoration:none;text-align:center;transition:background .15s ease;}
+  .btn:hover{background:var(--accent-deep);color:#fff;}
+  .btn[disabled]{opacity:0.45;cursor:not-allowed;}
+  .btn[disabled]:hover{background:var(--accent);color:#3a2410;}
+  #completeBtn{margin-top:22px;}
+
+  @media(max-width:560px){
+    .card{padding:30px 22px;}
+    .q-text{font-size:22px;}
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="stage">
+    <div class="card">
+
+      <div class="lead">
+        <span class="kick">You're almost in</span>
+        <div class="pbar"><i id="pfill"></i></div>
+        <p class="pcount" id="pcount">Question 1 of 7</p>
+        <p id="leadnote">Your seat is on hold.</p>
+        <p>Answer a few quick questions so we can tailor the session to you.</p>
+      </div>
+
+      <div class="q-wrap" id="quiz">
+        <div class="q-num" id="qnum">Question 1</div>
+        <h2 class="q-text" id="qtext">…</h2>
+        <div class="opts" id="opts"></div>
+        <button class="btn" id="completeBtn" type="button" style="display:none;">Complete Survey →</button>
+        <div class="nav">
+          <button class="back" id="back">← Back</button>
+          <span class="micro">Takes under 60 seconds</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // ========================================================================
+    // CONTENT BLOCK — Quest Commonwealth. ICP: protection-minded near-retiree
+    // ($500k+), most savings still market-exposed, wants income they can't
+    // outlive. Confirms a seat for "The Safe Money Mindset".
+    // Pivotal (high-ceiling) dimensions: proximity to retirement (Q2, 0-4),
+    // savings (Q3, 0-4), intent (Q7, 0-5). Max = 22; qualify = 15 (~68%).
+    // ========================================================================
+    const SURVEY = {
+      questions: [
+        { q:"Which best describes you right now?",
+          opts:[ ["Still working, planning for retirement",1],["Retiring within the next couple of years",1],["Already retired",1],["Just exploring, retirement is a long way off",0] ] },
+        { q:"How close are you to retirement?",
+          opts:[ ["I'm within 5 years of it",4],["Somewhere in the next 5 to 10 years",3],["More than 10 years out",1],["Not sure, I haven't set a date",0] ] },
+        { q:"Roughly how much have you saved for retirement? (401k, IRA, savings)",
+          opts:[ ["Over $2 million",4],["$1 million to $2 million",4],["$500k to $1 million",3],["Under $500k",0] ] },
+        { q:"How much of your retirement savings is currently exposed to the stock market?",
+          opts:[ ["Almost all of it",3],["Most of it",3],["About half",2],["Very little, it's mostly protected",1] ] },
+        { q:"What worries you most about retirement?",
+          opts:[ ["A market crash wiping out my savings",2],["Running out of money",2],["Overpaying taxes on the way out",2],["Honestly, nothing keeps me up at night",0] ] },
+        { q:"Do you have a written plan that protects your income if the market drops sharply?",
+          opts:[ ["No, nothing like that",3],["I'm not sure",2],["Sort of, but I'm not confident in it",1],["Yes, and I'm fully confident in it",0] ] },
+        { q:"If a specialist could show you how to build protected income you can't outlive, would a conversation be worth it?",
+          opts:[ ["Yes, that's exactly what I need",5],["Probably, if it's genuinely useful",3],["Maybe someday",1],["No, I'm just here for the training",0] ] }
+      ],
+      qualify: 15
+    };
+
+    // ========================================================================
+    // ENGINE — do not edit per prospect. Reads everything from SURVEY above.
+    // ========================================================================
+    const QUESTIONS = SURVEY.questions;
+    const QUALIFY = SURVEY.qualify;
+
+    let idx = 0; const answers = new Array(QUESTIONS.length).fill(null);
+    const elQuiz=document.getElementById('quiz'), elNum=document.getElementById('qnum'),
+          elText=document.getElementById('qtext'), elOpts=document.getElementById('opts'),
+          elBack=document.getElementById('back'), elFill=document.getElementById('pfill'),
+          elCount=document.getElementById('pcount'), elComplete=document.getElementById('completeBtn');
+
+    function render(){
+      const Q = QUESTIONS[idx];
+      const isLast = idx === QUESTIONS.length-1;
+      elNum.textContent = "Question " + (idx+1);
+      elText.textContent = Q.q;
+      elCount.textContent = "Question " + (idx+1) + " of " + QUESTIONS.length;
+      elFill.style.width = ((idx)/QUESTIONS.length*100) + "%";
+      elBack.disabled = idx===0;
+      elComplete.style.display = isLast ? "block" : "none";
+      elComplete.disabled = answers[idx]===null;
+      elOpts.innerHTML = "";
+      Q.opts.forEach(function(o,i){
+        const b=document.createElement('button');
+        b.className="opt"+(answers[idx]===i?" sel":"");
+        b.innerHTML='<span class="dot"></span><span>'+o[0]+'</span>';
+        b.onclick=function(){ answers[idx]=i; choose(); };
+        elOpts.appendChild(b);
+      });
+    }
+    function choose(){
+      if(idx < QUESTIONS.length-1){
+        render();
+        setTimeout(function(){ idx++; render(); }, 230);
+      } else {
+        render();
+      }
+    }
+    elBack.onclick=function(){ if(idx>0){ idx--; render(); } };
+    elComplete.onclick=function(){ finish(); };
+
+    function goTo(page){
+      var qs = '';
+      try{ qs = window.location.search || ''; }catch(e){}
+      window.location.href = page + qs;
+    }
+    function finish(){
+      let score=0; answers.forEach(function(a,i){ if(a!==null) score+=QUESTIONS[i].opts[a][1]; });
+      if(score >= QUALIFY){ goTo('webinar-thank-you-call.html'); }
+      else                { goTo('webinar-thank-you.html'); }
+    }
+    render();
+  </script>
+
+  <script>
+  (function(){
+    if(window.parent===window) return;
+    function H(){return Math.max(document.documentElement.scrollHeight, document.body?document.body.scrollHeight:0);}
+    function post(){try{window.parent.postMessage({type:'d100-embed-height',height:H()},'*');}catch(e){}}
+    window.addEventListener('load',post); window.addEventListener('resize',post);
+    if(window.ResizeObserver){try{new ResizeObserver(post).observe(document.documentElement);}catch(e){}}
+    var n=0,iv=setInterval(function(){post(); if(++n>20)clearInterval(iv);},500); post();
+  })();
+  </script>
+</body>
+</html>
